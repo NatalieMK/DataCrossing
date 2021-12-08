@@ -13,9 +13,11 @@ extern crate serde_derive;
 
 use serde_json::Value as JsonValue;
 
-#[derive(Serialize, Deserialize)]
+// Swift Cross-Compatability for iOS Use
+// Additions by Natalie Kim
 
-struct PatternInfo {
+#[derive(Serialize, Deserialize)]
+pub struct SwiftInput {
     year: u16,
     day: u8,
     month: u8,
@@ -23,20 +25,21 @@ struct PatternInfo {
 }
 
 #[derive(Serialize, Deserialize)]
-struct ReturnInfo{
+pub struct SwiftOutput{
     weather: String
 }
+// Data is recieved from and sent to the Swift program in JSON format.
+// JSON Format is then Serialized into a Rust object, then Deserialized for JSON export.
 
 #[no_mangle]
 pub extern fn rust_parse(to: *const c_char) -> *mut c_char {
     let c_str = unsafe {CStr::from_ptr(to)};
-    let printed = match c_str.to_str(){
-        Err(_) => "there",
+    let swift_input = match c_str.to_str(){
+        Err(_) => "Error",
         Ok(string) => string,
     };
-    let newPrint = getWeather(printed);
-    println!("{}", printed);
-    return CString::new(newPrint).unwrap().into_raw();
+    let weather_information = get_weather_for_seed(swift_input);
+    return CString::new(weather_information).unwrap().into_raw();
 }
 
 #[no_mangle]
@@ -47,93 +50,17 @@ pub extern fn rust_parse_free(s: *mut c_char) {
     };
 }
 
-pub fn test(){
-
-	let mut gd = GuessData::new(Hemisphere::Northern);
-
-	gd.add_pattern(2020, 4, 4, Fine00);
-	gd.add_pattern(2020, 4, 4, Fine02);
-	gd.add_pattern(2020, 4, 4, Fine04);
-	gd.add_pattern(2020, 4, 4, Fine06);
-
-	gd.add_pattern(2020, 4, 16, Fine00);
-	gd.add_pattern(2020, 4, 16, Fine02);
-	gd.add_pattern(2020, 4, 16, Fine04);
-	gd.add_pattern(2020, 4, 16, Fine06);
-
-	gd.add_pattern(2020, 4, 19, CloudFine00);
-	gd.add_rainbow(2020, 4, 19, false);
-
-	// gd.add_pattern(2020, 6, 7, Fine00);
-
-	gd.add_pattern(2020, 6, 16, Fine00);
-	gd.add_pattern(2020, 6, 16, Fine02);
-	gd.add_pattern(2020, 6, 16, Fine04);
-	gd.add_pattern(2020, 6, 16, Fine06);
-	gd.add_pattern(2020, 6, 16, Cloud00);
-	gd.add_pattern(2020, 6, 16, Cloud01);
-	gd.add_pattern(2020, 6, 16, Cloud02);
-	gd.add_pattern(2020, 6, 16, Rain00);
-	gd.add_pattern(2020, 6, 16, FineCloud00);
-	gd.add_pattern(2020, 6, 16, FineCloud01);
-	gd.add_pattern(2020, 6, 16, CloudFine00);
-	gd.add_pattern(2020, 6, 16, CloudFine01);
-	gd.add_pattern(2020, 6, 16, CloudFine02);
-	gd.add_pattern(2020, 6, 16, RainCloud00);
-	gd.add_pattern(2020, 6, 16, RainCloud01);
-	gd.add_pattern(2020, 6, 16, RainCloud02);
-
-	gd.add_pattern(2020, 6, 17, Rain01);
-	gd.add_pattern(2020, 6, 17, CloudRain01);
-
-	gd.add_pattern(2020, 6, 18, Rain02);
-	gd.add_pattern(2020, 6, 18, CloudFine00);
-
-	gd.add_pattern(2020, 6, 19, Fine02);
-	gd.add_pattern(2020, 6, 19, Fine04);
-	gd.add_pattern(2020, 6, 19, Fine06);
-
-	gd.add_pattern(2020, 6, 20, Cloud02);
-	gd.add_pattern(2020, 6, 20, RainCloud02);
-
-	gd.add_pattern(2020, 6, 29, Fine00);
-
-	let mut guesser = Guesser::new(0, 0x7fffffff);
-	loop {
-		match guesser.work(&gd, 0x200001) {
-			GuesserResult::Complete => break,
-			GuesserResult::Incomplete => (),
-			GuesserResult::Failed => break
-		};
-		let percentage = guesser.get_percentage();
-		println!("{}... results={}", percentage, guesser.get_result_count());
-	}
-	let res = guesser.work(&gd, 0x7fffffff);
-	println!("result: {:?}", res);
-
-	for i in 0..guesser.get_result_count() {
-		let seed = guesser.get_result(i);
-		println!("seed {}: {}", i, seed);
-	}
-}
-
-pub fn getWeather(str: &str) -> String {
+pub fn get_weather_for_seed(str: &str) -> String {
     let json_str = str;
-    let res = serde_json::from_str(json_str);
-
-    if res.is_ok(){
-    let p: PatternInfo = res.unwrap();
-    println!("The year is {}", p.year);
-    println!("The day is {}", p.day);
-    println!("The month is {}", p.month);
-    println!("The seed is {}", p.seed);
+    let result = serde_json::from_str(json_str);
+    if result.is_ok(){
+    let p: SwiftInput = result.unwrap();
     let pattern = get_pattern(Northern, p.seed, p.year, p.month, p.day);
-    let patternString = (get_pattern_str(pattern));
-    let returnVal = ReturnInfo{
-        weather: String::from(patternString)
+    let pattern_str = get_pattern_str(pattern);
+    let daily_weather_type = SwiftOutput{
+        weather: String::from(pattern_str)
     };
-    let return_str = serde_json::to_string(&returnVal).unwrap();
-    println!("{}",return_str);
+    let return_str = serde_json::to_string(&daily_weather_type).unwrap();
     return return_str
     } else {
     println!("Sorry, could not parse JSON");
@@ -141,10 +68,9 @@ pub fn getWeather(str: &str) -> String {
     }
 }
 
-// -
-// Beginning of MeteoNook lib.rs file by Ninji
-// -
 
+
+// Original lib.rs file from Ninji
 
 macro_rules! log {
 	( $( $t:tt )* ) => {

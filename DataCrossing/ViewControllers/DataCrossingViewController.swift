@@ -9,7 +9,7 @@ import UIKit
 
 class DataCrossingViewController: UIViewController {
     
-    let strBoi: String = """
+    let testString: String = """
     {
     "year": 2022,
     "day": 25,
@@ -21,12 +21,10 @@ class DataCrossingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .acWhite
-        let rustParse = RustParser()
-        let rustJSON = rustParse.parseParse(to: strBoi)
-        let data: Data? = rustJSON.data(using: .utf8)
-        if let dateJSON = try? JSONDecoder().decode(Weather.self, from: data!){
-            print(dateJSON.self.weather)
-        }
+        let meteonook = MeteoNookCaller()
+        let other = MeteoNookCaller.call.parse(to: testString)
+        let weather = MeteoNookCaller.call.getDayWeather(with: other)
+        print(weather)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

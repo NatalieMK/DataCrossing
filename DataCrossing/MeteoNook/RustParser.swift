@@ -8,7 +8,7 @@
 import Foundation
 
 class RustParser {
-    func parseParse(to: String) -> String {
+    func parse(to: String) -> String {
         let result = rust_parse(to)
         let swift_result = String(cString: result!)
         rust_parse_free(UnsafeMutablePointer(mutating: result))

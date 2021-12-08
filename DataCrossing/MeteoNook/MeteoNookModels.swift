@@ -11,9 +11,10 @@ struct Date: Codable {
     var year: Int
     var day: Int
     var month: Int
-    
 }
 
 struct Weather: Codable {
     var weather: String
 }
+
+

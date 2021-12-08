@@ -1,5 +1,5 @@
 [package]
-name = "parser"
+name = "meteonook"
 version = "0.1.0"
 edition = "2021"
 
@@ -11,5 +11,5 @@ serde_json = "1.0"
 serde_derive = "1.0"
 
 [lib]
-name = "parser"
+name = "meteonook"
 crate-type = ["staticlib", "cdylib"]

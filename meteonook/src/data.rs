@@ -317,11 +317,13 @@ pub fn get_pattern_kind(pat: Pattern) -> PatternKind {
 	pat.kind()
 }
 
+// Swift Compatability functions written by Natalie Kim.
+
 pub fn get_pattern_str(pat: Pattern) -> &'static str {
- 	let patKind = pat.kind();
-	let str = match patKind {
+ 	let pat_kind = pat.kind();
+	let pattern_kind_str = match pat_kind {
 		PatternKind::Fine => "Fine", PatternKind::Cloud => "Cloud", PatternKind::Rain => "Rain", PatternKind::FineCloud => "FineCloud", PatternKind::CloudFine => "CloudFine", PatternKind::FineRain => "FineRain",
 		PatternKind::CloudRain => "CloudRain", PatternKind::RainCloud => "RainCloud", PatternKind::Commun => "Commun", PatternKind::EventDay => "EventDay"
 	};
-	return str;
+	return pattern_kind_str;
 }
