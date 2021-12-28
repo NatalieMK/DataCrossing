@@ -49,3 +49,6 @@ CSVs are formatted from the spreadsheet at https://tinyurl.com/acnh-sheet. I've 
 various critters in-game (80 fish, 80 bugs, and 40 different deep-sea creatures!). 
 
 :heart: Natalie (or Island Representative Nombi)
+
+### Note
+This project is a fan project, completely unaffiliated with Animal Crossing or Nintendo.
