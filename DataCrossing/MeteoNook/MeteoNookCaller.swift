@@ -18,6 +18,13 @@ final class MeteoNookCaller{
         return swift_result
     }
     
+    func parse_hour(to: String) -> String {
+        let result = rust_parse_hours(to)
+        let swift_result = String(cString: result!)
+        rust_parse_free(UnsafeMutablePointer(mutating: result))
+        return swift_result
+    }
+    
     func getSeed(with jsonString: String) -> Int32 {
         return 0
     }
@@ -29,7 +36,6 @@ final class MeteoNookCaller{
         } else {
         return ""
         }
-        
     }
     
     func canDecode(with jsonString: String) -> Bool{

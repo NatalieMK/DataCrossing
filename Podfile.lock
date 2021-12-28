@@ -1,0 +1,21 @@
+PODS:
+  - Kingfisher (7.1.2)
+  - SwiftCSV (0.6.1)
+
+DEPENDENCIES:
+  - Kingfisher (~> 7.0)
+  - SwiftCSV
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Kingfisher
+  trunk:
+    - SwiftCSV
+
+SPEC CHECKSUMS:
+  Kingfisher: 44ed6a8504763f27bab46163adfac83f5deb240c
+  SwiftCSV: f0108ec3e85c69ca7d7707645a4d044a222dc10c
+
+PODFILE CHECKSUM: 7b42ab196bfddf6b996ba3c65bcd25b4be00d458
+
+COCOAPODS: 1.11.2

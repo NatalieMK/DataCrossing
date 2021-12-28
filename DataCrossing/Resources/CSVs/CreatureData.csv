@@ -1,0 +1,41 @@
+number,name,url,size,N_Jan,N_Feb,N_Mar,N_Apr,N_May,N_Jun,N_Jul,N_Aug,N_Sep,N_Oct,N_Nov,N_Dec,S_Jan,S_Feb,S_Mar,S_Apr,S_May,S_Jun,S_Jul,S_Aug,S_Sep,S_Oct,S_Nov,S_Dec
+1,seaweed,https://acnhcdn.com/latest/MenuIcon/Wakame.png,large,0,0,0,0,0,0,0,NA,NA,0,0,0,0,NA,NA,0,0,0,0,0,0,0,0,0
+2,sea grapes,https://acnhcdn.com/latest/MenuIcon/Umibudou.png,small,NA,NA,NA,NA,NA,0,0,0,0,NA,NA,NA,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,0
+3,sea cucumber,https://acnhcdn.com/latest/MenuIcon/Namako.png,medium,0,0,0,0,NA,NA,NA,NA,NA,NA,0,0,NA,NA,NA,NA,0,0,0,0,0,0,NA,NA
+4,sea pig,https://acnhcdn.com/latest/MenuIcon/Senjunamako.png,small,1600-0900,1600-0900,NA,NA,NA,NA,NA,NA,NA,NA,1600-0900,1600-0900,NA,NA,NA,NA,1600-0900,1600-0900,1600-0900,1600-0900,NA,NA,NA,NA
+5,sea star,https://acnhcdn.com/latest/MenuIcon/Hitode.png,small,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+6,sea urchin,https://acnhcdn.com/latest/MenuIcon/Uni.png,small,NA,NA,NA,NA,0,0,0,0,0,NA,NA,NA,0,0,0,NA,NA,NA,NA,NA,NA,NA,0,0
+7,slate pencil urchin,https://acnhcdn.com/latest/MenuIcon/Paipuuni.png,medium,NA,NA,NA,NA,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,NA,NA,NA,1600-0900,1600-0900,1600-0900,NA,NA,NA,NA,NA,NA,NA,1600-0900,1600-0900
+8,sea anemone,https://acnhcdn.com/latest/MenuIcon/Isogintyaku.png,large,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+9,moon jellyfish,https://acnhcdn.com/latest/MenuIcon/Mizukurage.png,small,NA,NA,NA,NA,NA,NA,0,0,0,NA,NA,NA,0,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA
+10,sea slug,https://acnhcdn.com/latest/MenuIcon/Umiushi.png,xsmall,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+11,pearl oyster,https://acnhcdn.com/latest/MenuIcon/Akoyagai.png,small,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+12,mussel,https://acnhcdn.com/latest/MenuIcon/Muhrugai.png,small,NA,NA,NA,NA,NA,0,0,0,0,0,0,0,0,0,0,0,0,0,NA,NA,NA,NA,NA,0
+13,oyster,https://acnhcdn.com/latest/MenuIcon/Kaki.png,small,0,0,NA,NA,NA,NA,NA,NA,0,0,0,0,NA,NA,0,0,0,0,0,0,NA,NA,NA,NA
+14,scallop,https://acnhcdn.com/latest/MenuIcon/Hotate.png,medium,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+15,whelk,https://acnhcdn.com/latest/MenuIcon/Baigai.png,small,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+16,turban shell,https://acnhcdn.com/latest/MenuIcon/Sazae.png,small,NA,NA,0,0,0,NA,NA,NA,0,0,0,0,NA,NA,0,0,0,0,NA,NA,0,0,0,NA
+17,abalone,https://acnhcdn.com/latest/MenuIcon/Awabi.png,medium,1600-0900,NA,NA,NA,NA,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,NA,NA,NA,NA,1600-0900
+18,gigas giant clam,https://acnhcdn.com/latest/MenuIcon/Shakogai.png,xlarge,NA,NA,NA,NA,0,0,0,0,0,NA,NA,NA,0,0,0,NA,NA,NA,NA,NA,NA,NA,0,0
+19,chambered nautilus,https://acnhcdn.com/latest/MenuIcon/Oumugai.png,medium,NA,NA,1600-0900,1600-0900,1600-0900,1600-0900,NA,NA,1600-0900,1600-0900,1600-0900,NA,NA,NA,1600-0900,1600-0900,1600-0900,NA,NA,NA,1600-0900,1600-0900,1600-0900,1600-0900
+20,octopus,https://acnhcdn.com/latest/MenuIcon/Tako.png,medium,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+21,umbrella octopus,https://acnhcdn.com/latest/MenuIcon/Mendako.png,small,NA,NA,0,0,0,NA,NA,NA,0,0,0,NA,NA,NA,0,0,0,NA,NA,NA,0,0,0,NA
+22,vampire squid,https://acnhcdn.com/latest/MenuIcon/Koumoridako.png,medium,NA,NA,NA,NA,1600-0900,1600-0900,1600-0900,1600-0900,NA,NA,NA,NA,1600-0900,1600-0900,NA,NA,NA,NA,NA,NA,NA,NA,1600-0900,1600-0900
+23,firefly squid,https://acnhcdn.com/latest/MenuIcon/Hotaruika.png,xsmall,NA,NA,2100-0400,2100-0400,2100-0400,2100-0400,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2100-0400,2100-0400,2100-0400,2100-0400
+24,gazami crab,https://acnhcdn.com/latest/MenuIcon/Gazami.png,medium,NA,NA,NA,NA,NA,0,0,0,0,0,0,NA,0,0,0,0,0,NA,NA,NA,NA,NA,NA,0
+25,Dungeness crab,https://acnhcdn.com/latest/MenuIcon/DungenessCrab.png,medium,0,0,0,0,0,NA,NA,NA,NA,NA,0,0,NA,NA,NA,NA,0,0,0,0,0,0,0,NA
+26,snow crab,https://acnhcdn.com/latest/MenuIcon/Zuwaigani.png,large,0,0,0,0,NA,NA,NA,NA,NA,NA,0,0,NA,NA,NA,NA,0,0,0,0,0,0,NA,NA
+27,red king crab,https://acnhcdn.com/latest/MenuIcon/Tarabagani.png,large,0,0,0,NA,NA,NA,NA,NA,NA,NA,0,0,NA,NA,NA,NA,0,0,0,0,0,NA,NA,NA
+28,acorn barnacle,https://acnhcdn.com/latest/MenuIcon/Fujitsubo.png,xsmall,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+29,spider crab,https://acnhcdn.com/latest/MenuIcon/Takaashigani.png,xlarge,NA,NA,0,0,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0,0,NA,NA
+30,tiger prawn,https://acnhcdn.com/latest/MenuIcon/Kurumaebi.png,small,NA,NA,NA,NA,NA,1600-0900,1600-0900,1600-0900,1600-0900,NA,NA,NA,1600-0900,1600-0900,1600-0900,NA,NA,NA,NA,NA,NA,NA,NA,1600-0900
+31,sweet shrimp,https://acnhcdn.com/latest/MenuIcon/Amaebi.png,small,1600-0900,1600-0900,NA,NA,NA,NA,NA,NA,1600-0900,1600-0900,1600-0900,1600-0900,NA,NA,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,NA,NA,NA,NA
+32,mantis shrimp,https://acnhcdn.com/latest/MenuIcon/Shako.png,small,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900,1600-0900
+33,spiny lobster,https://acnhcdn.com/latest/MenuIcon/Iseebi.png,large,NA,NA,NA,NA,NA,NA,NA,NA,NA,2100-0400,2100-0400,2100-0400,NA,NA,NA,2100-0400,2100-0400,2100-0400,NA,NA,NA,NA,NA,NA
+34,lobster,https://acnhcdn.com/latest/MenuIcon/Fish54.png,large,0,NA,NA,0,0,0,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,0,0,NA,NA,0,0,0
+35,giant isopod,https://acnhcdn.com/latest/MenuIcon/Daiougusokumushi.png,medium,NA,NA,NA,NA,NA,NA,0900-1600; 2100-0400,0900-1600; 2100-0400,0900-1600; 2100-0400,0900-1600; 2100-0400,NA,NA,0900-1600; 2100-0400,0900-1600; 2100-0400,0900-1600; 2100-0400,0900-1600; 2100-0400,NA,NA,NA,NA,NA,NA,NA,NA
+36,horseshoe crab,https://acnhcdn.com/latest/MenuIcon/Kabutogani.png,medium,NA,NA,NA,NA,NA,NA,2100-0400,2100-0400,2100-0400,NA,NA,NA,2100-0400,2100-0400,2100-0400,NA,NA,NA,NA,NA,NA,NA,NA,NA
+37,sea pineapple,https://acnhcdn.com/latest/MenuIcon/Hoya.png,small,NA,NA,NA,0,0,0,0,0,NA,NA,NA,NA,0,0,NA,NA,NA,NA,NA,NA,NA,0,0,0
+38,spotted garden eel,https://acnhcdn.com/latest/MenuIcon/Chinanago.png,small,NA,NA,NA,NA,0400-2100,0400-2100,0400-2100,0400-2100,0400-2100,0400-2100,NA,NA,0400-2100,0400-2100,0400-2100,0400-2100,NA,NA,NA,NA,NA,NA,0400-2100,0400-2100
+39,flatworm,https://acnhcdn.com/latest/MenuIcon/Hiramushi.png,xsmall,NA,NA,NA,NA,NA,NA,NA,1600-0900,1600-0900,NA,NA,NA,NA,1600-0900,1600-0900,NA,NA,NA,NA,NA,NA,NA,NA,NA
+40,Venus' flower basket,https://acnhcdn.com/latest/MenuIcon/Kairoudouketsu.png,medium,0,0,NA,NA,NA,NA,NA,NA,NA,0,0,0,NA,NA,NA,0,0,0,0,0,NA,NA,NA,NA

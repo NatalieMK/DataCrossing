@@ -1,0 +1,6 @@
+framework module Pods_DataCrossingTests {
+  umbrella header "Pods-DataCrossingTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

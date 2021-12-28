@@ -1,0 +1,1102 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		030040AC9370A081B6F438EE /* Pods_DataCrossing_DataCrossingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92450B7D3D38CB34FF2406AD /* Pods_DataCrossing_DataCrossingUITests.framework */; };
+		393257A627445D840010D958 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393257A527445D840010D958 /* AppDelegate.swift */; };
+		393257A827445D840010D958 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393257A727445D840010D958 /* SceneDelegate.swift */; };
+		393257AA27445D840010D958 /* DataCrossingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393257A927445D840010D958 /* DataCrossingViewController.swift */; };
+		393257AD27445D840010D958 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 393257AB27445D840010D958 /* Main.storyboard */; };
+		393257AF27445D850010D958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 393257AE27445D850010D958 /* Assets.xcassets */; };
+		393257B227445D850010D958 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 393257B027445D850010D958 /* LaunchScreen.storyboard */; };
+		393257BD27445D850010D958 /* DataCrossingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393257BC27445D850010D958 /* DataCrossingTests.swift */; };
+		393257C727445D850010D958 /* DataCrossingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393257C627445D850010D958 /* DataCrossingUITests.swift */; };
+		393257C927445D850010D958 /* DataCrossingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393257C827445D850010D958 /* DataCrossingUITestsLaunchTests.swift */; };
+		393257DC274463780010D958 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393257DB274463780010D958 /* ColorExtensions.swift */; };
+		393257DE27446BE40010D958 /* IslandDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393257DD27446BE40010D958 /* IslandDataViewController.swift */; };
+		393257E2274493900010D958 /* DailyWeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393257E1274493900010D958 /* DailyWeatherCollectionViewCell.swift */; };
+		393257E4274498280010D958 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393257E3274498280010D958 /* Extensions.swift */; };
+		393257E72744ADC70010D958 /* WeatherEventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393257E62744ADC70010D958 /* WeatherEventCollectionViewCell.swift */; };
+		393257F9274C5E110010D958 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 393257ED274C2D680010D958 /* libresolv.tbd */; };
+		393258882760051D0010D958 /* MeteoNookModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393258872760051D0010D958 /* MeteoNookModels.swift */; };
+		3932588A276158C90010D958 /* libmeteonook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39325889276158BD0010D958 /* libmeteonook.a */; };
+		3932588E2761639E0010D958 /* MeteoNookCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932588D2761639E0010D958 /* MeteoNookCaller.swift */; };
+		39325891276286420010D958 /* UserIslandData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3932588F276286420010D958 /* UserIslandData.xcdatamodeld */; };
+		3932589827628FC20010D958 /* IslandData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932589627628FC20010D958 /* IslandData+CoreDataClass.swift */; };
+		3932589927628FC20010D958 /* IslandData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932589727628FC20010D958 /* IslandData+CoreDataProperties.swift */; };
+		393258BF276293450010D958 /* IslandDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393258BE276293450010D958 /* IslandDataController.swift */; };
+		393258C12762A1350010D958 /* CreateIslandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393258C02762A1350010D958 /* CreateIslandViewController.swift */; };
+		393258C3276402AB0010D958 /* IslandDataControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393258C2276402AA0010D958 /* IslandDataControllerTests.swift */; };
+		393258C5276421020010D958 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393258C4276421020010D958 /* CoreDataStack.swift */; };
+		393258C7276421DF0010D958 /* CoreDataTestStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393258C6276421DF0010D958 /* CoreDataTestStack.swift */; };
+		393258C927693CE80010D958 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393258C827693CE80010D958 /* MenuViewController.swift */; };
+		393258CB276944960010D958 /* MuseumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393258CA276944960010D958 /* MuseumViewController.swift */; };
+		393258D0276AC2310010D958 /* BugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393258CF276AC2310010D958 /* BugViewController.swift */; };
+		393258D2276AC85C0010D958 /* ArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393258D1276AC85C0010D958 /* ArtViewController.swift */; };
+		393258D4276AC86D0010D958 /* FishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393258D3276AC86D0010D958 /* FishViewController.swift */; };
+		393258D6276AC8780010D958 /* SeaCreatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393258D5276AC8780010D958 /* SeaCreatureViewController.swift */; };
+		393258DC276E72C30010D958 /* ConditionalTimeSwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393258DB276E72C30010D958 /* ConditionalTimeSwitchViewController.swift */; };
+		396933B2276FE45900239E9B /* ConditionalTextSwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933B1276FE45900239E9B /* ConditionalTextSwitchViewController.swift */; };
+		396933BB276FF9C300239E9B /* MuseumModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933BA276FF9C300239E9B /* MuseumModels.swift */; };
+		396933C527711F3000239E9B /* FishData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 396933C227711F3000239E9B /* FishData.csv */; };
+		396933C627711F3000239E9B /* BugsData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 396933C327711F3000239E9B /* BugsData.csv */; };
+		396933C727711F3000239E9B /* CreatureData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 396933C427711F3000239E9B /* CreatureData.csv */; };
+		396933C927712FD300239E9B /* FishDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933C827712FD300239E9B /* FishDataController.swift */; };
+		396933CC277153C800239E9B /* MuseumItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933CB277153C800239E9B /* MuseumItemCollectionViewCell.swift */; };
+		396933CE27715E1700239E9B /* BugDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933CD27715E1600239E9B /* BugDataController.swift */; };
+		396933D02771715300239E9B /* MeteoNookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933CF2771715300239E9B /* MeteoNookController.swift */; };
+		396933D22772A27B00239E9B /* EventDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933D12772A27B00239E9B /* EventDay.swift */; };
+		396933D62773D8B900239E9B /* SeaCreatureDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933D52773D8B900239E9B /* SeaCreatureDataController.swift */; };
+		396933E02773F49300239E9B /* Fish+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933DE2773F49300239E9B /* Fish+CoreDataProperties.swift */; };
+		396933E12773F49300239E9B /* Fish+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933DF2773F49300239E9B /* Fish+CoreDataClass.swift */; };
+		396933E427764C1600239E9B /* SeaCreature+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933E327764C1600239E9B /* SeaCreature+CoreDataProperties.swift */; };
+		396933E527764C1600239E9B /* SeaCreature+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933E227764C1600239E9B /* SeaCreature+CoreDataClass.swift */; };
+		396933E827764EE900239E9B /* CritterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933E727764EE900239E9B /* CritterData.swift */; };
+		396933EC2776A69F00239E9B /* Bug+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933EA2776A69F00239E9B /* Bug+CoreDataClass.swift */; };
+		396933ED2776A69F00239E9B /* Bug+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933EB2776A69F00239E9B /* Bug+CoreDataProperties.swift */; };
+		396933F02777CEC200239E9B /* HourlyForecastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933EF2777CEC200239E9B /* HourlyForecastCollectionViewCell.swift */; };
+		396933F22777E0E000239E9B /* TourneyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933F12777E0E000239E9B /* TourneyCollectionViewCell.swift */; };
+		396933F4277A9D7700239E9B /* MuseumCounterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933F3277A9D7700239E9B /* MuseumCounterCollectionViewCell.swift */; };
+		A2A4E44745489934E95F5AD0 /* Pods_DataCrossing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E09168C487AF85FD7D8B205E /* Pods_DataCrossing.framework */; };
+		CF6012A9CCED6E6753EB4686 /* Pods_DataCrossingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF3DF4C66ADF3348230DE21 /* Pods_DataCrossingTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		393257B927445D850010D958 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3932579A27445D840010D958 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 393257A127445D840010D958;
+			remoteInfo = DataCrossing;
+		};
+		393257C327445D850010D958 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3932579A27445D840010D958 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 393257A127445D840010D958;
+			remoteInfo = DataCrossing;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		393257A227445D840010D958 /* DataCrossing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataCrossing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		393257A527445D840010D958 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		393257A727445D840010D958 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		393257A927445D840010D958 /* DataCrossingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCrossingViewController.swift; sourceTree = "<group>"; };
+		393257AC27445D840010D958 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		393257AE27445D850010D958 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		393257B127445D850010D958 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		393257B327445D850010D958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		393257B827445D850010D958 /* DataCrossingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataCrossingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		393257BC27445D850010D958 /* DataCrossingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCrossingTests.swift; sourceTree = "<group>"; };
+		393257C227445D850010D958 /* DataCrossingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataCrossingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		393257C627445D850010D958 /* DataCrossingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCrossingUITests.swift; sourceTree = "<group>"; };
+		393257C827445D850010D958 /* DataCrossingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCrossingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		393257DB274463780010D958 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		393257DD27446BE40010D958 /* IslandDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandDataViewController.swift; sourceTree = "<group>"; };
+		393257E1274493900010D958 /* DailyWeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherCollectionViewCell.swift; sourceTree = "<group>"; };
+		393257E3274498280010D958 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		393257E62744ADC70010D958 /* WeatherEventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEventCollectionViewCell.swift; sourceTree = "<group>"; };
+		393257ED274C2D680010D958 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		393257F7274C5DE60010D958 /* libparser.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libparser.a; path = ../parser/parser/target/universal/release/libparser.a; sourceTree = "<group>"; };
+		393257FA274C5E330010D958 /* meteonook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = meteonook.h; path = ../parser/parser/src/meteonook.h; sourceTree = "<group>"; };
+		393257FB274C5E550010D958 /* Meteonook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Meteonook-Bridging-Header.h"; sourceTree = "<group>"; };
+		393258872760051D0010D958 /* MeteoNookModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoNookModels.swift; sourceTree = "<group>"; };
+		39325889276158BD0010D958 /* libmeteonook.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmeteonook.a; path = meteonook/target/universal/release/libmeteonook.a; sourceTree = "<group>"; };
+		3932588D2761639E0010D958 /* MeteoNookCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoNookCaller.swift; sourceTree = "<group>"; };
+		39325890276286420010D958 /* UserIslandData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserIslandData.xcdatamodel; sourceTree = "<group>"; };
+		3932589627628FC20010D958 /* IslandData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IslandData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3932589727628FC20010D958 /* IslandData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IslandData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		393258BE276293450010D958 /* IslandDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandDataController.swift; sourceTree = "<group>"; };
+		393258C02762A1350010D958 /* CreateIslandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIslandViewController.swift; sourceTree = "<group>"; };
+		393258C2276402AA0010D958 /* IslandDataControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandDataControllerTests.swift; sourceTree = "<group>"; };
+		393258C4276421020010D958 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		393258C6276421DF0010D958 /* CoreDataTestStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTestStack.swift; sourceTree = "<group>"; };
+		393258C827693CE80010D958 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		393258CA276944960010D958 /* MuseumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumViewController.swift; sourceTree = "<group>"; };
+		393258CF276AC2310010D958 /* BugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugViewController.swift; sourceTree = "<group>"; };
+		393258D1276AC85C0010D958 /* ArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtViewController.swift; sourceTree = "<group>"; };
+		393258D3276AC86D0010D958 /* FishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishViewController.swift; sourceTree = "<group>"; };
+		393258D5276AC8780010D958 /* SeaCreatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaCreatureViewController.swift; sourceTree = "<group>"; };
+		393258DB276E72C30010D958 /* ConditionalTimeSwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalTimeSwitchViewController.swift; sourceTree = "<group>"; };
+		396933B1276FE45900239E9B /* ConditionalTextSwitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionalTextSwitchViewController.swift; sourceTree = "<group>"; };
+		396933BA276FF9C300239E9B /* MuseumModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumModels.swift; sourceTree = "<group>"; };
+		396933C227711F3000239E9B /* FishData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FishData.csv; sourceTree = "<group>"; };
+		396933C327711F3000239E9B /* BugsData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = BugsData.csv; sourceTree = "<group>"; };
+		396933C427711F3000239E9B /* CreatureData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CreatureData.csv; sourceTree = "<group>"; };
+		396933C827712FD300239E9B /* FishDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishDataController.swift; sourceTree = "<group>"; };
+		396933CB277153C800239E9B /* MuseumItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		396933CD27715E1600239E9B /* BugDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugDataController.swift; sourceTree = "<group>"; };
+		396933CF2771715300239E9B /* MeteoNookController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoNookController.swift; sourceTree = "<group>"; };
+		396933D12772A27B00239E9B /* EventDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDay.swift; sourceTree = "<group>"; };
+		396933D52773D8B900239E9B /* SeaCreatureDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaCreatureDataController.swift; sourceTree = "<group>"; };
+		396933DE2773F49300239E9B /* Fish+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Fish+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		396933DF2773F49300239E9B /* Fish+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Fish+CoreDataClass.swift"; sourceTree = "<group>"; };
+		396933E227764C1600239E9B /* SeaCreature+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SeaCreature+CoreDataClass.swift"; path = "/Users/nataliekim/Desktop/DataCrossing/DataCrossing/MuseumData/SeaCreature+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		396933E327764C1600239E9B /* SeaCreature+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SeaCreature+CoreDataProperties.swift"; path = "/Users/nataliekim/Desktop/DataCrossing/DataCrossing/MuseumData/SeaCreature+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		396933E727764EE900239E9B /* CritterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterData.swift; sourceTree = "<group>"; };
+		396933EA2776A69F00239E9B /* Bug+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Bug+CoreDataClass.swift"; path = "/Users/nataliekim/Desktop/DataCrossing/DataCrossing/MuseumData/Bug+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		396933EB2776A69F00239E9B /* Bug+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Bug+CoreDataProperties.swift"; path = "/Users/nataliekim/Desktop/DataCrossing/DataCrossing/MuseumData/Bug+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		396933EF2777CEC200239E9B /* HourlyForecastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastCollectionViewCell.swift; sourceTree = "<group>"; };
+		396933F12777E0E000239E9B /* TourneyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyCollectionViewCell.swift; sourceTree = "<group>"; };
+		396933F3277A9D7700239E9B /* MuseumCounterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumCounterCollectionViewCell.swift; sourceTree = "<group>"; };
+		3FC4EB50AD33AE80E40E0843 /* Pods-DataCrossing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCrossing.release.xcconfig"; path = "Target Support Files/Pods-DataCrossing/Pods-DataCrossing.release.xcconfig"; sourceTree = "<group>"; };
+		408B6ED5B81AFEA5DC028EE9 /* Pods-DataCrossingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCrossingTests.debug.xcconfig"; path = "Target Support Files/Pods-DataCrossingTests/Pods-DataCrossingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		83CC3939276841D67153AA59 /* Pods-DataCrossing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCrossing.debug.xcconfig"; path = "Target Support Files/Pods-DataCrossing/Pods-DataCrossing.debug.xcconfig"; sourceTree = "<group>"; };
+		92450B7D3D38CB34FF2406AD /* Pods_DataCrossing_DataCrossingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataCrossing_DataCrossingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4041B2454C081BFC31CFD32 /* Pods-DataCrossing-DataCrossingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCrossing-DataCrossingUITests.release.xcconfig"; path = "Target Support Files/Pods-DataCrossing-DataCrossingUITests/Pods-DataCrossing-DataCrossingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B1692E03E15B275936F09588 /* Pods-DataCrossing-DataCrossingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCrossing-DataCrossingUITests.debug.xcconfig"; path = "Target Support Files/Pods-DataCrossing-DataCrossingUITests/Pods-DataCrossing-DataCrossingUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E09168C487AF85FD7D8B205E /* Pods_DataCrossing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataCrossing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB3C0CE16DB5DCBD50B81A42 /* Pods-DataCrossingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCrossingTests.release.xcconfig"; path = "Target Support Files/Pods-DataCrossingTests/Pods-DataCrossingTests.release.xcconfig"; sourceTree = "<group>"; };
+		EDF3DF4C66ADF3348230DE21 /* Pods_DataCrossingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataCrossingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3932579F27445D840010D958 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				393257F9274C5E110010D958 /* libresolv.tbd in Frameworks */,
+				3932588A276158C90010D958 /* libmeteonook.a in Frameworks */,
+				A2A4E44745489934E95F5AD0 /* Pods_DataCrossing.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		393257B527445D850010D958 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF6012A9CCED6E6753EB4686 /* Pods_DataCrossingTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		393257BF27445D850010D958 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				030040AC9370A081B6F438EE /* Pods_DataCrossing_DataCrossingUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3932579927445D840010D958 = {
+			isa = PBXGroup;
+			children = (
+				393257FA274C5E330010D958 /* meteonook.h */,
+				393257A427445D840010D958 /* DataCrossing */,
+				393257BB27445D850010D958 /* DataCrossingTests */,
+				393257C527445D850010D958 /* DataCrossingUITests */,
+				393257A327445D840010D958 /* Products */,
+				393257EA274C2D320010D958 /* Frameworks */,
+				E145FE4F07FBDF63D86BEFA6 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		393257A327445D840010D958 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				393257A227445D840010D958 /* DataCrossing.app */,
+				393257B827445D850010D958 /* DataCrossingTests.xctest */,
+				393257C227445D850010D958 /* DataCrossingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		393257A427445D840010D958 /* DataCrossing */ = {
+			isa = PBXGroup;
+			children = (
+				393257FB274C5E550010D958 /* Meteonook-Bridging-Header.h */,
+				393257D92744629B0010D958 /* Resources */,
+				393257D82744628C0010D958 /* ViewControllers */,
+				393257D72744627B0010D958 /* MeteoNook */,
+				393257B327445D850010D958 /* Info.plist */,
+				3932588F276286420010D958 /* UserIslandData.xcdatamodeld */,
+				396933D72773EF4C00239E9B /* MuseumData */,
+				3932589A27628FD90010D958 /* IslandData */,
+			);
+			path = DataCrossing;
+			sourceTree = "<group>";
+		};
+		393257BB27445D850010D958 /* DataCrossingTests */ = {
+			isa = PBXGroup;
+			children = (
+				393257BC27445D850010D958 /* DataCrossingTests.swift */,
+				393258C2276402AA0010D958 /* IslandDataControllerTests.swift */,
+				393258C6276421DF0010D958 /* CoreDataTestStack.swift */,
+			);
+			path = DataCrossingTests;
+			sourceTree = "<group>";
+		};
+		393257C527445D850010D958 /* DataCrossingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				393257C627445D850010D958 /* DataCrossingUITests.swift */,
+				393257C827445D850010D958 /* DataCrossingUITestsLaunchTests.swift */,
+			);
+			path = DataCrossingUITests;
+			sourceTree = "<group>";
+		};
+		393257D5274462380010D958 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				393257AB27445D840010D958 /* Main.storyboard */,
+				393257B027445D850010D958 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		393257D72744627B0010D958 /* MeteoNook */ = {
+			isa = PBXGroup;
+			children = (
+				393258872760051D0010D958 /* MeteoNookModels.swift */,
+				3932588D2761639E0010D958 /* MeteoNookCaller.swift */,
+				396933CF2771715300239E9B /* MeteoNookController.swift */,
+			);
+			path = MeteoNook;
+			sourceTree = "<group>";
+		};
+		393257D82744628C0010D958 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				393257A927445D840010D958 /* DataCrossingViewController.swift */,
+				393258C827693CE80010D958 /* MenuViewController.swift */,
+				393258CE276A85BB0010D958 /* MuseumPage */,
+				393257DD27446BE40010D958 /* IslandDataViewController.swift */,
+				393258C02762A1350010D958 /* CreateIslandViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		393257D92744629B0010D958 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				393257E52744AD460010D958 /* Custom Cells */,
+				396933AE276FE33300239E9B /* CSVs */,
+				393257DA274463620010D958 /* UI */,
+				393257A727445D840010D958 /* SceneDelegate.swift */,
+				393257E3274498280010D958 /* Extensions.swift */,
+				393257A527445D840010D958 /* AppDelegate.swift */,
+				396933D12772A27B00239E9B /* EventDay.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		393257DA274463620010D958 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				396933B0276FE39700239E9B /* Custom Subviews */,
+				393257D5274462380010D958 /* Storyboards */,
+				393257AE27445D850010D958 /* Assets.xcassets */,
+				393257DB274463780010D958 /* ColorExtensions.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		393257E52744AD460010D958 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				396933CB277153C800239E9B /* MuseumItemCollectionViewCell.swift */,
+				396933F3277A9D7700239E9B /* MuseumCounterCollectionViewCell.swift */,
+				393257E1274493900010D958 /* DailyWeatherCollectionViewCell.swift */,
+				393257E62744ADC70010D958 /* WeatherEventCollectionViewCell.swift */,
+				396933EF2777CEC200239E9B /* HourlyForecastCollectionViewCell.swift */,
+				396933F12777E0E000239E9B /* TourneyCollectionViewCell.swift */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		393257EA274C2D320010D958 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39325889276158BD0010D958 /* libmeteonook.a */,
+				393257F7274C5DE60010D958 /* libparser.a */,
+				393257ED274C2D680010D958 /* libresolv.tbd */,
+				E09168C487AF85FD7D8B205E /* Pods_DataCrossing.framework */,
+				92450B7D3D38CB34FF2406AD /* Pods_DataCrossing_DataCrossingUITests.framework */,
+				EDF3DF4C66ADF3348230DE21 /* Pods_DataCrossingTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3932589A27628FD90010D958 /* IslandData */ = {
+			isa = PBXGroup;
+			children = (
+				3932589627628FC20010D958 /* IslandData+CoreDataClass.swift */,
+				3932589727628FC20010D958 /* IslandData+CoreDataProperties.swift */,
+				393258BE276293450010D958 /* IslandDataController.swift */,
+				393258C4276421020010D958 /* CoreDataStack.swift */,
+			);
+			path = IslandData;
+			sourceTree = "<group>";
+		};
+		393258CE276A85BB0010D958 /* MuseumPage */ = {
+			isa = PBXGroup;
+			children = (
+				393258CA276944960010D958 /* MuseumViewController.swift */,
+				393258D1276AC85C0010D958 /* ArtViewController.swift */,
+				393258D5276AC8780010D958 /* SeaCreatureViewController.swift */,
+				393258CF276AC2310010D958 /* BugViewController.swift */,
+				393258D3276AC86D0010D958 /* FishViewController.swift */,
+			);
+			path = MuseumPage;
+			sourceTree = "<group>";
+		};
+		396933AE276FE33300239E9B /* CSVs */ = {
+			isa = PBXGroup;
+			children = (
+				396933C327711F3000239E9B /* BugsData.csv */,
+				396933C427711F3000239E9B /* CreatureData.csv */,
+				396933C227711F3000239E9B /* FishData.csv */,
+			);
+			path = CSVs;
+			sourceTree = "<group>";
+		};
+		396933B0276FE39700239E9B /* Custom Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				396933B1276FE45900239E9B /* ConditionalTextSwitchViewController.swift */,
+				393258DB276E72C30010D958 /* ConditionalTimeSwitchViewController.swift */,
+			);
+			path = "Custom Subviews";
+			sourceTree = "<group>";
+		};
+		396933D72773EF4C00239E9B /* MuseumData */ = {
+			isa = PBXGroup;
+			children = (
+				396933EE2777CB8000239E9B /* Bugs */,
+				396933E92776A66800239E9B /* SeaCreatures */,
+				396933E627764C5C00239E9B /* Fish */,
+				396933BA276FF9C300239E9B /* MuseumModels.swift */,
+				396933E727764EE900239E9B /* CritterData.swift */,
+			);
+			path = MuseumData;
+			sourceTree = "<group>";
+		};
+		396933E627764C5C00239E9B /* Fish */ = {
+			isa = PBXGroup;
+			children = (
+				396933DF2773F49300239E9B /* Fish+CoreDataClass.swift */,
+				396933DE2773F49300239E9B /* Fish+CoreDataProperties.swift */,
+				396933C827712FD300239E9B /* FishDataController.swift */,
+			);
+			path = Fish;
+			sourceTree = "<group>";
+		};
+		396933E92776A66800239E9B /* SeaCreatures */ = {
+			isa = PBXGroup;
+			children = (
+				396933E327764C1600239E9B /* SeaCreature+CoreDataProperties.swift */,
+				396933E227764C1600239E9B /* SeaCreature+CoreDataClass.swift */,
+				396933D52773D8B900239E9B /* SeaCreatureDataController.swift */,
+			);
+			path = SeaCreatures;
+			sourceTree = "<group>";
+		};
+		396933EE2777CB8000239E9B /* Bugs */ = {
+			isa = PBXGroup;
+			children = (
+				396933EA2776A69F00239E9B /* Bug+CoreDataClass.swift */,
+				396933EB2776A69F00239E9B /* Bug+CoreDataProperties.swift */,
+				396933CD27715E1600239E9B /* BugDataController.swift */,
+			);
+			path = Bugs;
+			sourceTree = "<group>";
+		};
+		E145FE4F07FBDF63D86BEFA6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				83CC3939276841D67153AA59 /* Pods-DataCrossing.debug.xcconfig */,
+				3FC4EB50AD33AE80E40E0843 /* Pods-DataCrossing.release.xcconfig */,
+				B1692E03E15B275936F09588 /* Pods-DataCrossing-DataCrossingUITests.debug.xcconfig */,
+				A4041B2454C081BFC31CFD32 /* Pods-DataCrossing-DataCrossingUITests.release.xcconfig */,
+				408B6ED5B81AFEA5DC028EE9 /* Pods-DataCrossingTests.debug.xcconfig */,
+				EB3C0CE16DB5DCBD50B81A42 /* Pods-DataCrossingTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		393257A127445D840010D958 /* DataCrossing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 393257CC27445D850010D958 /* Build configuration list for PBXNativeTarget "DataCrossing" */;
+			buildPhases = (
+				AF1BD586A6297A3B507578F5 /* [CP] Check Pods Manifest.lock */,
+				3932579E27445D840010D958 /* Sources */,
+				3932579F27445D840010D958 /* Frameworks */,
+				393257A027445D840010D958 /* Resources */,
+				AA382B687811E47D61F984E8 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DataCrossing;
+			productName = DataCrossing;
+			productReference = 393257A227445D840010D958 /* DataCrossing.app */;
+			productType = "com.apple.product-type.application";
+		};
+		393257B727445D850010D958 /* DataCrossingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 393257CF27445D850010D958 /* Build configuration list for PBXNativeTarget "DataCrossingTests" */;
+			buildPhases = (
+				09E1F9C68AD9578A233ED2AA /* [CP] Check Pods Manifest.lock */,
+				393257B427445D850010D958 /* Sources */,
+				393257B527445D850010D958 /* Frameworks */,
+				393257B627445D850010D958 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				393257BA27445D850010D958 /* PBXTargetDependency */,
+			);
+			name = DataCrossingTests;
+			productName = DataCrossingTests;
+			productReference = 393257B827445D850010D958 /* DataCrossingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		393257C127445D850010D958 /* DataCrossingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 393257D227445D850010D958 /* Build configuration list for PBXNativeTarget "DataCrossingUITests" */;
+			buildPhases = (
+				283A59F837C0678E87D51BEF /* [CP] Check Pods Manifest.lock */,
+				393257BE27445D850010D958 /* Sources */,
+				393257BF27445D850010D958 /* Frameworks */,
+				393257C027445D850010D958 /* Resources */,
+				524C283E55505C9E60E9C91E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				393257C427445D850010D958 /* PBXTargetDependency */,
+			);
+			name = DataCrossingUITests;
+			productName = DataCrossingUITests;
+			productReference = 393257C227445D850010D958 /* DataCrossingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3932579A27445D840010D958 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					393257A127445D840010D958 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					393257B727445D850010D958 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 393257A127445D840010D958;
+					};
+					393257C127445D850010D958 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 393257A127445D840010D958;
+					};
+				};
+			};
+			buildConfigurationList = 3932579D27445D840010D958 /* Build configuration list for PBXProject "DataCrossing" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3932579927445D840010D958;
+			productRefGroup = 393257A327445D840010D958 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				393257A127445D840010D958 /* DataCrossing */,
+				393257B727445D850010D958 /* DataCrossingTests */,
+				393257C127445D850010D958 /* DataCrossingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		393257A027445D840010D958 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				393257B227445D850010D958 /* LaunchScreen.storyboard in Resources */,
+				393257AF27445D850010D958 /* Assets.xcassets in Resources */,
+				396933C527711F3000239E9B /* FishData.csv in Resources */,
+				396933C627711F3000239E9B /* BugsData.csv in Resources */,
+				393257AD27445D840010D958 /* Main.storyboard in Resources */,
+				396933C727711F3000239E9B /* CreatureData.csv in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		393257B627445D850010D958 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		393257C027445D850010D958 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09E1F9C68AD9578A233ED2AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DataCrossingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		283A59F837C0678E87D51BEF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DataCrossing-DataCrossingUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		524C283E55505C9E60E9C91E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DataCrossing-DataCrossingUITests/Pods-DataCrossing-DataCrossingUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DataCrossing-DataCrossingUITests/Pods-DataCrossing-DataCrossingUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DataCrossing-DataCrossingUITests/Pods-DataCrossing-DataCrossingUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA382B687811E47D61F984E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DataCrossing/Pods-DataCrossing-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DataCrossing/Pods-DataCrossing-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DataCrossing/Pods-DataCrossing-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF1BD586A6297A3B507578F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DataCrossing-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3932579E27445D840010D958 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				396933EC2776A69F00239E9B /* Bug+CoreDataClass.swift in Sources */,
+				393258D2276AC85C0010D958 /* ArtViewController.swift in Sources */,
+				396933D22772A27B00239E9B /* EventDay.swift in Sources */,
+				3932588E2761639E0010D958 /* MeteoNookCaller.swift in Sources */,
+				393257AA27445D840010D958 /* DataCrossingViewController.swift in Sources */,
+				393258CB276944960010D958 /* MuseumViewController.swift in Sources */,
+				396933ED2776A69F00239E9B /* Bug+CoreDataProperties.swift in Sources */,
+				393258DC276E72C30010D958 /* ConditionalTimeSwitchViewController.swift in Sources */,
+				393258C12762A1350010D958 /* CreateIslandViewController.swift in Sources */,
+				396933CE27715E1700239E9B /* BugDataController.swift in Sources */,
+				396933B2276FE45900239E9B /* ConditionalTextSwitchViewController.swift in Sources */,
+				393257A627445D840010D958 /* AppDelegate.swift in Sources */,
+				396933E12773F49300239E9B /* Fish+CoreDataClass.swift in Sources */,
+				393257A827445D840010D958 /* SceneDelegate.swift in Sources */,
+				396933E427764C1600239E9B /* SeaCreature+CoreDataProperties.swift in Sources */,
+				396933F22777E0E000239E9B /* TourneyCollectionViewCell.swift in Sources */,
+				393257E4274498280010D958 /* Extensions.swift in Sources */,
+				393257DC274463780010D958 /* ColorExtensions.swift in Sources */,
+				3932589827628FC20010D958 /* IslandData+CoreDataClass.swift in Sources */,
+				393257E72744ADC70010D958 /* WeatherEventCollectionViewCell.swift in Sources */,
+				393258D0276AC2310010D958 /* BugViewController.swift in Sources */,
+				396933C927712FD300239E9B /* FishDataController.swift in Sources */,
+				393257DE27446BE40010D958 /* IslandDataViewController.swift in Sources */,
+				393258882760051D0010D958 /* MeteoNookModels.swift in Sources */,
+				393258D6276AC8780010D958 /* SeaCreatureViewController.swift in Sources */,
+				396933F4277A9D7700239E9B /* MuseumCounterCollectionViewCell.swift in Sources */,
+				396933CC277153C800239E9B /* MuseumItemCollectionViewCell.swift in Sources */,
+				393258C5276421020010D958 /* CoreDataStack.swift in Sources */,
+				396933D62773D8B900239E9B /* SeaCreatureDataController.swift in Sources */,
+				396933BB276FF9C300239E9B /* MuseumModels.swift in Sources */,
+				396933F02777CEC200239E9B /* HourlyForecastCollectionViewCell.swift in Sources */,
+				393258D4276AC86D0010D958 /* FishViewController.swift in Sources */,
+				396933E827764EE900239E9B /* CritterData.swift in Sources */,
+				393258C927693CE80010D958 /* MenuViewController.swift in Sources */,
+				396933D02771715300239E9B /* MeteoNookController.swift in Sources */,
+				393257E2274493900010D958 /* DailyWeatherCollectionViewCell.swift in Sources */,
+				3932589927628FC20010D958 /* IslandData+CoreDataProperties.swift in Sources */,
+				396933E527764C1600239E9B /* SeaCreature+CoreDataClass.swift in Sources */,
+				396933E02773F49300239E9B /* Fish+CoreDataProperties.swift in Sources */,
+				393258BF276293450010D958 /* IslandDataController.swift in Sources */,
+				39325891276286420010D958 /* UserIslandData.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		393257B427445D850010D958 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				393258C3276402AB0010D958 /* IslandDataControllerTests.swift in Sources */,
+				393258C7276421DF0010D958 /* CoreDataTestStack.swift in Sources */,
+				393257BD27445D850010D958 /* DataCrossingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		393257BE27445D850010D958 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				393257C927445D850010D958 /* DataCrossingUITestsLaunchTests.swift in Sources */,
+				393257C727445D850010D958 /* DataCrossingUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		393257BA27445D850010D958 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 393257A127445D840010D958 /* DataCrossing */;
+			targetProxy = 393257B927445D850010D958 /* PBXContainerItemProxy */;
+		};
+		393257C427445D850010D958 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 393257A127445D840010D958 /* DataCrossing */;
+			targetProxy = 393257C327445D850010D958 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		393257AB27445D840010D958 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				393257AC27445D840010D958 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		393257B027445D850010D958 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				393257B127445D850010D958 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		393257CA27445D850010D958 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		393257CB27445D850010D958 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		393257CD27445D850010D958 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83CC3939276841D67153AA59 /* Pods-DataCrossing.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DataCrossing/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/meteonook/target/universal/release",
+					"$(PROJECT_DIR)/meteonook/target/universal/release",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nataliekim.DataCrossing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/DataCrossing/Meteonook-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		393257CE27445D850010D958 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FC4EB50AD33AE80E40E0843 /* Pods-DataCrossing.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DataCrossing/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/meteonook/target/universal/release",
+					"$(PROJECT_DIR)/meteonook/target/universal/release",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nataliekim.DataCrossing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/DataCrossing/Meteonook-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		393257D027445D850010D958 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 408B6ED5B81AFEA5DC028EE9 /* Pods-DataCrossingTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nataliekim.DataCrossingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DataCrossing.app/DataCrossing";
+			};
+			name = Debug;
+		};
+		393257D127445D850010D958 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB3C0CE16DB5DCBD50B81A42 /* Pods-DataCrossingTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nataliekim.DataCrossingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DataCrossing.app/DataCrossing";
+			};
+			name = Release;
+		};
+		393257D327445D850010D958 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1692E03E15B275936F09588 /* Pods-DataCrossing-DataCrossingUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nataliekim.DataCrossingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DataCrossing;
+			};
+			name = Debug;
+		};
+		393257D427445D850010D958 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4041B2454C081BFC31CFD32 /* Pods-DataCrossing-DataCrossingUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nataliekim.DataCrossingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DataCrossing;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3932579D27445D840010D958 /* Build configuration list for PBXProject "DataCrossing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				393257CA27445D850010D958 /* Debug */,
+				393257CB27445D850010D958 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		393257CC27445D850010D958 /* Build configuration list for PBXNativeTarget "DataCrossing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				393257CD27445D850010D958 /* Debug */,
+				393257CE27445D850010D958 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		393257CF27445D850010D958 /* Build configuration list for PBXNativeTarget "DataCrossingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				393257D027445D850010D958 /* Debug */,
+				393257D127445D850010D958 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		393257D227445D850010D958 /* Build configuration list for PBXNativeTarget "DataCrossingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				393257D327445D850010D958 /* Debug */,
+				393257D427445D850010D958 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3932588F276286420010D958 /* UserIslandData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				39325890276286420010D958 /* UserIslandData.xcdatamodel */,
+			);
+			currentVersion = 39325890276286420010D958 /* UserIslandData.xcdatamodel */;
+			path = UserIslandData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3932579A27445D840010D958 /* Project object */;
+}

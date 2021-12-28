@@ -25,6 +25,15 @@ pub struct SwiftInput {
 }
 
 #[derive(Serialize, Deserialize)]
+pub struct SwiftHours {
+    year: u16,
+    month: u8,
+    day: u8,
+    hour: u8,
+    seed: u32
+}
+
+#[derive(Serialize, Deserialize)]
 pub struct SwiftOutput{
     weather: String
 }
@@ -40,6 +49,17 @@ pub extern fn rust_parse(to: *const c_char) -> *mut c_char {
     };
     let weather_information = get_weather_for_seed(swift_input);
     return CString::new(weather_information).unwrap().into_raw();
+}
+
+#[no_mangle]
+pub extern fn rust_parse_hours(to: *const c_char) -> *mut c_char {
+    let c_str = unsafe {CStr::from_ptr(to)};
+    let swift_input = match c_str.to_str(){
+        Err(_) => "Error",
+        Ok(string) => string,
+    };
+    let hours = get_weather_for_hour(swift_input);
+    return CString::new(hours).unwrap().into_raw();
 }
 
 #[no_mangle]
@@ -66,6 +86,27 @@ pub fn get_weather_for_seed(str: &str) -> String {
     println!("Sorry, could not parse JSON");
     return String::new()
     }
+}
+
+pub fn get_weather_for_hour(str: &str) -> String {
+    let json_str = str;
+    let result = serde_json::from_str(json_str);
+    if result.is_ok(){
+    let p: SwiftHours = result.unwrap();
+    let pattern = get_pattern(Northern, p.seed, p.year, p.month, p.day);
+    let weather = get_weather(p.hour, pattern);
+    let weather_str = get_hour_str(weather);
+    let hour_weather = SwiftOutput{
+        weather: String::from(weather_str)
+    };
+    let return_str = serde_json::to_string(&hour_weather).unwrap();
+    return return_str
+    } else {
+    println!("Sorry, could not parse JSON");
+    return String::new()
+}
+
+
 }
 
 

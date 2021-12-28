@@ -23,6 +23,19 @@ extension UIColor {
     static let brightYellow = UIColor(red: 255/255, green: 245/255, blue: 99/255, alpha: 1.0)
     static let acWhite = UIColor(red: 255/255, green: 255/255, blue: 250/255, alpha: 1.0)
     static let acBrown = UIColor(red: 196/255, green: 141/255, blue: 63/255, alpha: 1.0)
+    
+    // Credit to Twitter user @Ashaife
+    static let creamYellow = UIColor(red: 0.97, green: 0.93, blue: 0.74, alpha: 1.00)
+    static let sand = UIColor(red: 1.00, green: 0.98, blue: 0.90, alpha: 1.00)
+    static let coolBrown = UIColor(red: 0.47, green: 0.41, blue: 0.32, alpha: 1.00)
+    static let darkTeal = UIColor(red: 0.00, green: 0.49, blue: 0.45, alpha: 1.00)
+    static let salmon = UIColor(red: 1.00, green: 124/255, blue: 106/255, alpha: 1.00)
+    static let darkMint = UIColor(red: 104/255, green: 184/255, blue: 147/255, alpha: 1.0)
+    static let coolMint = UIColor(red: 142/255, green: 207/255, blue: 202/255, alpha: 1.0)
+    
+
+
+    
 
     
     

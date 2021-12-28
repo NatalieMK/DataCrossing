@@ -327,3 +327,10 @@ pub fn get_pattern_str(pat: Pattern) -> &'static str {
 	};
 	return pattern_kind_str;
 }
+
+pub fn get_hour_str(weather: Weather) -> &'static str{
+	let weather_str = match weather {
+		Weather:: Clear => "Clear", Weather::Sunny => "Sunny", Weather::Cloudy => "Cloudy", Weather::RainClouds => "RainClouds", Weather::Rain => "Rain", Weather::HeavyRain => "HeavyRain"
+	};
+	return weather_str
+}
