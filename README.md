@@ -5,6 +5,14 @@ DataCrossing is a project I created over the past month as a way to track the va
 Additionally, I've added this to my public repository as a representation to recruiters of what I am capable of. Unless otherwise noted, all code was written by me. 
 DataCrossing also uses opensource code, and any bridging code I added in order to use it in-app is labelled as such. 
 
+## Dependencies
+Kingfisher (https://github.com/onevcat/Kingfisher)
+SwiftCSV (https://github.com/swiftcsv/SwiftCSV)
+
+## Animal Crossing Resources 
+Data Spreadsheet for Animal Crossing: New Horizons (https://tinyurl.com/acnh-sheet)
+MeteoNook (https://github.com/Treeki/MeteoNook)
+
 README in progress. 
 
 As I am working alone on a local machine, this may not be the most recent version of DataCrossing. I still have more to implement. If you're curious in the project in regards to a job opportunity,
