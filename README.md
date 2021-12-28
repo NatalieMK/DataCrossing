@@ -13,6 +13,15 @@ SwiftCSV (https://github.com/swiftcsv/SwiftCSV)
 Data Spreadsheet for Animal Crossing: New Horizons (https://tinyurl.com/acnh-sheet)
 MeteoNook (https://github.com/Treeki/MeteoNook)
 
+## Future Goals
+* Add TurnipProphet (https://github.com/mikebryant/ac-nh-turnip-prices)
+* Add a "Leaving This Month" Section to the Museum Page
+* Information screens for bugs, fish, and creatures including availability schedules
+* Allow for uncatching critters
+* Add NPC schedule predictions
+* Implement MeteoNook Seed Guessing and Weather Event storage
+
+
 README in progress. 
 
 As I am working alone on a local machine, this may not be the most recent version of DataCrossing. I still have more to implement. If you're curious in the project in regards to a job opportunity,
