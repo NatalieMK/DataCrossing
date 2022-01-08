@@ -39,6 +39,32 @@ class IslandDataControllerTests: XCTestCase {
         }
     }
     
+    func testInitIslandTimeTravel(){
+        do {
+            let dateFormat = DateFormatter()
+            dateFormat.dateFormat = "yyyy/MM/dd HH:mm"
+            let date = dateFormat.date(from: "2001/10/08 22:31")
+            try dataController.initIsland(name: "valid", hemisphere: 1, islandDate: date, weatherSeed: nil)
+            let island = try dataController.getSavedIsland()
+            
+            XCTAssertEqual(island.currentIslandDate, date)
+        }
+        catch {
+            foundError = error
+        }
+    }
+    
+    func testInitIslandNoTimeTravel(){
+        do {
+            try dataController.initIsland(name: "valid", hemisphere: 1, islandDate: nil, weatherSeed: nil)
+            let island = try dataController.getSavedIsland()
+            XCTAssertNotNil(island.currentIslandDate)
+        }
+        catch {
+            foundError = error
+        }
+    }
+    
     func testInitIslandGivenInvalidName() {
         XCTAssertThrowsError(try dataController.initIsland(name: "anamewithmorethantenletters", hemisphere: 1, islandDate: nil, weatherSeed: nil))
     }
@@ -62,6 +88,30 @@ class IslandDataControllerTests: XCTestCase {
             let island = try dataController.getSavedIsland()
             XCTAssertEqual(200, island.seed)
         } catch {
+            foundError = error
+        }
+    }
+    
+    func testUpdateWeatherSeed(){
+        do {
+            try dataController.initIsland(name: "valid", hemisphere: 1, islandDate: nil, weatherSeed: 200)
+            try dataController.updateIslandSeed(newSeed: 10000)
+            let island = try dataController.getSavedIsland()
+            XCTAssertEqual(island.seed, 10000)
+        }         catch {
+            foundError = error
+        }
+    }
+    
+    func testUpdateIslandDate(){
+        do {
+            try dataController.initIsland(name: "valid", hemisphere: 1, islandDate: nil, weatherSeed: 200)
+            let components = DateComponents(year: 2023, month: 2, day: 11)
+            let date = Calendar.current.date(from: components)
+            try dataController.updateIslandDate(newDate: date!)
+            let island = try dataController.getSavedIsland()
+            XCTAssertEqual(island.currentIslandDate, date)
+        }         catch {
             foundError = error
         }
     }

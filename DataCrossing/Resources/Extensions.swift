@@ -64,9 +64,10 @@ extension Date{
         let currentDate = islandData.getIslandDate()
         let createdDate = islandData.getIslandCreatedAtDate()
         let interval = timeIntervalSince(createdDate)
-        
+
         do {
             try islandData.updateIslandDate(newDate: Calendar.current.date(byAdding: .second, value: Int(interval), to: islandInit)!)
+            print(Calendar.current.date(byAdding: .second, value: Int(interval), to: islandInit)!)
         } catch {
             print("Error updating time")
         }

@@ -19,7 +19,7 @@ class CreateIslandViewController: UIViewController {
     // MARK: - UI Declarations
     
     let titleAttributes: [NSAttributedString.Key: Any] = [
-        NSAttributedString.Key.font: UIFont(name: "AmericanTypewriter-Semibold", size: 35),
+        NSAttributedString.Key.font: UIFont(name: "AmericanTypewriter-Semibold", size: 34),
         NSAttributedString.Key.foregroundColor: UIColor(red: 0.97, green: 0.83, blue: 0.35, alpha: 1.00),
         NSAttributedString.Key.strokeColor: UIColor.acBrown,
         NSAttributedString.Key.strokeWidth: -2.0,
@@ -66,6 +66,7 @@ class CreateIslandViewController: UIViewController {
         text.backgroundColor = nil
         text.isEditable = false
         text.translatesAutoresizingMaskIntoConstraints = false
+        text.isScrollEnabled = false
         return text
     }()
     
@@ -116,6 +117,7 @@ class CreateIslandViewController: UIViewController {
         text.backgroundColor = nil
         text.isEditable = false
         text.translatesAutoresizingMaskIntoConstraints = false
+        text.isScrollEnabled = false
         return text
     }()
     
@@ -132,7 +134,20 @@ class CreateIslandViewController: UIViewController {
         text.text = "Do you know your island's weather seed?"
         text.isEditable = false
         text.translatesAutoresizingMaskIntoConstraints = false
+        text.isScrollEnabled = false
         return text
+    }()
+    
+    private let scrollView: UIScrollView = {
+        let scroll = UIScrollView()
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        return scroll
+    }()
+    
+    private let contentView: UIView = {
+        let content = UIView()
+        content.translatesAutoresizingMaskIntoConstraints = false
+        return content
     }()
     
     // MARK: -
@@ -142,19 +157,32 @@ class CreateIslandViewController: UIViewController {
         view.backgroundColor = .sand
         seedInfo.conditionalField.delegate = self
         
+        view.addSubview(scrollView)
+
+        scrollView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 8.0).isActive = true
+        scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 8.0).isActive = true
+//        scrollView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -8.0).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8.0).isActive = true
+        scrollView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -8.0).isActive = true
+        
+        scrollView.addSubview(contentView)
+        contentView.leftAnchor.constraint(equalTo: scrollView.leftAnchor).isActive = true
+        contentView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 50).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+        contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant:  -8.0).isActive = true
+    
         
         //Add Subviews
-        view.addSubview(titleView)
-        view.addSubview(islandField)
-        view.addSubview(timeTravelText)
-        view.addSubview(seedText)
-        view.addSubview(seedInfo.view)
-        view.addSubview(islandCreateButton)
-        view.addSubview(timeTravelView.view)
-        view.addSubview(hemisphereInfo)
-        view.addSubview(hemisphereText)
-        
-        //
+        contentView.addSubview(titleView)
+        contentView.addSubview(islandField)
+        contentView.addSubview(timeTravelText)
+        contentView.addSubview(seedText)
+        contentView.addSubview(seedInfo.view)
+        contentView.addSubview(islandCreateButton)
+        contentView.addSubview(timeTravelView.view)
+        contentView.addSubview(hemisphereInfo)
+        contentView.addSubview(hemisphereText)
+
         seedText.attributedText = NSAttributedString(string: seedText.text, attributes: fontAttributes)
         timeTravelText.attributedText = NSAttributedString(string: timeTravelText.text, attributes: fontAttributes)
         hemisphereText.attributedText = NSAttributedString(string: hemisphereText.text, attributes: fontAttributes)
@@ -166,16 +194,28 @@ class CreateIslandViewController: UIViewController {
         titleView.attributedText = NSAttributedString(string: titleView.text, attributes: titleAttributes)
         
         //Layout Subviews
-        view.autoLayoutView(field: titleView, topField: nil, heightConstant: 60, leadOffset: 20, trailOffset: 20, yOffset: 100)
-        view.autoLayoutView(field: islandField, topField: titleView, heightConstant: 50, leadOffset: 20, trailOffset: 20, yOffset: 30)
-        view.autoLayoutView(field: hemisphereText, topField: islandField, heightConstant: 50, leadOffset: 20, trailOffset: 20, yOffset: 20)
-        view.autoLayoutView(field: hemisphereInfo, topField: hemisphereText, heightConstant: 50, leadOffset: 20, trailOffset: 20, yOffset: 20)
-        view.autoLayoutView(field: timeTravelText, topField: hemisphereInfo, heightConstant: 50, leadOffset: 20, trailOffset: 20, yOffset: 20)
-        view.autoLayoutView(field: timeTravelView.view, topField: timeTravelText, heightConstant: 110, leadOffset: 20, trailOffset: 20, yOffset: 5)
-        view.autoLayoutView(field: seedText, topField: timeTravelView.view, heightConstant: 50, leadOffset: 20, trailOffset: 20, yOffset: 20)
-        view.autoLayoutView(field: seedInfo.view, topField: seedText, heightConstant: 110, leadOffset: 20, trailOffset: 20, yOffset: 5)
-        view.autoLayoutView(field: islandCreateButton, topField: seedInfo.view, heightConstant: 50, leadOffset: 50, trailOffset: 50, yOffset: 20)
+        titleView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        titleView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16.0).isActive = true
+        titleView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 16.0).isActive = true
+
+        contentView.autoLayoutView(field: islandField, topField: titleView, heightConstant: 50, leadOffset: 0, trailOffset: 8, yOffset: 30)
         
+        contentView.autoLayoutView(field: hemisphereText, topField: islandField, heightConstant: 50, leadOffset: 0, trailOffset: 8, yOffset: 20)
+        contentView.autoLayoutView(field: hemisphereInfo, topField: hemisphereText, heightConstant: 50, leadOffset: 0, trailOffset: 8, yOffset: 10)
+        contentView.autoLayoutView(field: timeTravelText, topField: hemisphereInfo, heightConstant: 50, leadOffset: 0, trailOffset: 8, yOffset: 30)
+        contentView.autoLayoutView(field: timeTravelView.view, topField: timeTravelText, heightConstant: 110, leadOffset: 0, trailOffset: 8, yOffset: 10)
+        contentView.autoLayoutView(field: seedText, topField: timeTravelView.view, heightConstant: 50, leadOffset: 0, trailOffset: 8, yOffset: 20)
+        contentView.autoLayoutView(field: seedInfo.view, topField: seedText, heightConstant: 110, leadOffset: 0, trailOffset: 8, yOffset: 10)
+
+        islandCreateButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        islandCreateButton.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        islandCreateButton.topAnchor.constraint(equalTo: seedInfo.view.bottomAnchor, constant: 30).isActive = true
+        islandCreateButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -16.0).isActive = true
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
     
     override func viewDidAppear(_ animated: Bool) {

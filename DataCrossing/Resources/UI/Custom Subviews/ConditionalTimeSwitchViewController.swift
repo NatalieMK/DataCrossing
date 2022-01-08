@@ -21,6 +21,7 @@ class ConditionalTimeSwitchViewController: UIViewController {
             field.backgroundColor = nil
             field.isEditable = false
             field.translatesAutoresizingMaskIntoConstraints = false
+            field.isScrollEnabled = false
             return field
         }()
         
