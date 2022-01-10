@@ -65,6 +65,7 @@
 		396933F6278B5FD400239E9B /* CreateIslandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933F5278B5FD400239E9B /* CreateIslandController.swift */; };
 		396933FB278B6E5500239E9B /* CreateDataControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933FA278B6E5500239E9B /* CreateDataControllerTests.swift */; };
 		396933FE278B8E0300239E9B /* CritterInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933FD278B8E0300239E9B /* CritterInformationViewController.swift */; };
+		39693400278CA38200239E9B /* CritterCalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933FF278CA38200239E9B /* CritterCalendarCollectionViewCell.swift */; };
 		A2A4E44745489934E95F5AD0 /* Pods_DataCrossing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E09168C487AF85FD7D8B205E /* Pods_DataCrossing.framework */; };
 		CF6012A9CCED6E6753EB4686 /* Pods_DataCrossingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF3DF4C66ADF3348230DE21 /* Pods_DataCrossingTests.framework */; };
 /* End PBXBuildFile section */
@@ -151,6 +152,7 @@
 		396933F5278B5FD400239E9B /* CreateIslandController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIslandController.swift; sourceTree = "<group>"; };
 		396933FA278B6E5500239E9B /* CreateDataControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDataControllerTests.swift; sourceTree = "<group>"; };
 		396933FD278B8E0300239E9B /* CritterInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterInformationViewController.swift; sourceTree = "<group>"; };
+		396933FF278CA38200239E9B /* CritterCalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterCalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		3FC4EB50AD33AE80E40E0843 /* Pods-DataCrossing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCrossing.release.xcconfig"; path = "Target Support Files/Pods-DataCrossing/Pods-DataCrossing.release.xcconfig"; sourceTree = "<group>"; };
 		408B6ED5B81AFEA5DC028EE9 /* Pods-DataCrossingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCrossingTests.debug.xcconfig"; path = "Target Support Files/Pods-DataCrossingTests/Pods-DataCrossingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		83CC3939276841D67153AA59 /* Pods-DataCrossing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCrossing.debug.xcconfig"; path = "Target Support Files/Pods-DataCrossing/Pods-DataCrossing.debug.xcconfig"; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 				393257E62744ADC70010D958 /* WeatherEventCollectionViewCell.swift */,
 				396933EF2777CEC200239E9B /* HourlyForecastCollectionViewCell.swift */,
 				396933F12777E0E000239E9B /* TourneyCollectionViewCell.swift */,
+				396933FF278CA38200239E9B /* CritterCalendarCollectionViewCell.swift */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -713,6 +716,7 @@
 				393258CB276944960010D958 /* MuseumViewController.swift in Sources */,
 				396933ED2776A69F00239E9B /* Bug+CoreDataProperties.swift in Sources */,
 				393258DC276E72C30010D958 /* ConditionalTimeSwitchViewController.swift in Sources */,
+				39693400278CA38200239E9B /* CritterCalendarCollectionViewCell.swift in Sources */,
 				393258C12762A1350010D958 /* CreateIslandViewController.swift in Sources */,
 				396933CE27715E1700239E9B /* BugDataController.swift in Sources */,
 				396933B2276FE45900239E9B /* ConditionalTextSwitchViewController.swift in Sources */,

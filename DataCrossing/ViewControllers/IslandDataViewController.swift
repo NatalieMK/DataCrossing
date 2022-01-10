@@ -41,14 +41,12 @@ class IslandDataViewController: UIViewController, UICollectionViewDelegate, UICo
         islandView.dataSource = self
         islandView.delegate = self
 
-
         view.addSubview(islandView)
         islandView.register(DailyWeatherCollectionViewCell.self, forCellWithReuseIdentifier: DailyWeatherCollectionViewCell.identifier)
         islandView.register(WeatherEventCollectionViewCell.self, forCellWithReuseIdentifier: WeatherEventCollectionViewCell.identifier)
         islandView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         islandView.register(HourlyForecastCollectionViewCell.self, forCellWithReuseIdentifier: HourlyForecastCollectionViewCell.identifier)
         islandView.register(TourneyCollectionViewCell.self, forCellWithReuseIdentifier: TourneyCollectionViewCell.identifier)
-        
     }
     
     func reloadData(){
@@ -93,10 +91,6 @@ class IslandDataViewController: UIViewController, UICollectionViewDelegate, UICo
         .backgroundColor: UIColor.clear,
         .foregroundColor: UIColor.acWhite
     ]
-    
-    
-    
-    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch (indexPath.section) {
