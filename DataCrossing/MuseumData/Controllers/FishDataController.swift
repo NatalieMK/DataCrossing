@@ -55,7 +55,7 @@ class FishDataController: CritterDataController{
         let size = getCritterData(dictionary: dictionary, key: "size")!
         
         dictionary.forEach {key, value in
-            if (key.contains("NH") || key.contains("SH")){
+            if (key.contains("N_") || key.contains("S_")){
                 available[key] = value
             }
         }

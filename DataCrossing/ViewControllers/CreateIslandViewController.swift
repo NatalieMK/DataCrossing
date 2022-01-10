@@ -221,36 +221,78 @@ class CreateIslandViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
-    
-    @objc func didTapCreateIsland() throws {
-        
-        let island = IslandDataController()
-        let islandName = islandField.text
-        var seedNum: Int32?
-        var givenDate: Date = Date()
+}
 
-        if (seedInfo.conditionalSwitch.selectedSegmentIndex == 0)
-        && (seedInfo.conditionalField.text != nil){
-            let seed = seedInfo.conditionalField.text
-            guard let seedInt = Int32(seed!) else {
-                print("Error")
-                return
-            }
-            seedNum = seedInt
+extension CreateIslandViewController{
+    
+    @objc func didTapCreateIsland(){
+        
+        let island = CreateIslandController()
+        let islandName = islandField.text!
+        var givenDate: Date = Date()
+        var hemi: Int
+        var doesTimeTravel: Bool
+        var seed: String?
+        
+        // Hemisphere is set. 0 == Northern, 1 == Southern
+        if hemisphereInfo.selectedSegmentIndex == 1 ||
+            hemisphereInfo.selectedSegmentIndex == 0 {
+            hemi = hemisphereInfo.selectedSegmentIndex
         } else {
-            seedNum = nil
+            showAlert(message: "Please select a hemisphere")
+            return
         }
+        
+        // Check "Time Travel" switch.
+        // If yes is selected, givenDate is reset to whatever date is chosen.
         if (timeTravelView.conditionalSwitch.selectedSegmentIndex == 0){
             givenDate = timeTravelView.conditionalDate.date
+            doesTimeTravel = true
+        } else if (timeTravelView.conditionalSwitch.selectedSegmentIndex == 1){
+            doesTimeTravel = false
+        } else {
+            showAlert(message: "Please select if you time travel.")
+            return
         }
-        let hemi = hemisphereInfo.selectedSegmentIndex
+        
+        // Check "Know Weather Seed" switch.
+        // If yes is selected, and the text input is not empty, save text as seed.
+        if (seedInfo.conditionalSwitch.selectedSegmentIndex == 0) {
+            if (seedInfo.conditionalField.text == ""){
+                showAlert(message: "Please input seed. You can select NO if unsure.")
+            } else {
+                seed = seedInfo.conditionalField.text
+            }
+        } else if (seedInfo.conditionalSwitch.selectedSegmentIndex == 1) {
+            // Otherwise, seed is nil
+            seed = nil
+        } else {
+            showAlert(message: "Please select if you know your weather seed")
+            return
+        }
+        
         do{
-            try island.initIsland(name: islandName!, hemisphere: Int16(hemi), islandDate: givenDate, weatherSeed: seedNum)
+            // Call createIsland, further checking done in CreateIslandController.
+            try island.createIsland(islandName: islandName, hemi: hemi, doesTimeTravel: doesTimeTravel, islandDate: givenDate, seed: seed)
             islandDelegate.didCreateIsland()
             dismiss(animated: true, completion: nil)
-        } catch {
+        }
+        // Catch cases to present alerts.
+        catch CreateIslandControllerError.nameTooShort{
+            showAlert(message: "Island Name is Required")
+        }
+        catch CreateIslandControllerError.nameTooLong{
+            showAlert(message: "Island Name can only be 10 characters or less")
+        }
+        catch {
             print(error.localizedDescription)
         }
+    }
+    
+    func showAlert(message: String){
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
 }

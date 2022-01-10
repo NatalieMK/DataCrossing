@@ -9,10 +9,16 @@ import UIKit
 import SwiftCSV
 import Kingfisher
 
+protocol FishViewControllerDelegate {
+    func didTapFish(fish: Fish, index: Int)
+}
 
 class FishViewController: UIViewController {
     
+    var fishDelegate: FishViewControllerDelegate!
+    
     let fishDataControl = FishDataController()
+    let critterInfoVC = CritterInformationViewController()
     
     let collectionView: UICollectionView = {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
@@ -85,10 +91,12 @@ extension FishViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let name = fishDataControl.allFish[indexPath.row].name
-        do {
-        let fish = try fishDataControl.getFishNamed(name: name)
-        }
-        catch {
+
+        let fish = fishDataControl.getFishNamed(name: name)
+        if fish != nil {
+            print(name)
+            fishDelegate.didTapFish(fish: fish!, index: indexPath.row)
+            } else  {
             print("Could not catch fish")
         }
     }
@@ -98,6 +106,11 @@ extension FishViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 }
 
+extension FishViewController {
+    func presentInfo(){
+        present(critterInfoVC, animated: true)
+    }
+}
 extension FishViewController: UIGestureRecognizerDelegate {
     
     @objc func handleLongPress(gesture : UILongPressGestureRecognizer!) {

@@ -51,35 +51,27 @@ class IslandDataController{
         return islands[0]
     }
     
-    // Initiates island named "name"
-    // Hemisphere is set to user entered hemisphere. 0: Northern, 1: Southern
+
+    // Parameters:
+    // name: String => name of island.
+    // hemisphere: Int16 => represents hemisphere of island. 0: Northern, 1: Southern
+    // doesTimeTravel: Bool => user indicated that they do or do not time travel on island.
+    // seed: Int32? => island weather seed. Left nil if unknown.
+    // addedAt: Date => date that island was created *in app*. This is used to keep track of time passed, regardless of time on island. This cannot be changed. Set to current by default.
+    // currentIslandDate => current island date at moment of creation. This can be changed. Set to current date by default.
     
-    func initIsland(name: String, hemisphere: Int16, islandDate: Date?, weatherSeed: Int32?) throws {
+    func saveIsland(name: String, hemisphere: Int16, doesTimeTravel: Bool, seed: Int32?, addedAt: Date, currentIslandDate: Date) throws{
         let userIsland = IslandData(context: mainContext)
         
-        guard name.count <= 10 else {
-            throw IslandDataControllerError.nameTooLong
-        }
-        guard name.count >= 1 else {
-            throw IslandDataControllerError.nameTooShort
-        }
-        
-        if islandDate != nil {
-            userIsland.doesTimeTravel = true
-        }
-        
-        if weatherSeed != nil {
-            guard weatherSeed! >= 0 else {
-                throw IslandDataControllerError.invalidSeed
-            }
-            userIsland.seed = weatherSeed!
-        }
         userIsland.islandName = name
         userIsland.hemisphere = hemisphere
-        userIsland.addedAt = Date()
-        userIsland.currentIslandDate = islandDate ?? Date()
-        userIsland.initIslandDate = islandDate ?? Date()
-        userIsland.doesTimeTravel = false
+        userIsland.doesTimeTravel = doesTimeTravel
+        if seed != nil {
+            userIsland.seed = seed!
+        }
+        
+        userIsland.addedAt = addedAt
+        userIsland.currentIslandDate = currentIslandDate
         
         do {
             try mainContext.save()
@@ -87,6 +79,7 @@ class IslandDataController{
         {
             throw IslandDataControllerError.unknownError
         }
+        
     }
     
     // Updates the weather seed number for user island

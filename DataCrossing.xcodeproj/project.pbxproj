@@ -56,12 +56,15 @@
 		396933E12773F49300239E9B /* Fish+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933DF2773F49300239E9B /* Fish+CoreDataClass.swift */; };
 		396933E427764C1600239E9B /* SeaCreature+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933E327764C1600239E9B /* SeaCreature+CoreDataProperties.swift */; };
 		396933E527764C1600239E9B /* SeaCreature+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933E227764C1600239E9B /* SeaCreature+CoreDataClass.swift */; };
-		396933E827764EE900239E9B /* CritterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933E727764EE900239E9B /* CritterData.swift */; };
+		396933E827764EE900239E9B /* CritterDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933E727764EE900239E9B /* CritterDataController.swift */; };
 		396933EC2776A69F00239E9B /* Bug+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933EA2776A69F00239E9B /* Bug+CoreDataClass.swift */; };
 		396933ED2776A69F00239E9B /* Bug+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933EB2776A69F00239E9B /* Bug+CoreDataProperties.swift */; };
 		396933F02777CEC200239E9B /* HourlyForecastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933EF2777CEC200239E9B /* HourlyForecastCollectionViewCell.swift */; };
 		396933F22777E0E000239E9B /* TourneyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933F12777E0E000239E9B /* TourneyCollectionViewCell.swift */; };
 		396933F4277A9D7700239E9B /* MuseumCounterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933F3277A9D7700239E9B /* MuseumCounterCollectionViewCell.swift */; };
+		396933F6278B5FD400239E9B /* CreateIslandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933F5278B5FD400239E9B /* CreateIslandController.swift */; };
+		396933FB278B6E5500239E9B /* CreateDataControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933FA278B6E5500239E9B /* CreateDataControllerTests.swift */; };
+		396933FE278B8E0300239E9B /* CritterInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933FD278B8E0300239E9B /* CritterInformationViewController.swift */; };
 		A2A4E44745489934E95F5AD0 /* Pods_DataCrossing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E09168C487AF85FD7D8B205E /* Pods_DataCrossing.framework */; };
 		CF6012A9CCED6E6753EB4686 /* Pods_DataCrossingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF3DF4C66ADF3348230DE21 /* Pods_DataCrossingTests.framework */; };
 /* End PBXBuildFile section */
@@ -139,12 +142,15 @@
 		396933DF2773F49300239E9B /* Fish+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Fish+CoreDataClass.swift"; sourceTree = "<group>"; };
 		396933E227764C1600239E9B /* SeaCreature+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SeaCreature+CoreDataClass.swift"; path = "/Users/nataliekim/Desktop/DataCrossing/DataCrossing/MuseumData/SeaCreature+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		396933E327764C1600239E9B /* SeaCreature+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SeaCreature+CoreDataProperties.swift"; path = "/Users/nataliekim/Desktop/DataCrossing/DataCrossing/MuseumData/SeaCreature+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		396933E727764EE900239E9B /* CritterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterData.swift; sourceTree = "<group>"; };
+		396933E727764EE900239E9B /* CritterDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterDataController.swift; sourceTree = "<group>"; };
 		396933EA2776A69F00239E9B /* Bug+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Bug+CoreDataClass.swift"; path = "/Users/nataliekim/Desktop/DataCrossing/DataCrossing/MuseumData/Bug+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		396933EB2776A69F00239E9B /* Bug+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Bug+CoreDataProperties.swift"; path = "/Users/nataliekim/Desktop/DataCrossing/DataCrossing/MuseumData/Bug+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		396933EF2777CEC200239E9B /* HourlyForecastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastCollectionViewCell.swift; sourceTree = "<group>"; };
 		396933F12777E0E000239E9B /* TourneyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyCollectionViewCell.swift; sourceTree = "<group>"; };
 		396933F3277A9D7700239E9B /* MuseumCounterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumCounterCollectionViewCell.swift; sourceTree = "<group>"; };
+		396933F5278B5FD400239E9B /* CreateIslandController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIslandController.swift; sourceTree = "<group>"; };
+		396933FA278B6E5500239E9B /* CreateDataControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDataControllerTests.swift; sourceTree = "<group>"; };
+		396933FD278B8E0300239E9B /* CritterInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterInformationViewController.swift; sourceTree = "<group>"; };
 		3FC4EB50AD33AE80E40E0843 /* Pods-DataCrossing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCrossing.release.xcconfig"; path = "Target Support Files/Pods-DataCrossing/Pods-DataCrossing.release.xcconfig"; sourceTree = "<group>"; };
 		408B6ED5B81AFEA5DC028EE9 /* Pods-DataCrossingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCrossingTests.debug.xcconfig"; path = "Target Support Files/Pods-DataCrossingTests/Pods-DataCrossingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		83CC3939276841D67153AA59 /* Pods-DataCrossing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCrossing.debug.xcconfig"; path = "Target Support Files/Pods-DataCrossing/Pods-DataCrossing.debug.xcconfig"; sourceTree = "<group>"; };
@@ -213,9 +219,9 @@
 			isa = PBXGroup;
 			children = (
 				393257FB274C5E550010D958 /* Meteonook-Bridging-Header.h */,
+				396933F7278B5FDA00239E9B /* Controllers */,
 				393257D92744629B0010D958 /* Resources */,
 				393257D82744628C0010D958 /* ViewControllers */,
-				393257D72744627B0010D958 /* MeteoNook */,
 				393257B327445D850010D958 /* Info.plist */,
 				3932588F276286420010D958 /* UserIslandData.xcdatamodeld */,
 				396933D72773EF4C00239E9B /* MuseumData */,
@@ -227,9 +233,9 @@
 		393257BB27445D850010D958 /* DataCrossingTests */ = {
 			isa = PBXGroup;
 			children = (
-				393257BC27445D850010D958 /* DataCrossingTests.swift */,
-				393258C2276402AA0010D958 /* IslandDataControllerTests.swift */,
+				396933FC278B890E00239E9B /* Resources */,
 				393258C6276421DF0010D958 /* CoreDataTestStack.swift */,
+				396933FA278B6E5500239E9B /* CreateDataControllerTests.swift */,
 			);
 			path = DataCrossingTests;
 			sourceTree = "<group>";
@@ -328,9 +334,9 @@
 		3932589A27628FD90010D958 /* IslandData */ = {
 			isa = PBXGroup;
 			children = (
+				396933F9278B60D200239E9B /* Controllers */,
 				3932589627628FC20010D958 /* IslandData+CoreDataClass.swift */,
 				3932589727628FC20010D958 /* IslandData+CoreDataProperties.swift */,
-				393258BE276293450010D958 /* IslandDataController.swift */,
 				393258C4276421020010D958 /* CoreDataStack.swift */,
 			);
 			path = IslandData;
@@ -344,6 +350,7 @@
 				393258D5276AC8780010D958 /* SeaCreatureViewController.swift */,
 				393258CF276AC2310010D958 /* BugViewController.swift */,
 				393258D3276AC86D0010D958 /* FishViewController.swift */,
+				396933FD278B8E0300239E9B /* CritterInformationViewController.swift */,
 			);
 			path = MuseumPage;
 			sourceTree = "<group>";
@@ -370,43 +377,77 @@
 		396933D72773EF4C00239E9B /* MuseumData */ = {
 			isa = PBXGroup;
 			children = (
-				396933EE2777CB8000239E9B /* Bugs */,
-				396933E92776A66800239E9B /* SeaCreatures */,
-				396933E627764C5C00239E9B /* Fish */,
+				396933F8278B602A00239E9B /* Controllers */,
+				396933EE2777CB8000239E9B /* BugCoreData */,
+				396933E92776A66800239E9B /* SeaCreatureCoreData */,
+				396933E627764C5C00239E9B /* FishCoreData */,
 				396933BA276FF9C300239E9B /* MuseumModels.swift */,
-				396933E727764EE900239E9B /* CritterData.swift */,
 			);
 			path = MuseumData;
 			sourceTree = "<group>";
 		};
-		396933E627764C5C00239E9B /* Fish */ = {
+		396933E627764C5C00239E9B /* FishCoreData */ = {
 			isa = PBXGroup;
 			children = (
 				396933DF2773F49300239E9B /* Fish+CoreDataClass.swift */,
 				396933DE2773F49300239E9B /* Fish+CoreDataProperties.swift */,
-				396933C827712FD300239E9B /* FishDataController.swift */,
 			);
-			path = Fish;
+			path = FishCoreData;
 			sourceTree = "<group>";
 		};
-		396933E92776A66800239E9B /* SeaCreatures */ = {
+		396933E92776A66800239E9B /* SeaCreatureCoreData */ = {
 			isa = PBXGroup;
 			children = (
 				396933E327764C1600239E9B /* SeaCreature+CoreDataProperties.swift */,
 				396933E227764C1600239E9B /* SeaCreature+CoreDataClass.swift */,
-				396933D52773D8B900239E9B /* SeaCreatureDataController.swift */,
 			);
-			path = SeaCreatures;
+			path = SeaCreatureCoreData;
 			sourceTree = "<group>";
 		};
-		396933EE2777CB8000239E9B /* Bugs */ = {
+		396933EE2777CB8000239E9B /* BugCoreData */ = {
 			isa = PBXGroup;
 			children = (
 				396933EA2776A69F00239E9B /* Bug+CoreDataClass.swift */,
 				396933EB2776A69F00239E9B /* Bug+CoreDataProperties.swift */,
-				396933CD27715E1600239E9B /* BugDataController.swift */,
 			);
-			path = Bugs;
+			path = BugCoreData;
+			sourceTree = "<group>";
+		};
+		396933F7278B5FDA00239E9B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				393257D72744627B0010D958 /* MeteoNook */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		396933F8278B602A00239E9B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				396933E727764EE900239E9B /* CritterDataController.swift */,
+				396933D52773D8B900239E9B /* SeaCreatureDataController.swift */,
+				396933CD27715E1600239E9B /* BugDataController.swift */,
+				396933C827712FD300239E9B /* FishDataController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		396933F9278B60D200239E9B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				393258BE276293450010D958 /* IslandDataController.swift */,
+				396933F5278B5FD400239E9B /* CreateIslandController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		396933FC278B890E00239E9B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				393257BC27445D850010D958 /* DataCrossingTests.swift */,
+				393258C2276402AA0010D958 /* IslandDataControllerTests.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		E145FE4F07FBDF63D86BEFA6 /* Pods */ = {
@@ -678,6 +719,7 @@
 				393257A627445D840010D958 /* AppDelegate.swift in Sources */,
 				396933E12773F49300239E9B /* Fish+CoreDataClass.swift in Sources */,
 				393257A827445D840010D958 /* SceneDelegate.swift in Sources */,
+				396933F6278B5FD400239E9B /* CreateIslandController.swift in Sources */,
 				396933E427764C1600239E9B /* SeaCreature+CoreDataProperties.swift in Sources */,
 				396933F22777E0E000239E9B /* TourneyCollectionViewCell.swift in Sources */,
 				393257E4274498280010D958 /* Extensions.swift in Sources */,
@@ -696,7 +738,8 @@
 				396933BB276FF9C300239E9B /* MuseumModels.swift in Sources */,
 				396933F02777CEC200239E9B /* HourlyForecastCollectionViewCell.swift in Sources */,
 				393258D4276AC86D0010D958 /* FishViewController.swift in Sources */,
-				396933E827764EE900239E9B /* CritterData.swift in Sources */,
+				396933FE278B8E0300239E9B /* CritterInformationViewController.swift in Sources */,
+				396933E827764EE900239E9B /* CritterDataController.swift in Sources */,
 				393258C927693CE80010D958 /* MenuViewController.swift in Sources */,
 				396933D02771715300239E9B /* MeteoNookController.swift in Sources */,
 				393257E2274493900010D958 /* DailyWeatherCollectionViewCell.swift in Sources */,
@@ -715,6 +758,7 @@
 				393258C3276402AB0010D958 /* IslandDataControllerTests.swift in Sources */,
 				393258C7276421DF0010D958 /* CoreDataTestStack.swift in Sources */,
 				393257BD27445D850010D958 /* DataCrossingTests.swift in Sources */,
+				396933FB278B6E5500239E9B /* CreateDataControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

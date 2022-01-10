@@ -19,6 +19,7 @@ class DataCrossingViewController: UIViewController {
     let menuVC = MenuViewController()
     let islandVC = IslandDataViewController()
     lazy var museumVC = MuseumViewController()
+    lazy var critterVC = CritterInformationViewController()
     
     let tabBarVC: UITabBarController = {
         let tabBar = UITabBarController()
@@ -108,12 +109,14 @@ extension DataCrossingViewController: MenuViewControllerDelegate {
     func addMuseum() {
         let museumNavVC = UINavigationController(rootViewController: museumVC)
         let bugVC = UINavigationController(rootViewController: BugViewController())
-        let fishVC = UINavigationController(rootViewController: FishViewController())
+        let fishVC = FishViewController()
+        let fishNavVC = UINavigationController(rootViewController: fishVC)
         let seaVC = UINavigationController(rootViewController: SeaCreatureViewController())
         let artVC = UINavigationController(rootViewController: ArtViewController())
         
         museumVC.menuDelegate = self
-        museumTabBarVC.setViewControllers([museumNavVC, bugVC, fishVC, seaVC], animated: false)
+        fishVC.fishDelegate = self
+        museumTabBarVC.setViewControllers([museumNavVC, bugVC, fishNavVC, seaVC], animated: false)
         addChild(museumTabBarVC)
         museumTabBarVC.view.frame = tabBarVC.view.frame
         museumTabBarVC.view.frame.origin.x = self.tabBarVC.view.frame.origin.x
@@ -121,10 +124,19 @@ extension DataCrossingViewController: MenuViewControllerDelegate {
         museumTabBarVC.didMove(toParent: self)
         museumNavVC.tabBarItem.image = UIImage(systemName: "building.columns")
         bugVC.tabBarItem.image = UIImage(systemName: "ladybug")
-        fishVC.tabBarItem.image = UIImage(systemName: "tortoise")
+        fishNavVC.tabBarItem.image = UIImage(systemName: "tortoise")
         seaVC.tabBarItem.image = UIImage(systemName: "allergens")
 
         toggleMenu(completion: nil)
+    }
+}
+
+extension DataCrossingViewController: FishViewControllerDelegate {
+    
+    func didTapFish(fish: Fish, index: Int) {
+        critterVC.critter = fish
+        critterVC.index = index
+        present(critterVC, animated: true)
     }
 }
 
