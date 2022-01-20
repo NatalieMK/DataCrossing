@@ -8,9 +8,15 @@
 import UIKit
 import Kingfisher
 
+protocol BugViewControllerDelegate {
+    func didTapBug(bug: Bug, index: Int)
+}
+
 class BugViewController: UIViewController {
 
     let bugDataControl = BugDataController()
+    var bugDelegate: BugViewControllerDelegate!
+    let critterInfoVC = CritterInformationViewController()
     
     let collectionView: UICollectionView = {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
@@ -78,7 +84,6 @@ extension BugViewController: UICollectionViewDelegate, UICollectionViewDataSourc
         longPress.delaysTouchesBegan = true
         longPress.delegate = self
         self.collectionView.addGestureRecognizer(longPress)
-        
         return cell
     }
     
@@ -86,11 +91,18 @@ extension BugViewController: UICollectionViewDelegate, UICollectionViewDataSourc
         let name = bugDataControl.allBugs[indexPath.row].name
         let bug = bugDataControl.getBugNamed(name: name)
         if (bug != nil){
-            print(bug!.name)
+            bugDelegate.didTapBug(bug: bug!, index: indexPath.row)
         }
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.width/6, height: view.width/6)
+    }
+}
+
+extension BugViewController {
+    func presentInfo(){
+        present(critterInfoVC, animated: true)
     }
 }
 

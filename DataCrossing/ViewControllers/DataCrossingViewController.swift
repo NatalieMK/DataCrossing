@@ -108,33 +108,51 @@ extension DataCrossingViewController: MenuViewControllerDelegate {
     
     func addMuseum() {
         let museumNavVC = UINavigationController(rootViewController: museumVC)
-        let bugVC = UINavigationController(rootViewController: BugViewController())
+        let bugVC = BugViewController()
+        let bugNavVC = UINavigationController(rootViewController: bugVC)
         let fishVC = FishViewController()
         let fishNavVC = UINavigationController(rootViewController: fishVC)
-        let seaVC = UINavigationController(rootViewController: SeaCreatureViewController())
-        let artVC = UINavigationController(rootViewController: ArtViewController())
+        let seaVC = SeaCreatureViewController()
+        let seaNavVC = UINavigationController(rootViewController: seaVC)
+        
         
         museumVC.menuDelegate = self
         fishVC.fishDelegate = self
-        museumTabBarVC.setViewControllers([museumNavVC, bugVC, fishNavVC, seaVC], animated: false)
+        bugVC.bugDelegate = self
+        seaVC.creatureDelegate = self
+        
+        
+        museumTabBarVC.setViewControllers([museumNavVC, bugNavVC, fishNavVC, seaNavVC], animated: false)
         addChild(museumTabBarVC)
         museumTabBarVC.view.frame = tabBarVC.view.frame
         museumTabBarVC.view.frame.origin.x = self.tabBarVC.view.frame.origin.x
         view.addSubview(museumTabBarVC.view)
         museumTabBarVC.didMove(toParent: self)
         museumNavVC.tabBarItem.image = UIImage(systemName: "building.columns")
-        bugVC.tabBarItem.image = UIImage(systemName: "ladybug")
+        bugNavVC.tabBarItem.image = UIImage(systemName: "ladybug")
         fishNavVC.tabBarItem.image = UIImage(systemName: "tortoise")
-        seaVC.tabBarItem.image = UIImage(systemName: "allergens")
+        seaNavVC.tabBarItem.image = UIImage(systemName: "allergens")
 
         toggleMenu(completion: nil)
     }
 }
 
-extension DataCrossingViewController: FishViewControllerDelegate {
+extension DataCrossingViewController: FishViewControllerDelegate, BugViewControllerDelegate, SeaCreatureViewControllerDelegate {
     
     func didTapFish(fish: Fish, index: Int) {
         critterVC.critter = fish
+        critterVC.index = index
+        present(critterVC, animated: true)
+    }
+    
+    func didTapBug(bug: Bug, index: Int){
+        critterVC.critter = bug
+        critterVC.index = index
+        present(critterVC, animated: true)
+    }
+    
+    func didTapSeaCreature(creature: SeaCreature, index: Int) {
+        critterVC.critter = creature
         critterVC.index = index
         present(critterVC, animated: true)
     }
@@ -158,7 +176,6 @@ extension DataCrossingViewController: IslandDataViewControllerDelegate, MuseumVi
             }
         case .opened:
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut) {
-                
                 self.tabBarVC.view.frame.origin.x = 0
                 self.museumTabBarVC.view.frame.origin.x = 0
                 

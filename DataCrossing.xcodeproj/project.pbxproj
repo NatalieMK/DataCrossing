@@ -66,6 +66,8 @@
 		396933FB278B6E5500239E9B /* CreateDataControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933FA278B6E5500239E9B /* CreateDataControllerTests.swift */; };
 		396933FE278B8E0300239E9B /* CritterInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933FD278B8E0300239E9B /* CritterInformationViewController.swift */; };
 		39693400278CA38200239E9B /* CritterCalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933FF278CA38200239E9B /* CritterCalendarCollectionViewCell.swift */; };
+		39693402278E2AA000239E9B /* CSVFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39693401278E2AA000239E9B /* CSVFormatter.swift */; };
+		39693404278E379400239E9B /* CritterSizeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39693403278E379400239E9B /* CritterSizeCollectionViewCell.swift */; };
 		A2A4E44745489934E95F5AD0 /* Pods_DataCrossing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E09168C487AF85FD7D8B205E /* Pods_DataCrossing.framework */; };
 		CF6012A9CCED6E6753EB4686 /* Pods_DataCrossingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF3DF4C66ADF3348230DE21 /* Pods_DataCrossingTests.framework */; };
 /* End PBXBuildFile section */
@@ -153,6 +155,8 @@
 		396933FA278B6E5500239E9B /* CreateDataControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDataControllerTests.swift; sourceTree = "<group>"; };
 		396933FD278B8E0300239E9B /* CritterInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterInformationViewController.swift; sourceTree = "<group>"; };
 		396933FF278CA38200239E9B /* CritterCalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterCalendarCollectionViewCell.swift; sourceTree = "<group>"; };
+		39693401278E2AA000239E9B /* CSVFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVFormatter.swift; sourceTree = "<group>"; };
+		39693403278E379400239E9B /* CritterSizeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterSizeCollectionViewCell.swift; sourceTree = "<group>"; };
 		3FC4EB50AD33AE80E40E0843 /* Pods-DataCrossing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCrossing.release.xcconfig"; path = "Target Support Files/Pods-DataCrossing/Pods-DataCrossing.release.xcconfig"; sourceTree = "<group>"; };
 		408B6ED5B81AFEA5DC028EE9 /* Pods-DataCrossingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCrossingTests.debug.xcconfig"; path = "Target Support Files/Pods-DataCrossingTests/Pods-DataCrossingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		83CC3939276841D67153AA59 /* Pods-DataCrossing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCrossing.debug.xcconfig"; path = "Target Support Files/Pods-DataCrossing/Pods-DataCrossing.debug.xcconfig"; sourceTree = "<group>"; };
@@ -285,8 +289,9 @@
 		393257D92744629B0010D958 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				393257E52744AD460010D958 /* Custom Cells */,
+				39693401278E2AA000239E9B /* CSVFormatter.swift */,
 				396933AE276FE33300239E9B /* CSVs */,
+				393257E52744AD460010D958 /* Custom Cells */,
 				393257DA274463620010D958 /* UI */,
 				393257A727445D840010D958 /* SceneDelegate.swift */,
 				393257E3274498280010D958 /* Extensions.swift */,
@@ -317,6 +322,7 @@
 				396933EF2777CEC200239E9B /* HourlyForecastCollectionViewCell.swift */,
 				396933F12777E0E000239E9B /* TourneyCollectionViewCell.swift */,
 				396933FF278CA38200239E9B /* CritterCalendarCollectionViewCell.swift */,
+				39693403278E379400239E9B /* CritterSizeCollectionViewCell.swift */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -734,6 +740,7 @@
 				396933C927712FD300239E9B /* FishDataController.swift in Sources */,
 				393257DE27446BE40010D958 /* IslandDataViewController.swift in Sources */,
 				393258882760051D0010D958 /* MeteoNookModels.swift in Sources */,
+				39693402278E2AA000239E9B /* CSVFormatter.swift in Sources */,
 				393258D6276AC8780010D958 /* SeaCreatureViewController.swift in Sources */,
 				396933F4277A9D7700239E9B /* MuseumCounterCollectionViewCell.swift in Sources */,
 				396933CC277153C800239E9B /* MuseumItemCollectionViewCell.swift in Sources */,
@@ -752,6 +759,7 @@
 				396933E02773F49300239E9B /* Fish+CoreDataProperties.swift in Sources */,
 				393258BF276293450010D958 /* IslandDataController.swift in Sources */,
 				39325891276286420010D958 /* UserIslandData.xcdatamodeld in Sources */,
+				39693404278E379400239E9B /* CritterSizeCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

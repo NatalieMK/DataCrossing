@@ -79,7 +79,6 @@ extension FishViewController: UICollectionViewDelegate, UICollectionViewDataSour
             print("Could not catch fish")
         }
         
-        
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector (self.handleLongPress))
         longPress.minimumPressDuration = 0.5
         longPress.delaysTouchesBegan = true
@@ -91,10 +90,8 @@ extension FishViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let name = fishDataControl.allFish[indexPath.row].name
-
         let fish = fishDataControl.getFishNamed(name: name)
         if fish != nil {
-            print(name)
             fishDelegate.didTapFish(fish: fish!, index: indexPath.row)
             } else  {
             print("Could not catch fish")

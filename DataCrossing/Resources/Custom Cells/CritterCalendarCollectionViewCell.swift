@@ -49,11 +49,13 @@ class CritterCalendarCollectionViewCell: UICollectionViewCell {
     let monthLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .coolMint
+        label.textAlignment = .center
         return label
     }()
     
     let availabilityLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .center
         label.backgroundColor = .acWhite
         return label
     }()

@@ -6,10 +6,16 @@
 //
 
 import UIKit
+import Kingfisher
 
+protocol SeaCreatureViewControllerDelegate {
+    func didTapSeaCreature(creature: SeaCreature, index: Int)
+        
+}
 class SeaCreatureViewController: UIViewController {
-
+    
     let creatureDataControl = SeaCreatureDataController()
+    var creatureDelegate: SeaCreatureViewControllerDelegate!
     
     let collectionView: UICollectionView = {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
@@ -88,7 +94,7 @@ extension SeaCreatureViewController: UICollectionViewDelegate, UICollectionViewD
         let name = creatureDataControl.allCreatures[indexPath.row].name
         let creature = creatureDataControl.getCreatureNamed(name: name)
         if (creature != nil) {
-            print(creature!.name)
+            creatureDelegate.didTapSeaCreature(creature: creature!, index: indexPath.row)
         }
     }
     
