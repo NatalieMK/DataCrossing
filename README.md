@@ -19,7 +19,7 @@ There is an insane amount of data to keep track of in Animal Crossing: New Horiz
 ## Future Goals
 * Add TurnipProphet (https://github.com/mikebryant/ac-nh-turnip-prices)
 * Add a "Leaving This Month" Section to the Museum Page
-* Information screens for bugs, fish, and creatures including availability schedules
+~~* Information screens for bugs, fish, and creatures including availability schedules~~
 * Allow for uncatching critters
 * Add NPC schedule predictions
 * Implement MeteoNook Seed Guessing and Weather Event storage
