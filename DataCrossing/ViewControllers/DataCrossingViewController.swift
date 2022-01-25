@@ -141,18 +141,18 @@ extension DataCrossingViewController: MenuViewControllerDelegate {
     }
     
     func addWeather() {
-
-        let weatherNavVC = UINavigationController(rootViewController: weatherVC)
+        
+        let weatherNavVC = PortraitLockedNavigationController(rootViewController: weatherVC)
         
         weatherVC.weatherDelegate = self
         weatherTabBarVC.setViewControllers([weatherNavVC], animated: false)
-        
         addChild(weatherTabBarVC)
         weatherTabBarVC.view.frame = tabBarVC.view.frame
+        weatherVC.collectionView.sizeToFit()
         weatherTabBarVC.view.frame.origin.x = self.tabBarVC.view.frame.origin.x
         view.addSubview(weatherTabBarVC.view)
         weatherTabBarVC.didMove(toParent: self)
-        
+
         toggleMenu(completion: nil)
     }
     

@@ -18,9 +18,11 @@ class WeatherViewController: SwipingCollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-
+        collectionView?.register(DailyWeatherOverviewCell.self, forCellWithReuseIdentifier: DailyWeatherOverviewCell.identifier)
         view.backgroundColor = .sand
     }
+    
+   
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -34,12 +36,17 @@ class WeatherViewController: SwipingCollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DailyWeatherOverviewCell.identifier, for: indexPath) as! DailyWeatherOverviewCell
         cell.backgroundColor = indexPath.item % 2 == 0 ? .acWhite : .acBrown
         return cell
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let safeArea = view.bounds.inset(by: view.safeAreaInsets)
+        return CGSize(width: safeArea.width, height: safeArea.height)
+    }
 }
-
-
-
-

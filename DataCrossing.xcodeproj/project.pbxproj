@@ -71,6 +71,8 @@
 		39D7C913279C90DC00DC930A /* CritterSizeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D7C912279C90DC00DC930A /* CritterSizeLabel.swift */; };
 		39D7C915279F7A7B00DC930A /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D7C914279F7A7B00DC930A /* WeatherViewController.swift */; };
 		39D7C917279F89C500DC930A /* DailyWeatherOverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D7C916279F89C500DC930A /* DailyWeatherOverviewCell.swift */; };
+		39D7C91B27A074B600DC930A /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D7C91A27A074B600DC930A /* WeatherTableViewCell.swift */; };
+		39D7C91D27A0889700DC930A /* PortraitLockedNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D7C91C27A0889700DC930A /* PortraitLockedNavigationController.swift */; };
 		A2A4E44745489934E95F5AD0 /* Pods_DataCrossing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E09168C487AF85FD7D8B205E /* Pods_DataCrossing.framework */; };
 		CF6012A9CCED6E6753EB4686 /* Pods_DataCrossingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF3DF4C66ADF3348230DE21 /* Pods_DataCrossingTests.framework */; };
 /* End PBXBuildFile section */
@@ -159,10 +161,12 @@
 		396933FD278B8E0300239E9B /* CritterInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterInformationViewController.swift; sourceTree = "<group>"; };
 		396933FF278CA38200239E9B /* CritterCalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterCalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		39693401278E2AA000239E9B /* CSVFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVFormatter.swift; sourceTree = "<group>"; };
-		39D7C910279C808F00DC930A /* SwipingCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwipingCollectionViewController.swift; path = "UI/Custom Subviews/SwipingCollectionViewController.swift"; sourceTree = "<group>"; };
+		39D7C910279C808F00DC930A /* SwipingCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingCollectionViewController.swift; sourceTree = "<group>"; };
 		39D7C912279C90DC00DC930A /* CritterSizeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterSizeLabel.swift; sourceTree = "<group>"; };
 		39D7C914279F7A7B00DC930A /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		39D7C916279F89C500DC930A /* DailyWeatherOverviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherOverviewCell.swift; sourceTree = "<group>"; };
+		39D7C91A27A074B600DC930A /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
+		39D7C91C27A0889700DC930A /* PortraitLockedNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitLockedNavigationController.swift; sourceTree = "<group>"; };
 		3FC4EB50AD33AE80E40E0843 /* Pods-DataCrossing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCrossing.release.xcconfig"; path = "Target Support Files/Pods-DataCrossing/Pods-DataCrossing.release.xcconfig"; sourceTree = "<group>"; };
 		408B6ED5B81AFEA5DC028EE9 /* Pods-DataCrossingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCrossingTests.debug.xcconfig"; path = "Target Support Files/Pods-DataCrossingTests/Pods-DataCrossingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		83CC3939276841D67153AA59 /* Pods-DataCrossing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCrossing.debug.xcconfig"; path = "Target Support Files/Pods-DataCrossing/Pods-DataCrossing.debug.xcconfig"; sourceTree = "<group>"; };
@@ -296,16 +300,17 @@
 		393257D92744629B0010D958 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				39D7C910279C808F00DC930A /* SwipingCollectionViewController.swift */,
+				39D7C91927A0745700DC930A /* CustomMuseumUI */,
+				39D7C91827A0741000DC930A /* CustomWeatherUI */,
 				39693401278E2AA000239E9B /* CSVFormatter.swift */,
 				396933AE276FE33300239E9B /* CSVs */,
-				39D7C912279C90DC00DC930A /* CritterSizeLabel.swift */,
 				393257E52744AD460010D958 /* Custom Cells */,
 				393257DA274463620010D958 /* UI */,
 				393257A727445D840010D958 /* SceneDelegate.swift */,
 				393257E3274498280010D958 /* Extensions.swift */,
 				393257A527445D840010D958 /* AppDelegate.swift */,
 				396933D12772A27B00239E9B /* EventDay.swift */,
+				39D7C91C27A0889700DC930A /* PortraitLockedNavigationController.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -313,7 +318,7 @@
 		393257DA274463620010D958 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				396933B0276FE39700239E9B /* Custom Subviews */,
+				396933B0276FE39700239E9B /* CustomViewControllers */,
 				393257D5274462380010D958 /* Storyboards */,
 				393257AE27445D850010D958 /* Assets.xcassets */,
 				393257DB274463780010D958 /* ColorExtensions.swift */,
@@ -324,14 +329,7 @@
 		393257E52744AD460010D958 /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
-				396933CB277153C800239E9B /* MuseumItemCollectionViewCell.swift */,
-				396933F3277A9D7700239E9B /* MuseumCounterCollectionViewCell.swift */,
-				393257E1274493900010D958 /* DailyWeatherCollectionViewCell.swift */,
-				393257E62744ADC70010D958 /* WeatherEventCollectionViewCell.swift */,
-				396933EF2777CEC200239E9B /* HourlyForecastCollectionViewCell.swift */,
 				396933F12777E0E000239E9B /* TourneyCollectionViewCell.swift */,
-				396933FF278CA38200239E9B /* CritterCalendarCollectionViewCell.swift */,
-				39D7C916279F89C500DC930A /* DailyWeatherOverviewCell.swift */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -383,13 +381,14 @@
 			path = CSVs;
 			sourceTree = "<group>";
 		};
-		396933B0276FE39700239E9B /* Custom Subviews */ = {
+		396933B0276FE39700239E9B /* CustomViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				39D7C910279C808F00DC930A /* SwipingCollectionViewController.swift */,
 				396933B1276FE45900239E9B /* ConditionalTextSwitchViewController.swift */,
 				393258DB276E72C30010D958 /* ConditionalTimeSwitchViewController.swift */,
 			);
-			path = "Custom Subviews";
+			path = CustomViewControllers;
 			sourceTree = "<group>";
 		};
 		396933D72773EF4C00239E9B /* MuseumData */ = {
@@ -466,6 +465,29 @@
 				393258C2276402AA0010D958 /* IslandDataControllerTests.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		39D7C91827A0741000DC930A /* CustomWeatherUI */ = {
+			isa = PBXGroup;
+			children = (
+				393257E1274493900010D958 /* DailyWeatherCollectionViewCell.swift */,
+				393257E62744ADC70010D958 /* WeatherEventCollectionViewCell.swift */,
+				396933EF2777CEC200239E9B /* HourlyForecastCollectionViewCell.swift */,
+				39D7C916279F89C500DC930A /* DailyWeatherOverviewCell.swift */,
+				39D7C91A27A074B600DC930A /* WeatherTableViewCell.swift */,
+			);
+			path = CustomWeatherUI;
+			sourceTree = "<group>";
+		};
+		39D7C91927A0745700DC930A /* CustomMuseumUI */ = {
+			isa = PBXGroup;
+			children = (
+				396933CB277153C800239E9B /* MuseumItemCollectionViewCell.swift */,
+				396933F3277A9D7700239E9B /* MuseumCounterCollectionViewCell.swift */,
+				396933FF278CA38200239E9B /* CritterCalendarCollectionViewCell.swift */,
+				39D7C912279C90DC00DC930A /* CritterSizeLabel.swift */,
+			);
+			path = CustomMuseumUI;
 			sourceTree = "<group>";
 		};
 		E145FE4F07FBDF63D86BEFA6 /* Pods */ = {
@@ -741,6 +763,7 @@
 				393257A827445D840010D958 /* SceneDelegate.swift in Sources */,
 				396933F6278B5FD400239E9B /* CreateIslandController.swift in Sources */,
 				396933E427764C1600239E9B /* SeaCreature+CoreDataProperties.swift in Sources */,
+				39D7C91D27A0889700DC930A /* PortraitLockedNavigationController.swift in Sources */,
 				396933F22777E0E000239E9B /* TourneyCollectionViewCell.swift in Sources */,
 				393257E4274498280010D958 /* Extensions.swift in Sources */,
 				393257DC274463780010D958 /* ColorExtensions.swift in Sources */,
@@ -763,6 +786,7 @@
 				396933FE278B8E0300239E9B /* CritterInformationViewController.swift in Sources */,
 				39D7C915279F7A7B00DC930A /* WeatherViewController.swift in Sources */,
 				396933E827764EE900239E9B /* CritterDataController.swift in Sources */,
+				39D7C91B27A074B600DC930A /* WeatherTableViewCell.swift in Sources */,
 				393258C927693CE80010D958 /* MenuViewController.swift in Sources */,
 				396933D02771715300239E9B /* MeteoNookController.swift in Sources */,
 				393257E2274493900010D958 /* DailyWeatherCollectionViewCell.swift in Sources */,
