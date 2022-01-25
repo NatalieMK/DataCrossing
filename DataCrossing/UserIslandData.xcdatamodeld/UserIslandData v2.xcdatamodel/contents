@@ -21,9 +21,9 @@
         <attribute name="hasBeenCaught" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="WeatherHourItem" representedClassName=".WeatherHourItem" parentEntity="WeatherItem" syncable="YES">
-        <attribute name="time" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    <entity name="WeatherHourItem" representedClassName=".WeatherHourItem" parentEntity="WeatherItem" elementID="time" syncable="YES">
+        <attribute name="hour" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="pattern" optional="YES" attributeType="String" elementID="type"/>
         <relationship name="dayWeather" optional="YES" maxCount="1" deletionRule="Nullify" ordered="YES" destinationEntity="WeatherItem" inverseName="hours" inverseEntity="WeatherItem"/>
     </entity>
     <entity name="WeatherItem" representedClassName=".WeatherItem" syncable="YES">
@@ -40,7 +40,7 @@
         <element name="Fish" positionX="229.226318359375" positionY="-417.4618225097656" width="128" height="59"/>
         <element name="IslandData" positionX="70.8399658203125" positionY="-419.9368591308594" width="128" height="134"/>
         <element name="SeaCreature" positionX="-94.2442626953125" positionY="-418.045166015625" width="128" height="59"/>
-        <element name="WeatherHourItem" positionX="-258.5740356445312" positionY="-9514.122497558594" width="128" height="88"/>
+        <element name="WeatherHourItem" positionX="-258.5740356445312" positionY="-9514.122497558594" width="128" height="74"/>
         <element name="WeatherItem" positionX="-256.1990966796875" positionY="-9821.753356933594" width="128" height="134"/>
     </elements>
 </model>

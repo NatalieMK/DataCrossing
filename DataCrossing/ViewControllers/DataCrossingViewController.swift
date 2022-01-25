@@ -21,6 +21,8 @@ class DataCrossingViewController: UIViewController {
     var islands = [IslandData]()
     lazy var museumVC = MuseumViewController()
     lazy var critterVC = CritterInformationViewController()
+    lazy var meteoVC = MeteoNookViewController()
+    
     
     let weatherLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
@@ -143,9 +145,15 @@ extension DataCrossingViewController: MenuViewControllerDelegate {
     func addWeather() {
         
         let weatherNavVC = PortraitLockedNavigationController(rootViewController: weatherVC)
+        let meteoNavVC = UINavigationController(rootViewController: meteoVC)
+        
+        weatherNavVC.tabBarItem.image = UIImage(systemName: "sun.max")
+        weatherNavVC.tabBarItem.title = "Forecast"
+        meteoNavVC.tabBarItem.title = "MeteoNook"
+        meteoNavVC.tabBarItem.image = UIImage(systemName: "sunrise")
         
         weatherVC.weatherDelegate = self
-        weatherTabBarVC.setViewControllers([weatherNavVC], animated: false)
+        weatherTabBarVC.setViewControllers([weatherNavVC, meteoNavVC], animated: false)
         addChild(weatherTabBarVC)
         weatherTabBarVC.view.frame = tabBarVC.view.frame
         weatherVC.collectionView.sizeToFit()

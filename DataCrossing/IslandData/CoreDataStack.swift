@@ -28,7 +28,7 @@ class CoreDataStack {
         persistentContainer = NSPersistentContainer(name: "UserIslandData")
         let description = persistentContainer.persistentStoreDescriptions.first
         description?.type = NSSQLiteStoreType
-        
+
         persistentContainer.loadPersistentStores { description, error in
             guard error == nil else {
                 fatalError("was unable to load store \(error!)")
