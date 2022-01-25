@@ -34,7 +34,7 @@ class IslandDataViewController: UIViewController, UICollectionViewDelegate, UICo
         weekWeather = meteoNook.weatherForWeek()
         hourWeather = meteoNook.weatherForHours()
         }
-        
+
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.bullet.rectangle"), style: .done, target: self, action: #selector(didTapMenuButton))
         navigationItem.leftBarButtonItem?.tintColor = .acWhite
         
@@ -67,7 +67,7 @@ class IslandDataViewController: UIViewController, UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch (section) {
         case 0:
-            return 1
+            return 0
         case 1:
             return 7
         case 2:
@@ -172,16 +172,16 @@ class IslandDataViewController: UIViewController, UICollectionViewDelegate, UICo
                 
             case 2:
                 
-                let hour = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+                let hour = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1/10)))
                 hour.contentInsets = NSDirectionalEdgeInsets()
                 
                 let hourGroup = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(1),
-                    heightDimension: .fractionalWidth(1/3)), subitem: hour, count: 4)
+                    heightDimension: .fractionalHeight(1/3)), subitem: hour, count: 10)
                 hourGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
 
                 let forecastSection = NSCollectionLayoutSection(group: hourGroup)
-                forecastSection.orthogonalScrollingBehavior = .continuous
+                
                 return forecastSection
             case 3:
                 let tourneyItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/2), heightDimension: .fractionalHeight(1)))
@@ -203,7 +203,7 @@ class IslandDataViewController: UIViewController, UICollectionViewDelegate, UICo
                         heightDimension: .fractionalHeight(1)),
                     subitems: [eventItem, eventItem ,eventItem])
                 
-                let nestedGroup = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1/4)), subitems: [currentItem, eventGroup])
+                let nestedGroup = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1/3)), subitems: [currentItem, eventGroup])
                 
                 let eventSection = NSCollectionLayoutSection(group: nestedGroup)
                 return eventSection

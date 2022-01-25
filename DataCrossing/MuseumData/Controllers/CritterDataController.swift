@@ -69,7 +69,7 @@ class CritterDataController{
     }
     
     func getCaughtList() throws -> [Critter?]{
-        var critters = [Critter]()
+        var critters: [Critter]?
         var caughtCritters = [Critter?]()
         do {
             critters = try getSaved()
@@ -77,7 +77,7 @@ class CritterDataController{
             throw CritterDataControllerError.errorAccessingCoreData
         }
         
-        for critter in critters {
+        for critter in critters! {
             if critter.hasBeenCaught {
                 caughtCritters.append(critter)
             }

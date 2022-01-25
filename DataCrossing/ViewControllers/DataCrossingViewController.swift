@@ -15,11 +15,21 @@ class DataCrossingViewController: UIViewController {
     }
     
     private var menuState: MenuState = .closed
-    
+   
     let menuVC = MenuViewController()
     let islandVC = IslandDataViewController()
+    var islands = [IslandData]()
     lazy var museumVC = MuseumViewController()
     lazy var critterVC = CritterInformationViewController()
+    
+    let weatherLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        return layout
+    }()
+    
+    lazy var weatherVC = WeatherViewController(collectionViewLayout: weatherLayout)
+
     
     let tabBarVC: UITabBarController = {
         let tabBar = UITabBarController()
@@ -34,6 +44,12 @@ class DataCrossingViewController: UIViewController {
         return tabBar
     }()
     
+    lazy var weatherTabBarVC: UITabBarController = {
+        let tabBar = UITabBarController()
+        tabBar.view.backgroundColor = .acWhite
+        return tabBar
+    }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,18 +58,32 @@ class DataCrossingViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let islandData = IslandDataController()
+        let islandData = IslandDataController(mainContext: CoreDataStack.shared.mainContext)
         var isUserIsland = false
         do {
             isUserIsland = try islandData.isSavedIsland()
             if !(isUserIsland){
                 loadCreateIsland()
             } else {
+                updateIsland()
                 loadChildVCs()
             }
         } catch {
             print(error.localizedDescription)
         }
+    }
+    
+    private func updateIsland(){
+
+        let islandData = IslandDataController(mainContext: CoreDataStack.shared.mainContext)
+        let islandInit = islandData.getIslandInitDate()
+
+        let createdDate = islandData.getIslandCreatedAtDate()
+        let interval = Date().timeIntervalSince(createdDate)
+        let newDate = Date.init(timeInterval: interval, since: islandInit)
+        do {
+         try islandData.updateIslandDate(newDate: newDate)
+        } catch {}
     }
     
     private func loadCreateIsland(){
@@ -69,7 +99,7 @@ class DataCrossingViewController: UIViewController {
         view.addSubview(menuVC.view)
         menuVC.didMove(toParent: self)
         islandVC.menuDelegate = self
-
+        
         let islandNavVC = UINavigationController(rootViewController: islandVC)
         tabBarVC.setViewControllers([islandNavVC], animated: false)
         islandNavVC.title = "Island"
@@ -96,13 +126,33 @@ extension DataCrossingViewController: MenuViewControllerDelegate {
             self.backToIsland()
         case .museum:
             self.addMuseum()
+        case .weather:
+            self.addWeather()
         }
     }
     
     func backToIsland() {
         museumTabBarVC.view.removeFromSuperview()
         museumTabBarVC.didMove(toParent: nil)
+        weatherTabBarVC.view.removeFromSuperview()
+        weatherTabBarVC.didMove(toParent: nil)
         islandVC.reloadData()
+        toggleMenu(completion: nil)
+    }
+    
+    func addWeather() {
+
+        let weatherNavVC = UINavigationController(rootViewController: weatherVC)
+        
+        weatherVC.weatherDelegate = self
+        weatherTabBarVC.setViewControllers([weatherNavVC], animated: false)
+        
+        addChild(weatherTabBarVC)
+        weatherTabBarVC.view.frame = tabBarVC.view.frame
+        weatherTabBarVC.view.frame.origin.x = self.tabBarVC.view.frame.origin.x
+        view.addSubview(weatherTabBarVC.view)
+        weatherTabBarVC.didMove(toParent: self)
+        
         toggleMenu(completion: nil)
     }
     
@@ -115,12 +165,10 @@ extension DataCrossingViewController: MenuViewControllerDelegate {
         let seaVC = SeaCreatureViewController()
         let seaNavVC = UINavigationController(rootViewController: seaVC)
         
-        
         museumVC.menuDelegate = self
         fishVC.fishDelegate = self
         bugVC.bugDelegate = self
         seaVC.creatureDelegate = self
-        
         
         museumTabBarVC.setViewControllers([museumNavVC, bugNavVC, fishNavVC, seaNavVC], animated: false)
         addChild(museumTabBarVC)
@@ -158,7 +206,7 @@ extension DataCrossingViewController: FishViewControllerDelegate, BugViewControl
     }
 }
 
-extension DataCrossingViewController: IslandDataViewControllerDelegate, MuseumViewControllerDelegate {
+extension DataCrossingViewController: IslandDataViewControllerDelegate, MuseumViewControllerDelegate, WeatherViewControllerDelegate {
     
     func didTapMenuButton() {
         toggleMenu(completion: nil)
@@ -169,6 +217,7 @@ extension DataCrossingViewController: IslandDataViewControllerDelegate, MuseumVi
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut) {
                 self.tabBarVC.view.frame.origin.x = self.islandVC.view.frame.size.width - 100
                 self.museumTabBarVC.view.frame.origin.x = self.museumVC.view.frame.size.width - 100
+                self.weatherTabBarVC.view.frame.origin.x = self.weatherVC.view.frame.size.width - 100
             } completion: {[weak self] done in
                 if done{
                     self?.menuState = .opened
@@ -178,7 +227,8 @@ extension DataCrossingViewController: IslandDataViewControllerDelegate, MuseumVi
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut) {
                 self.tabBarVC.view.frame.origin.x = 0
                 self.museumTabBarVC.view.frame.origin.x = 0
-                
+                self.weatherTabBarVC.view.frame.origin.x = 0
+               
             } completion: { [weak self] done in
                 if done{
                     self?.menuState = .closed

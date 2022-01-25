@@ -238,7 +238,6 @@ public func nextFishingTourney() -> Date{
                     Calendar.current.nextDate(after: self, matching: DateComponents(month: 4, weekday: 7, weekdayOrdinal: 2), matchingPolicy: Calendar.MatchingPolicy.nextTime),
                     Calendar.current.nextDate(after: self, matching: DateComponents(month: 7, weekday: 7, weekdayOrdinal: 2), matchingPolicy: Calendar.MatchingPolicy.nextTime),
                     Calendar.current.nextDate(after: self, matching: DateComponents(month: 11, weekday: 7, weekdayOrdinal: 2), matchingPolicy: Calendar.MatchingPolicy.nextTime)]
-    print(tourneys)
     
     var closestTourneyDistance = Double(366 * 60 * 60 * 60) // Farthest date possible in seconds
     var closestTourney = Date()

@@ -36,6 +36,7 @@ class BugViewController: UIViewController {
         super.viewDidAppear(animated)
         addNavBar()
         view.addSubview(collectionView)
+        collectionView.anchorToView(view: view, insets: UIEdgeInsets(top: 100, left: 0, bottom: 0, right: 0))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .done, target: self, action: #selector(popUpInfo))
         navigationItem.rightBarButtonItem?.tintColor = .acWhite
         collectionView.backgroundColor = .sand
@@ -48,8 +49,6 @@ class BugViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        let collectionViewFrame = CGRect(x: 10, y: 100, width: view.width - 20, height: view.height - 180)
-        collectionView.frame = collectionViewFrame
     }
     
     @objc func popUpInfo(){
@@ -70,6 +69,10 @@ extension BugViewController: UICollectionViewDelegate, UICollectionViewDataSourc
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MuseumItemCollectionViewCell.identifier, for: indexPath) as! MuseumItemCollectionViewCell
                 cell.imageView.kf.setImage(with: bugDataControl.allBugs[indexPath.row].url)
         let name = bugDataControl.allBugs[indexPath.row].name
+        cell.backgroundColor = .acWhite
+        cell.layer.cornerRadius = 15
+        cell.layer.borderColor = UIColor.paleBrown.cgColor
+        cell.layer.borderWidth = 2
         let bug = bugDataControl.getBugNamed(name: name)
         if bug != nil {
             if bug?.hasBeenCaught == true {
@@ -93,6 +96,10 @@ extension BugViewController: UICollectionViewDelegate, UICollectionViewDataSourc
         if (bug != nil){
             bugDelegate.didTapBug(bug: bug!, index: indexPath.row)
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 16, left: 8, bottom: 0, right: 8)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

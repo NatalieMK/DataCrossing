@@ -25,6 +25,14 @@ public class MeteoNookController {
         return weekWeather
         }
     
+//    public func weatherForDay() -> [String]{
+//        islandDate = islandControl.getIslandDate()!
+//        
+//    
+//        let prediction = getMeteoNookPrediction(date: Date())
+//        
+//    }
+    
     public func weatherForHours() -> [String]{
         islandDate = islandControl.getIslandDate()!
         var hourWeather = [String]()

@@ -19,34 +19,23 @@ class MuseumCounterCollectionViewCell: UICollectionViewCell {
     
     let numberLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .center
         return label
     }()
-    
-    let remainingLabel: UILabel = {
-        let label = UILabel()
-        return label
-    }()
-    
+
     let numAttributes: [NSAttributedString.Key : Any] = [
-        .font: UIFont(name: "KohinoorBangla-Semibold", size: 75),
+        .font: UIFont(name: "KohinoorBangla-Semibold", size: 50),
         .backgroundColor: UIColor.clear,
         .foregroundColor: UIColor.acWhite
     ]
-    
-    let textAttributes : [NSAttributedString.Key: Any] = [
-        NSAttributedString.Key.font: UIFont(name: "AmericanTypewriter-Semibold", size: 25),
-        NSAttributedString.Key.foregroundColor: UIColor.acWhite
-    ]
-    
     
     override init(frame: CGRect){
         super.init(frame: frame)
         contentView.layer.cornerRadius = 7.0
         contentView.addSubview(logoView)
         contentView.addSubview(numberLabel)
-        contentView.addSubview(remainingLabel)
+        
         numberLabel.attributedText = NSAttributedString(string: numberLabel.text ?? "?", attributes: numAttributes)
-        remainingLabel.attributedText = NSAttributedString(string: "remaining", attributes: textAttributes)
         contentView.backgroundColor = .salmon
         logoView.tintColor = .acWhite
     }
@@ -57,8 +46,6 @@ class MuseumCounterCollectionViewCell: UICollectionViewCell {
         logoView.frame = imageFrame
         let numberFrame = CGRect(x: contentView.width/4, y: contentView.height/4, width: contentView.width/2, height: contentView.height/2)
         numberLabel.frame = numberFrame
-        let remFrame = CGRect(x: contentView.width/6, y: contentView.height/4 * 3, width: contentView.width, height: contentView.height/4)
-        remainingLabel.frame = remFrame
     }
     
     required init?(coder: NSCoder) {

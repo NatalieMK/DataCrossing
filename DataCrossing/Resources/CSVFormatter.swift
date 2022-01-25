@@ -18,6 +18,11 @@ public class CSVFormatter {
         case time
     }
     
+    enum WeatherAvailable: String, CaseIterable {
+        case rain = "Yes"
+        case noRain = "No"
+    }
+    
     private func determineTime(timeString: String) -> TimesAvailable{
         switch(timeString){
         case "0":
@@ -34,7 +39,7 @@ public class CSVFormatter {
         case .allDay:
             return "All Day"
         case .unavailable:
-            return "N/A"
+            return "Unavailable"
         case .time:
             let filters = CharacterSet.whitespacesAndNewlines.union(.punctuationCharacters)
             let components = timeString.components(separatedBy: filters)
@@ -50,6 +55,24 @@ public class CSVFormatter {
             }
             
             return ("\(returnedTime[0]) - \(returnedTime[1])")
+        }
+    }
+    
+    private func determineRain(rainString: String) -> WeatherAvailable{
+        switch(rainString){
+        case "no_rain":
+            return WeatherAvailable.noRain
+        default:
+            return WeatherAvailable.rain
+        }
+    }
+    
+    public func formatRainString(rainString: String) -> String{
+        switch(determineRain(rainString: rainString)){
+        case .rain:
+            return determineRain(rainString: rainString).rawValue
+        default:
+            return determineRain(rainString: rainString).rawValue
         }
     }
 }

@@ -18,6 +18,7 @@ class MenuViewController: UIViewController {
     enum MenuOptions: String, CaseIterable {
         case island = "Island"
         case museum = "Museum"
+        case weather = "Weather"
     
     var imageName: String {
         switch self {
@@ -25,6 +26,8 @@ class MenuViewController: UIViewController {
             return "airplane"
         case .museum:
             return "building.columns"
+        case .weather:
+            return "cloud.sun"
         }
     }
     }

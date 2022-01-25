@@ -11,6 +11,7 @@ import simd
 protocol MuseumViewControllerDelegate {
     func didTapMenuButton()
 }
+
 class MuseumViewController: UIViewController {
 
     var menuDelegate: MuseumViewControllerDelegate!
@@ -56,57 +57,50 @@ class MuseumViewController: UIViewController {
 extension MuseumViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch (section){
-        case 0:
-            return 2
         default:
-            return 1
+            return 3
+
         }
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 1
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch(indexPath.section){
-        case 0:
+
             let cell = museumView.dequeueReusableCell(withReuseIdentifier: MuseumCounterCollectionViewCell.identifier, for: indexPath) as! MuseumCounterCollectionViewCell
             switch(indexPath.row){
             case 0:
                 cell.numberLabel.text = "\(fishRemaining.count)"
                 cell.logoView.image = UIImage(systemName: "tortoise.fill")
+            case 1:
+                cell.numberLabel.text = "\(creaturesRemaining.count)"
+                cell.logoView.image = UIImage(systemName: "allergens")
             default:
                 cell.numberLabel.text = "\(bugsRemaining.count)"
                 cell.logoView.image = UIImage(systemName: "ladybug.fill")
             }
+        
             return cell
-        default:
-            let cell = museumView.dequeueReusableCell(withReuseIdentifier: MuseumCounterCollectionViewCell.identifier, for: indexPath) as! MuseumCounterCollectionViewCell
-            cell.numberLabel.text = "\(creaturesRemaining.count)"
-            cell.logoView.image = UIImage(systemName: "allergens")
-            return cell
-        }
+        
     }
     
     static func buildLayout() -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout {(sectionNumber, env) -> NSCollectionLayoutSection? in
             switch (sectionNumber) {
-            case 0:
-                let bugItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/2), heightDimension: .fractionalHeight(1)))
-                bugItem.contentInsets = NSDirectionalEdgeInsets(top: 25, leading: 15, bottom: 0, trailing: 10)
-                let fishItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/2), heightDimension: .fractionalHeight(1)))
-                fishItem.contentInsets = NSDirectionalEdgeInsets(top: 25, leading: 10, bottom: 0, trailing: 15)
-                let counterGroup = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1/3)), subitems: [bugItem, fishItem])
+            default:
+                let bugItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/3), heightDimension: .fractionalHeight(1)))
+                bugItem.contentInsets = NSDirectionalEdgeInsets(top: 25, leading: 10, bottom: 0, trailing: 10)
+                let fishItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/3), heightDimension: .fractionalHeight(1)))
+                fishItem.contentInsets = NSDirectionalEdgeInsets(top: 25, leading: 10, bottom: 0, trailing: 10)
+                let creatureItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/3), heightDimension: .fractionalHeight(1)))
+                creatureItem.contentInsets = NSDirectionalEdgeInsets(top: 25, leading: 10, bottom: 0, trailing: 10)
+                let counterGroup = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1/4)), subitems: [bugItem, fishItem, creatureItem])
                 counterGroup.contentInsets = NSDirectionalEdgeInsets(top: 25, leading: 0, bottom: 10, trailing: 0)
                 let counterSection = NSCollectionLayoutSection(group: counterGroup)
                 return counterSection
-            default:
-                let creatureItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/2), heightDimension: .fractionalHeight(1)))
-                creatureItem.contentInsets = NSDirectionalEdgeInsets(top: 25, leading: 15, bottom: 0, trailing: 10)
-                let counterGroup = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1/3)), subitems: [creatureItem])
-                counterGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 25, trailing: 0)
-                let counterSection = NSCollectionLayoutSection(group: counterGroup)
-                return counterSection
             }
+
         }
     }
     

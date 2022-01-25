@@ -38,6 +38,7 @@ class FishViewController: UIViewController {
         super.viewDidAppear(animated)
         addNavBar()
         view.addSubview(collectionView)
+        collectionView.anchorToView(view: view, insets: UIEdgeInsets(top: 100, left: 0, bottom: 0, right: 0))
         collectionView.delegate = self
         collectionView.dataSource = self
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .done, target: self, action: #selector(popUpInfo))
@@ -49,8 +50,7 @@ class FishViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        let collectionViewFrame = CGRect(x: 10, y: 100, width: view.width - 20, height: view.height - 180)
-        collectionView.frame = collectionViewFrame
+
     }
 }
 
@@ -64,6 +64,10 @@ extension FishViewController: UICollectionViewDelegate, UICollectionViewDataSour
         // Kingfisher will download and cache image if needed, or load from locale machine if not.
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MuseumItemCollectionViewCell.identifier, for: indexPath) as! MuseumItemCollectionViewCell
                 cell.imageView.kf.setImage(with: fishDataControl.allFish[indexPath.row].url)
+        cell.backgroundColor = .acWhite
+        cell.layer.cornerRadius = 15
+        cell.layer.borderColor = UIColor.paleBrown.cgColor
+        cell.layer.borderWidth = 2
         let name = fishDataControl.allFish[indexPath.row].name
         do {
         let fish = try fishDataControl.getFishNamed(name: name)
@@ -86,6 +90,10 @@ extension FishViewController: UICollectionViewDelegate, UICollectionViewDataSour
         self.collectionView.addGestureRecognizer(longPress)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 16, left: 8, bottom: 0, right: 8)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

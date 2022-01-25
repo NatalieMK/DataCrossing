@@ -36,11 +36,11 @@ class SeaCreatureViewController: UIViewController {
         super.viewDidAppear(animated)
         addNavBar()
         view.addSubview(collectionView)
+        collectionView.anchorToView(view: view, insets: UIEdgeInsets(top: 100, left: 0, bottom: 0, right: 0))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .done, target: self, action: #selector(popUpInfo))
         navigationItem.rightBarButtonItem?.tintColor = .acWhite
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.frame = view.frame
         collectionView.backgroundColor = .sand
         collectionView.register(MuseumItemCollectionViewCell.self, forCellWithReuseIdentifier: MuseumItemCollectionViewCell.identifier)
         collectionView.reloadData()
@@ -48,15 +48,12 @@ class SeaCreatureViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        let collectionViewFrame = CGRect(x: 10, y: 100, width: view.width - 20, height: view.height - 180)
-        collectionView.frame = collectionViewFrame
     }
     
     @objc func popUpInfo(){
         let alert = UIAlertController(title: "Museum Screens", message: "Hold on an icon to mark the critter as CAUGHT.", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil )
-        
     }
 }
 
@@ -69,6 +66,10 @@ extension SeaCreatureViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MuseumItemCollectionViewCell.identifier, for: indexPath) as! MuseumItemCollectionViewCell
         cell.imageView.kf.setImage(with: creatureDataControl.allCreatures[indexPath.row].url)
+        cell.backgroundColor = .acWhite
+        cell.layer.cornerRadius = 15
+        cell.layer.borderColor = UIColor.paleBrown.cgColor
+        cell.layer.borderWidth = 2
         let name = creatureDataControl.allCreatures[indexPath.row].name
         do {
             let creature = creatureDataControl.getCreatureNamed(name: name)
@@ -80,14 +81,16 @@ extension SeaCreatureViewController: UICollectionViewDelegate, UICollectionViewD
                 }
             } else {cell.imageView.image = nil}
         }
-        
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector (self.handleLongPress))
         longPress.minimumPressDuration = 0.5
         longPress.delaysTouchesBegan = true
         longPress.delegate = self
         self.collectionView.addGestureRecognizer(longPress)
-        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 16, left: 8, bottom: 0, right: 8)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -118,6 +121,7 @@ extension SeaCreatureViewController: UIGestureRecognizerDelegate {
             print("couldn't find index path")
         }
     }
+    
     func makeAlert(indexPath: IndexPath) -> UIAlertController{
         let alert = UIAlertController(title: "Catch!", message: "Catch this sea creature?", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))

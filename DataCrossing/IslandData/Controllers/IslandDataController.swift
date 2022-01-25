@@ -25,6 +25,7 @@ class IslandDataController{
     init(mainContext: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.mainContext = mainContext
     }
+    
 
     // Returns if there is a user-saved island in core data.
     func isSavedIsland() throws -> Bool {
@@ -99,13 +100,16 @@ class IslandDataController{
     
     func updateIslandDate(newDate: Date) throws{
         do{
-            let savedIsland = try getSavedIsland()
-            savedIsland.currentIslandDate = newDate
+            print("Given Island Date: \(newDate)")
+            let island = try getSavedIsland()
+            island.currentIslandDate = newDate
+            print("Saved Island Date: \(island.currentIslandDate)")
             try mainContext.save()
         } catch {
            throw IslandDataControllerError.unknownError
         }
     }
+    
     
     // MARK: - Getters
     
@@ -122,20 +126,20 @@ class IslandDataController{
     }
     
     func getIslandCreatedAtDate() -> Date {
-        var island = IslandData()
+        var island: IslandData?
         do {
             island = try getSavedIsland()
         } catch {
         }
-        return island.addedAt!
+        return island!.addedAt!
     }
     
     func getIslandInitDate() -> Date {
-        var island = IslandData()
+        var island: IslandData?
         do {
             island = try getSavedIsland()
-            if island.doesTimeTravel {
-                return island.initIslandDate!
+            if island!.doesTimeTravel {
+                return island!.initIslandDate!
             }
         } catch {
         }

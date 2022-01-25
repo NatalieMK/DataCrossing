@@ -67,7 +67,10 @@
 		396933FE278B8E0300239E9B /* CritterInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933FD278B8E0300239E9B /* CritterInformationViewController.swift */; };
 		39693400278CA38200239E9B /* CritterCalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396933FF278CA38200239E9B /* CritterCalendarCollectionViewCell.swift */; };
 		39693402278E2AA000239E9B /* CSVFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39693401278E2AA000239E9B /* CSVFormatter.swift */; };
-		39693404278E379400239E9B /* CritterSizeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39693403278E379400239E9B /* CritterSizeCollectionViewCell.swift */; };
+		39D7C911279C808F00DC930A /* SwipingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D7C910279C808F00DC930A /* SwipingCollectionViewController.swift */; };
+		39D7C913279C90DC00DC930A /* CritterSizeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D7C912279C90DC00DC930A /* CritterSizeLabel.swift */; };
+		39D7C915279F7A7B00DC930A /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D7C914279F7A7B00DC930A /* WeatherViewController.swift */; };
+		39D7C917279F89C500DC930A /* DailyWeatherOverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D7C916279F89C500DC930A /* DailyWeatherOverviewCell.swift */; };
 		A2A4E44745489934E95F5AD0 /* Pods_DataCrossing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E09168C487AF85FD7D8B205E /* Pods_DataCrossing.framework */; };
 		CF6012A9CCED6E6753EB4686 /* Pods_DataCrossingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF3DF4C66ADF3348230DE21 /* Pods_DataCrossingTests.framework */; };
 /* End PBXBuildFile section */
@@ -156,7 +159,10 @@
 		396933FD278B8E0300239E9B /* CritterInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterInformationViewController.swift; sourceTree = "<group>"; };
 		396933FF278CA38200239E9B /* CritterCalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterCalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		39693401278E2AA000239E9B /* CSVFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVFormatter.swift; sourceTree = "<group>"; };
-		39693403278E379400239E9B /* CritterSizeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterSizeCollectionViewCell.swift; sourceTree = "<group>"; };
+		39D7C910279C808F00DC930A /* SwipingCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwipingCollectionViewController.swift; path = "UI/Custom Subviews/SwipingCollectionViewController.swift"; sourceTree = "<group>"; };
+		39D7C912279C90DC00DC930A /* CritterSizeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CritterSizeLabel.swift; sourceTree = "<group>"; };
+		39D7C914279F7A7B00DC930A /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		39D7C916279F89C500DC930A /* DailyWeatherOverviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherOverviewCell.swift; sourceTree = "<group>"; };
 		3FC4EB50AD33AE80E40E0843 /* Pods-DataCrossing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCrossing.release.xcconfig"; path = "Target Support Files/Pods-DataCrossing/Pods-DataCrossing.release.xcconfig"; sourceTree = "<group>"; };
 		408B6ED5B81AFEA5DC028EE9 /* Pods-DataCrossingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCrossingTests.debug.xcconfig"; path = "Target Support Files/Pods-DataCrossingTests/Pods-DataCrossingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		83CC3939276841D67153AA59 /* Pods-DataCrossing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCrossing.debug.xcconfig"; path = "Target Support Files/Pods-DataCrossing/Pods-DataCrossing.debug.xcconfig"; sourceTree = "<group>"; };
@@ -282,6 +288,7 @@
 				393258CE276A85BB0010D958 /* MuseumPage */,
 				393257DD27446BE40010D958 /* IslandDataViewController.swift */,
 				393258C02762A1350010D958 /* CreateIslandViewController.swift */,
+				39D7C914279F7A7B00DC930A /* WeatherViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -289,8 +296,10 @@
 		393257D92744629B0010D958 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				39D7C910279C808F00DC930A /* SwipingCollectionViewController.swift */,
 				39693401278E2AA000239E9B /* CSVFormatter.swift */,
 				396933AE276FE33300239E9B /* CSVs */,
+				39D7C912279C90DC00DC930A /* CritterSizeLabel.swift */,
 				393257E52744AD460010D958 /* Custom Cells */,
 				393257DA274463620010D958 /* UI */,
 				393257A727445D840010D958 /* SceneDelegate.swift */,
@@ -322,7 +331,7 @@
 				396933EF2777CEC200239E9B /* HourlyForecastCollectionViewCell.swift */,
 				396933F12777E0E000239E9B /* TourneyCollectionViewCell.swift */,
 				396933FF278CA38200239E9B /* CritterCalendarCollectionViewCell.swift */,
-				39693403278E379400239E9B /* CritterSizeCollectionViewCell.swift */,
+				39D7C916279F89C500DC930A /* DailyWeatherOverviewCell.swift */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -723,6 +732,7 @@
 				396933ED2776A69F00239E9B /* Bug+CoreDataProperties.swift in Sources */,
 				393258DC276E72C30010D958 /* ConditionalTimeSwitchViewController.swift in Sources */,
 				39693400278CA38200239E9B /* CritterCalendarCollectionViewCell.swift in Sources */,
+				39D7C913279C90DC00DC930A /* CritterSizeLabel.swift in Sources */,
 				393258C12762A1350010D958 /* CreateIslandViewController.swift in Sources */,
 				396933CE27715E1700239E9B /* BugDataController.swift in Sources */,
 				396933B2276FE45900239E9B /* ConditionalTextSwitchViewController.swift in Sources */,
@@ -745,11 +755,13 @@
 				396933F4277A9D7700239E9B /* MuseumCounterCollectionViewCell.swift in Sources */,
 				396933CC277153C800239E9B /* MuseumItemCollectionViewCell.swift in Sources */,
 				393258C5276421020010D958 /* CoreDataStack.swift in Sources */,
+				39D7C917279F89C500DC930A /* DailyWeatherOverviewCell.swift in Sources */,
 				396933D62773D8B900239E9B /* SeaCreatureDataController.swift in Sources */,
 				396933BB276FF9C300239E9B /* MuseumModels.swift in Sources */,
 				396933F02777CEC200239E9B /* HourlyForecastCollectionViewCell.swift in Sources */,
 				393258D4276AC86D0010D958 /* FishViewController.swift in Sources */,
 				396933FE278B8E0300239E9B /* CritterInformationViewController.swift in Sources */,
+				39D7C915279F7A7B00DC930A /* WeatherViewController.swift in Sources */,
 				396933E827764EE900239E9B /* CritterDataController.swift in Sources */,
 				393258C927693CE80010D958 /* MenuViewController.swift in Sources */,
 				396933D02771715300239E9B /* MeteoNookController.swift in Sources */,
@@ -758,8 +770,8 @@
 				396933E527764C1600239E9B /* SeaCreature+CoreDataClass.swift in Sources */,
 				396933E02773F49300239E9B /* Fish+CoreDataProperties.swift in Sources */,
 				393258BF276293450010D958 /* IslandDataController.swift in Sources */,
+				39D7C911279C808F00DC930A /* SwipingCollectionViewController.swift in Sources */,
 				39325891276286420010D958 /* UserIslandData.xcdatamodeld in Sources */,
-				39693404278E379400239E9B /* CritterSizeCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
