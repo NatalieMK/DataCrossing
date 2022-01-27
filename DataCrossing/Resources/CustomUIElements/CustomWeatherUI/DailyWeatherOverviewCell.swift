@@ -15,11 +15,11 @@ class DailyWeatherOverviewCell: UICollectionViewCell {
     
     enum weatherOptions: String {
         case Clear = "sun.max"
-        case RainCloud, RainClouds = "cloud.drizzle"
+        case RainClouds = "cloud.drizzle"
         case Sun = "sun.max.fill"
         case Rain = "cloud.rain"
-        case Cloud, Cloudy = "smoke.fill"
-        case CloudRain, HeavyRain = "cloud.heavyrain"
+        case Clouds = "smoke.fill"
+        case HeavyRain = "cloud.heavyrain"
         case CloudFine = "cloud.sun.fill"
     }
     
@@ -110,23 +110,23 @@ class DailyWeatherOverviewCell: UICollectionViewCell {
         case "Sunny":
             return UIImage(systemName: weatherOptions.Sun.rawValue)!
         case "Cloudy":
-            return UIImage(systemName: weatherOptions.Cloudy.rawValue)!
+            return UIImage(systemName: weatherOptions.Clouds.rawValue)!
         case "RainCloud":
-            return UIImage(systemName: weatherOptions.RainCloud.rawValue)!
+            return UIImage(systemName: weatherOptions.RainClouds.rawValue)!
         case "Fine", "EventDay":
             return UIImage(systemName: weatherOptions.Sun.rawValue)!
         case "Cloud":
-            return UIImage(systemName: weatherOptions.Cloud.rawValue)!
+            return UIImage(systemName: weatherOptions.Clouds.rawValue)!
         case "Rain":
             return UIImage(systemName: weatherOptions.Rain.rawValue)!
         case "CloudRain":
-            return UIImage(systemName: weatherOptions.CloudRain.rawValue)!
+            return UIImage(systemName: weatherOptions.HeavyRain.rawValue)!
         case "CloudFine":
             return UIImage(systemName: weatherOptions.CloudFine.rawValue)!
         case "HeavyRain":
             return UIImage(systemName: weatherOptions.HeavyRain.rawValue)!
         default:
-            return UIImage(systemName: "question")!
+            return UIImage(systemName: "questionmark")!
         }
     }
 

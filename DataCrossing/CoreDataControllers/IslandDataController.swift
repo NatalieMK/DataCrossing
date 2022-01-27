@@ -73,6 +73,7 @@ class IslandDataController{
         
         userIsland.addedAt = addedAt
         userIsland.currentIslandDate = currentIslandDate
+        userIsland.initIslandDate = currentIslandDate
         
         do {
             try mainContext.save()

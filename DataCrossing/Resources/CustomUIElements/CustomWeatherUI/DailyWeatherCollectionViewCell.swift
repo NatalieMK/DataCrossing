@@ -85,7 +85,7 @@ class DailyWeatherCollectionViewCell: UICollectionViewCell {
         case "CloudFine":
             return UIImage(systemName: weatherOptions.CloudFine.rawValue)!
         default:
-            return UIImage(systemName: "question")!
+            return UIImage(systemName: "questionmark")!
         }
     }
 }

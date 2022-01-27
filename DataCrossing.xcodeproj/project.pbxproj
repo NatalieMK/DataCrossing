@@ -74,7 +74,6 @@
 		39D7C91B27A074B600DC930A /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D7C91A27A074B600DC930A /* WeatherTableViewCell.swift */; };
 		39D7C91D27A0889700DC930A /* PortraitLockedNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D7C91C27A0889700DC930A /* PortraitLockedNavigationController.swift */; };
 		39D7C91F27A090F600DC930A /* MeteoNookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D7C91E27A090F600DC930A /* MeteoNookViewController.swift */; };
-		39D7C93927A0A34C00DC930A /* WeatherHourItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D7C93827A0A34C00DC930A /* WeatherHourItemController.swift */; };
 		39D7C93B27A0A37A00DC930A /* WeatherItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D7C93A27A0A37A00DC930A /* WeatherItemController.swift */; };
 		39D7C93D27A0B0B800DC930A /* WeatherPatternArrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D7C93C27A0B0B800DC930A /* WeatherPatternArrays.swift */; };
 		39D7C93F27A0B8E900DC930A /* WeatherArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D7C93E27A0B8E900DC930A /* WeatherArrayTests.swift */; };
@@ -82,6 +81,8 @@
 		39D7C95627A0C55500DC930A /* WeatherItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D7C95227A0C55500DC930A /* WeatherItem+CoreDataClass.swift */; };
 		39D7C95727A0C55500DC930A /* WeatherHourItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D7C95327A0C55500DC930A /* WeatherHourItem+CoreDataClass.swift */; };
 		39D7C95827A0C55500DC930A /* WeatherItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D7C95427A0C55500DC930A /* WeatherItem+CoreDataProperties.swift */; };
+		39D7C95A27A0E58D00DC930A /* AddWeatherItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D7C95927A0E58D00DC930A /* AddWeatherItemViewController.swift */; };
+		39D7C95C27A0F2EC00DC930A /* WeatherItemControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D7C95B27A0F2EC00DC930A /* WeatherItemControllerTests.swift */; };
 		A2A4E44745489934E95F5AD0 /* Pods_DataCrossing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E09168C487AF85FD7D8B205E /* Pods_DataCrossing.framework */; };
 		CF6012A9CCED6E6753EB4686 /* Pods_DataCrossingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF3DF4C66ADF3348230DE21 /* Pods_DataCrossingTests.framework */; };
 /* End PBXBuildFile section */
@@ -177,7 +178,6 @@
 		39D7C91A27A074B600DC930A /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 		39D7C91C27A0889700DC930A /* PortraitLockedNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitLockedNavigationController.swift; sourceTree = "<group>"; };
 		39D7C91E27A090F600DC930A /* MeteoNookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoNookViewController.swift; sourceTree = "<group>"; };
-		39D7C93827A0A34C00DC930A /* WeatherHourItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHourItemController.swift; sourceTree = "<group>"; };
 		39D7C93A27A0A37A00DC930A /* WeatherItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherItemController.swift; sourceTree = "<group>"; };
 		39D7C93C27A0B0B800DC930A /* WeatherPatternArrays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPatternArrays.swift; sourceTree = "<group>"; };
 		39D7C93E27A0B8E900DC930A /* WeatherArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherArrayTests.swift; sourceTree = "<group>"; };
@@ -186,6 +186,8 @@
 		39D7C95227A0C55500DC930A /* WeatherItem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WeatherItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		39D7C95327A0C55500DC930A /* WeatherHourItem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WeatherHourItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		39D7C95427A0C55500DC930A /* WeatherItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WeatherItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		39D7C95927A0E58D00DC930A /* AddWeatherItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeatherItemViewController.swift; sourceTree = "<group>"; };
+		39D7C95B27A0F2EC00DC930A /* WeatherItemControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherItemControllerTests.swift; sourceTree = "<group>"; };
 		3FC4EB50AD33AE80E40E0843 /* Pods-DataCrossing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCrossing.release.xcconfig"; path = "Target Support Files/Pods-DataCrossing/Pods-DataCrossing.release.xcconfig"; sourceTree = "<group>"; };
 		408B6ED5B81AFEA5DC028EE9 /* Pods-DataCrossingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCrossingTests.debug.xcconfig"; path = "Target Support Files/Pods-DataCrossingTests/Pods-DataCrossingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		83CC3939276841D67153AA59 /* Pods-DataCrossing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataCrossing.debug.xcconfig"; path = "Target Support Files/Pods-DataCrossing/Pods-DataCrossing.debug.xcconfig"; sourceTree = "<group>"; };
@@ -253,15 +255,15 @@
 		393257A427445D840010D958 /* DataCrossing */ = {
 			isa = PBXGroup;
 			children = (
-				39D7C92227A09E6500DC930A /* WeatherData */,
 				393257FB274C5E550010D958 /* Meteonook-Bridging-Header.h */,
-				396933F7278B5FDA00239E9B /* Controllers */,
+				393257D72744627B0010D958 /* MeteoNook */,
 				393257D92744629B0010D958 /* Resources */,
 				393257D82744628C0010D958 /* ViewControllers */,
 				393257B327445D850010D958 /* Info.plist */,
+				39D7C95E27A1C5FE00DC930A /* CoreDataControllers */,
+				39D7C95D27A1C57700DC930A /* CoreDataGeneratedFiles */,
+				393258C4276421020010D958 /* CoreDataStack.swift */,
 				3932588F276286420010D958 /* UserIslandData.xcdatamodeld */,
-				396933D72773EF4C00239E9B /* MuseumData */,
-				3932589A27628FD90010D958 /* IslandData */,
 			);
 			path = DataCrossing;
 			sourceTree = "<group>";
@@ -321,17 +323,14 @@
 		393257D92744629B0010D958 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				39D7C91927A0745700DC930A /* CustomMuseumUI */,
-				39D7C91827A0741000DC930A /* CustomWeatherUI */,
-				39693401278E2AA000239E9B /* CSVFormatter.swift */,
+				39D7C95F27A1C69800DC930A /* CustomUIElements */,
+				39D7C96027A1C6CA00DC930A /* Models+Formatters */,
 				396933AE276FE33300239E9B /* CSVs */,
-				393257E52744AD460010D958 /* Custom Cells */,
 				393257DA274463620010D958 /* UI */,
 				393257A727445D840010D958 /* SceneDelegate.swift */,
 				393257E3274498280010D958 /* Extensions.swift */,
 				393257A527445D840010D958 /* AppDelegate.swift */,
 				396933D12772A27B00239E9B /* EventDay.swift */,
-				39D7C91C27A0889700DC930A /* PortraitLockedNavigationController.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -339,7 +338,6 @@
 		393257DA274463620010D958 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				396933B0276FE39700239E9B /* CustomViewControllers */,
 				393257D5274462380010D958 /* Storyboards */,
 				393257AE27445D850010D958 /* Assets.xcassets */,
 				393257DB274463780010D958 /* ColorExtensions.swift */,
@@ -366,17 +364,6 @@
 				EDF3DF4C66ADF3348230DE21 /* Pods_DataCrossingTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		3932589A27628FD90010D958 /* IslandData */ = {
-			isa = PBXGroup;
-			children = (
-				396933F9278B60D200239E9B /* Controllers */,
-				3932589627628FC20010D958 /* IslandData+CoreDataClass.swift */,
-				3932589727628FC20010D958 /* IslandData+CoreDataProperties.swift */,
-				393258C4276421020010D958 /* CoreDataStack.swift */,
-			);
-			path = IslandData;
 			sourceTree = "<group>";
 		};
 		393258CE276A85BB0010D958 /* MuseumSection */ = {
@@ -412,18 +399,6 @@
 			path = CustomViewControllers;
 			sourceTree = "<group>";
 		};
-		396933D72773EF4C00239E9B /* MuseumData */ = {
-			isa = PBXGroup;
-			children = (
-				396933F8278B602A00239E9B /* Controllers */,
-				396933EE2777CB8000239E9B /* BugCoreData */,
-				396933E92776A66800239E9B /* SeaCreatureCoreData */,
-				396933E627764C5C00239E9B /* FishCoreData */,
-				396933BA276FF9C300239E9B /* MuseumModels.swift */,
-			);
-			path = MuseumData;
-			sourceTree = "<group>";
-		};
 		396933E627764C5C00239E9B /* FishCoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -451,40 +426,13 @@
 			path = BugCoreData;
 			sourceTree = "<group>";
 		};
-		396933F7278B5FDA00239E9B /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				393257D72744627B0010D958 /* MeteoNook */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		396933F8278B602A00239E9B /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				396933E727764EE900239E9B /* CritterDataController.swift */,
-				396933D52773D8B900239E9B /* SeaCreatureDataController.swift */,
-				396933CD27715E1600239E9B /* BugDataController.swift */,
-				396933C827712FD300239E9B /* FishDataController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		396933F9278B60D200239E9B /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				393258BE276293450010D958 /* IslandDataController.swift */,
-				396933F5278B5FD400239E9B /* CreateIslandController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		396933FC278B890E00239E9B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				393257BC27445D850010D958 /* DataCrossingTests.swift */,
 				393258C2276402AA0010D958 /* IslandDataControllerTests.swift */,
 				39D7C93E27A0B8E900DC930A /* WeatherArrayTests.swift */,
+				39D7C95B27A0F2EC00DC930A /* WeatherItemControllerTests.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -517,29 +465,60 @@
 			children = (
 				39D7C914279F7A7B00DC930A /* WeatherViewController.swift */,
 				39D7C91E27A090F600DC930A /* MeteoNookViewController.swift */,
+				39D7C95927A0E58D00DC930A /* AddWeatherItemViewController.swift */,
 			);
 			path = WeatherSection;
 			sourceTree = "<group>";
 		};
-		39D7C92227A09E6500DC930A /* WeatherData */ = {
+		39D7C95D27A1C57700DC930A /* CoreDataGeneratedFiles */ = {
 			isa = PBXGroup;
 			children = (
+				3932589627628FC20010D958 /* IslandData+CoreDataClass.swift */,
+				3932589727628FC20010D958 /* IslandData+CoreDataProperties.swift */,
+				396933E92776A66800239E9B /* SeaCreatureCoreData */,
+				396933E627764C5C00239E9B /* FishCoreData */,
+				396933EE2777CB8000239E9B /* BugCoreData */,
 				39D7C95327A0C55500DC930A /* WeatherHourItem+CoreDataClass.swift */,
 				39D7C95127A0C55500DC930A /* WeatherHourItem+CoreDataProperties.swift */,
 				39D7C95227A0C55500DC930A /* WeatherItem+CoreDataClass.swift */,
 				39D7C95427A0C55500DC930A /* WeatherItem+CoreDataProperties.swift */,
-				39D7C93727A0A32200DC930A /* Controllers */,
 			);
-			path = WeatherData;
+			path = CoreDataGeneratedFiles;
 			sourceTree = "<group>";
 		};
-		39D7C93727A0A32200DC930A /* Controllers */ = {
+		39D7C95E27A1C5FE00DC930A /* CoreDataControllers */ = {
 			isa = PBXGroup;
 			children = (
-				39D7C93827A0A34C00DC930A /* WeatherHourItemController.swift */,
+				396933E727764EE900239E9B /* CritterDataController.swift */,
+				396933D52773D8B900239E9B /* SeaCreatureDataController.swift */,
+				396933CD27715E1600239E9B /* BugDataController.swift */,
+				396933C827712FD300239E9B /* FishDataController.swift */,
 				39D7C93A27A0A37A00DC930A /* WeatherItemController.swift */,
+				393258BE276293450010D958 /* IslandDataController.swift */,
+				396933F5278B5FD400239E9B /* CreateIslandController.swift */,
 			);
-			path = Controllers;
+			path = CoreDataControllers;
+			sourceTree = "<group>";
+		};
+		39D7C95F27A1C69800DC930A /* CustomUIElements */ = {
+			isa = PBXGroup;
+			children = (
+				39D7C91C27A0889700DC930A /* PortraitLockedNavigationController.swift */,
+				393257E52744AD460010D958 /* Custom Cells */,
+				396933B0276FE39700239E9B /* CustomViewControllers */,
+				39D7C91927A0745700DC930A /* CustomMuseumUI */,
+				39D7C91827A0741000DC930A /* CustomWeatherUI */,
+			);
+			path = CustomUIElements;
+			sourceTree = "<group>";
+		};
+		39D7C96027A1C6CA00DC930A /* Models+Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				396933BA276FF9C300239E9B /* MuseumModels.swift */,
+				39693401278E2AA000239E9B /* CSVFormatter.swift */,
+			);
+			path = "Models+Formatters";
 			sourceTree = "<group>";
 		};
 		E145FE4F07FBDF63D86BEFA6 /* Pods */ = {
@@ -807,7 +786,6 @@
 				393258CB276944960010D958 /* MuseumViewController.swift in Sources */,
 				396933ED2776A69F00239E9B /* Bug+CoreDataProperties.swift in Sources */,
 				393258DC276E72C30010D958 /* ConditionalTimeSwitchViewController.swift in Sources */,
-				39D7C93927A0A34C00DC930A /* WeatherHourItemController.swift in Sources */,
 				39693400278CA38200239E9B /* CritterCalendarCollectionViewCell.swift in Sources */,
 				39D7C913279C90DC00DC930A /* CritterSizeLabel.swift in Sources */,
 				393258C12762A1350010D958 /* CreateIslandViewController.swift in Sources */,
@@ -845,6 +823,7 @@
 				396933FE278B8E0300239E9B /* CritterInformationViewController.swift in Sources */,
 				39D7C915279F7A7B00DC930A /* WeatherViewController.swift in Sources */,
 				396933E827764EE900239E9B /* CritterDataController.swift in Sources */,
+				39D7C95A27A0E58D00DC930A /* AddWeatherItemViewController.swift in Sources */,
 				39D7C91B27A074B600DC930A /* WeatherTableViewCell.swift in Sources */,
 				393258C927693CE80010D958 /* MenuViewController.swift in Sources */,
 				396933D02771715300239E9B /* MeteoNookController.swift in Sources */,
@@ -865,6 +844,7 @@
 			files = (
 				393258C3276402AB0010D958 /* IslandDataControllerTests.swift in Sources */,
 				39D7C93F27A0B8E900DC930A /* WeatherArrayTests.swift in Sources */,
+				39D7C95C27A0F2EC00DC930A /* WeatherItemControllerTests.swift in Sources */,
 				393258C7276421DF0010D958 /* CoreDataTestStack.swift in Sources */,
 				393257BD27445D850010D958 /* DataCrossingTests.swift in Sources */,
 				396933FB278B6E5500239E9B /* CreateDataControllerTests.swift in Sources */,
