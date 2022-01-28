@@ -89,8 +89,7 @@ extension Date{
         let islandInit = islandData.getIslandInitDate()
         let currentDate = islandData.getIslandDate()
         let createdDate = islandData.getIslandCreatedAtDate()
-        let interval = timeIntervalSince(createdDate)
-        
+        let interval = createdDate.timeIntervalSinceNow
         return (Calendar.current.date(byAdding: .second, value: Int(interval), to: islandInit)!)
     }
     

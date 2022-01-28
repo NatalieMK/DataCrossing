@@ -27,9 +27,11 @@
         <relationship name="dayWeather" optional="YES" maxCount="1" deletionRule="Nullify" ordered="YES" destinationEntity="WeatherItem" inverseName="hours" inverseEntity="WeatherItem"/>
     </entity>
     <entity name="WeatherItem" representedClassName=".WeatherItem" syncable="YES">
+        <attribute name="aurora" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="day" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="dayType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="doubleRainbow" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="meteor" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="month" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="rainbowTime" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -41,6 +43,6 @@
         <element name="IslandData" positionX="70.8399658203125" positionY="-419.9368591308594" width="128" height="134"/>
         <element name="SeaCreature" positionX="-94.2442626953125" positionY="-418.045166015625" width="128" height="59"/>
         <element name="WeatherHourItem" positionX="-258.5740356445312" positionY="-9514.122497558594" width="128" height="74"/>
-        <element name="WeatherItem" positionX="-256.1990966796875" positionY="-9821.753356933594" width="128" height="134"/>
+        <element name="WeatherItem" positionX="-256.1990966796875" positionY="-9821.753356933594" width="128" height="164"/>
     </elements>
 </model>

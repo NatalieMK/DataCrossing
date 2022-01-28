@@ -41,23 +41,30 @@ internal class WeatherItemController {
             throw WeatherItemControllerError.errorSaving
         }
     }
+    // get all saved WeatherItems
+    public func getWeatherItems() throws -> [WeatherItem] {
+        var items = [WeatherItem]()
+        do {
+            items = try mainContext.fetch(WeatherItem.fetchRequest())
+        } catch {}
+        return items
+    }
     
     // checks for previously saved item on this date. Creates new WeatherItem if date does not currently have one
     public func isWeatherItem(weatherDate: Date) {
-        let date = Calendar.current.dateComponents([.day, .month, .year], from: weatherDate)
+        let dateComponents = Calendar.current.dateComponents([.day, .month, .year], from: weatherDate)
+        let date = Calendar.current.date(from: dateComponents)
         do {
             let savedDates = try mainContext.fetch(WeatherItem.fetchRequest())
             for savedDate in savedDates {
-                if savedDate.day == date.day! {
-                    if savedDate.month == date.month! {
-                        if savedDate.year == date.year!{
-                            return
-                        }
-                    }
-                } else {
-                    try newWeatherItem(weatherDate: weatherDate)
+                let components = DateComponents(year: Int(savedDate.year), month: Int(savedDate.month), day: Int(savedDate.day))
+                let savedDate = Calendar.current.date(from: components)
+                if date == savedDate {
+                    return
                 }
             }
+            try newWeatherItem(weatherDate: date!)
+            
         } catch WeatherItemControllerError.errorSaving{
             
         } catch {

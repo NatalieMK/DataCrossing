@@ -71,7 +71,7 @@ class IslandDataController{
             userIsland.seed = seed!
         }
         
-        userIsland.addedAt = addedAt
+        userIsland.addedAt = Date()
         userIsland.currentIslandDate = currentIslandDate
         userIsland.initIslandDate = currentIslandDate
         

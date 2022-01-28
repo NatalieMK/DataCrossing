@@ -30,7 +30,7 @@ class DailyWeatherOverviewCell: UICollectionViewCell {
     
     let dayWeatherLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .salmon
+        label.backgroundColor = .coolMint
         label.minimumScaleFactor = 0.3
         label.font = UIFont(name: "telugusangammn-bold", size: 200)
         label.textAlignment = .center

@@ -7,34 +7,161 @@
 
 import UIKit
 
+protocol AddWeatherItemControllerDelegate {
+    func didAddEvent()
+}
 class AddWeatherItemViewController: UIViewController {
+    
+    var weatherDelegate: AddWeatherItemControllerDelegate!
     
     let doneButton: UIButton = {
         let button = UIButton()
         button.setTitle("Finish", for: .normal)
         button.backgroundColor = .acBrown
         button.layer.cornerRadius = 10
+        
         return button
+    }()
+    
+    let weatherOptions: UITableView = {
+        let weather = UITableView()
+        weather.backgroundColor = .paleBrown
+        weather.translatesAutoresizingMaskIntoConstraints = false
+        weather.layer.borderColor = UIColor.paleBrown.cgColor
+        weather.layer.borderWidth = 5
+        weather.backgroundColor = .acWhite
+        
+        return weather
+    }()
+    
+    let datePicker: UIDatePicker = {
+        let picker = UIDatePicker()
+        picker.preferredDatePickerStyle = .compact
+        picker.tintColor = .coolBrown
+        return picker
+    }()
+    
+    let auroraLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Aurora Borealis?"
+        return label
+    }()
+    
+    let meteorLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Shooting Stars?"
+        return label
+    }()
+    
+    let auroraSwitch: UISwitch = {
+        let switcher = UISwitch()
+        switcher.onTintColor = .acBrown
+        switcher.tintColor = .paleBrown
+        return switcher
+    }()
+    
+    let meteorSwitch: UISwitch = {
+        let switcher = UISwitch()
+        switcher.onTintColor = .acBrown
+        switcher.tintColor = .paleBrown
+        return switcher
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .brightYellow
+        view.backgroundColor = .acWhite
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .done, target: self, action: #selector(didSelectBack))
+        doneButton.addTarget(self, action: #selector(didSelectDoneButton), for: .touchUpInside)
         navigationItem.leftBarButtonItem?.tintColor = .acBrown
-            }
+        weatherOptions.register(WeatherTableViewCell.self, forCellReuseIdentifier: WeatherTableViewCell.identifier)
+        
+        view.addSubview(weatherOptions)
+        weatherOptions.delegate = self
+        weatherOptions.dataSource = self
+        
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         view.addSubview(doneButton)
-        doneButton.anchorToConstraints(top: view.topAnchor, leading: nil, trailing: view.trailingAnchor, bottom: nil, insets: UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 16))
-        doneButton.heightAnchor.constraint(lessThanOrEqualToConstant: 100).isActive = true
+        view.bringSubviewToFront(doneButton)
+        view.addSubview(datePicker)
+        view.addSubview(meteorSwitch)
+        view.addSubview(auroraSwitch)
+        view.addSubview(auroraLabel)
+        view.addSubview(meteorLabel)
+        
+        doneButton.anchorToConstraints(top: view.topAnchor, leading: nil, trailing: view.trailingAnchor, bottom: nil, insets: UIEdgeInsets(top: 150, left: 0, bottom: 0, right: 16))
+        doneButton.heightAnchor.constraint(lessThanOrEqualToConstant: navigationController?.navigationBar.height ?? 100).isActive = true
         doneButton.widthAnchor.constraint(equalTo: doneButton.heightAnchor, multiplier: 2.0).isActive = true
+        datePicker.anchorToConstraints(top: nil, leading: view.leadingAnchor, trailing: nil, bottom: nil, insets: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0))
+        datePicker.topAnchor.constraint(greaterThanOrEqualToSystemSpacingBelow: doneButton.bottomAnchor, multiplier: 4).isActive = true
+        meteorLabel.anchorToConstraints(top: meteorSwitch.topAnchor, leading: weatherOptions.leadingAnchor, trailing: meteorSwitch.leadingAnchor, bottom: meteorSwitch.bottomAnchor, insets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 16))
+        meteorSwitch.anchorToConstraints(top: datePicker.bottomAnchor, leading: nil, trailing: doneButton.leadingAnchor, bottom: nil, insets: UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0))
+        auroraLabel.anchorToConstraints(top: auroraSwitch.topAnchor, leading: weatherOptions.leadingAnchor, trailing: auroraSwitch.leadingAnchor, bottom: auroraSwitch.bottomAnchor, insets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 16))
+        auroraSwitch.anchorToConstraints(top: meteorSwitch.bottomAnchor, leading: meteorSwitch.leadingAnchor, trailing: nil, bottom: nil, insets: UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0))
+        weatherOptions.anchorToConstraints(top: auroraSwitch.bottomAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: nil, insets: UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 16))
+        weatherOptions.widthAnchor.constraint(lessThanOrEqualTo: view.widthAnchor).isActive = true
+        weatherOptions.heightAnchor.constraint(greaterThanOrEqualTo: weatherOptions.widthAnchor).isActive = true
+        
+        
     }
     
     @objc func didSelectBack(){
         dismiss(animated: true, completion: nil)
     }
     
+    @objc func didSelectDoneButton(){
+        print("Click")
+        let weatherController = WeatherItemController()
+        weatherController.isWeatherItem(weatherDate: datePicker.date)
+        weatherDelegate.didAddEvent()
+        dismiss(animated: true, completion: nil)
+    }
+    
 
+}
+
+extension AddWeatherItemViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 6
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.height/6
+    }
+    
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTableViewCell.identifier, for: indexPath) as! WeatherTableViewCell
+        switch (indexPath.row){
+        case 0:
+            cell.weatherImage.image = UIImage(systemName: "sun.max")
+            cell.weatherText.text = "Clear/Fine"
+        case 1:
+            cell.weatherImage.image = UIImage(systemName: "cloud.sun")
+            cell.weatherText.text = "Sunny with Clouds"
+        case 2:
+            cell.weatherImage.image = UIImage(systemName: "cloud")
+            cell.weatherText.text = "Cloudy"
+        case 3:
+            cell.weatherImage.image = UIImage(systemName: "smoke.fill")
+            cell.weatherText.text = "Rain Clouds"
+        case 4:
+            cell.weatherImage.image = UIImage(systemName: "cloud.drizzle")
+            cell.weatherText.text = "Rain"
+        default:
+            cell.weatherImage.image = UIImage(systemName: "cloud.heavyrain")
+            cell.weatherText.text = "Heavy Rain"
+        }
+        cell.weatherText.adjustsFontSizeToFitWidth = true
+        cell.weatherImage.tintColor = .acBrown
+        if cell.isSelected {
+            cell.tintColor = .paleBrown
+        }
+        
+        return cell
+    }
+    
+    
 }

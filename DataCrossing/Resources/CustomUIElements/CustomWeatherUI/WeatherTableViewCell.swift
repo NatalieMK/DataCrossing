@@ -18,11 +18,12 @@ class WeatherTableViewCell: UITableViewCell {
     
     let weatherText: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
+        label.textAlignment = .right
         label.textColor = .acWhite
         label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.15
+        label.minimumScaleFactor = 0.10
         label.font = UIFont(name: "telugusangammn-bold", size: 200)
+        label.numberOfLines = 0
         label.backgroundColor = .clear
         return label
     }()
@@ -35,9 +36,9 @@ class WeatherTableViewCell: UITableViewCell {
     
     override func layoutSubviews(){
         super.layoutSubviews()
-        weatherImage.anchorToConstraints(top: contentView.topAnchor, leading: contentView.leadingAnchor, trailing: nil, bottom: contentView.bottomAnchor, insets: UIEdgeInsets(top: 3, left: 0, bottom: 3, right: 0))
+        weatherImage.anchorToConstraints(top: contentView.topAnchor, leading: contentView.leadingAnchor, trailing: nil, bottom: contentView.bottomAnchor, insets: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8))
         weatherImage.widthAnchor.constraint(equalTo: weatherImage.heightAnchor).isActive = true
-        weatherText.anchorToConstraints(top: contentView.topAnchor, leading: contentView.centerXAnchor, trailing: contentView.trailingAnchor, bottom: contentView.bottomAnchor)
+        weatherText.anchorToConstraints(top: contentView.topAnchor, leading: weatherImage.trailingAnchor, trailing: contentView.trailingAnchor, bottom: contentView.bottomAnchor, insets: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8))
     }
     
     required init?(coder: NSCoder) {

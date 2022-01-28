@@ -2,7 +2,7 @@
 //  WeatherItem+CoreDataProperties.swift
 //  
 //
-//  Created by Natalie on 1/25/22.
+//  Created by Natalie on 1/26/22.
 //
 //
 
@@ -22,6 +22,8 @@ extension WeatherItem {
     @NSManaged public var month: Int16
     @NSManaged public var rainbowTime: Int16
     @NSManaged public var year: Int16
+    @NSManaged public var aurora: Bool
+    @NSManaged public var meteor: Bool
     @NSManaged public var hours: NSOrderedSet?
 
 }

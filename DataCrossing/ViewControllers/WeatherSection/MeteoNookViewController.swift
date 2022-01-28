@@ -7,9 +7,15 @@
 
 import UIKit
 
-class MeteoNookViewController: UIViewController {
-
-    let savedDays = [WeatherItem]()
+class MeteoNookViewController: UIViewController, AddWeatherItemControllerDelegate {
+    
+    func didAddEvent() {
+        getData()
+        weatherTable.reloadData()
+    }
+    
+    var savedDays = [WeatherItem]()
+    var weatherItemController = WeatherItemController()
     
     let weatherTable: UITableView = {
         let table = UITableView()
@@ -21,12 +27,27 @@ class MeteoNookViewController: UIViewController {
         view.addSubview(weatherTable)
         weatherTable.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         addNavBar()
+        getData()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .done, target: self, action: #selector(didTapAddWeather))
+        navigationItem.rightBarButtonItem?.tintColor = .acWhite
+        weatherTable.dataSource = self
+        weatherTable.delegate = self
+        weatherTable.frame = view.frame
+    }
+    
+    func getData(){
+        do {
+            savedDays = try weatherItemController.getWeatherItems()
+            print(savedDays)
+        } catch {
+            print("Error fetching data")
+        }
     }
     
     @objc func didTapAddWeather(){
         let addWeather = AddWeatherItemViewController()
         let nav = UINavigationController(rootViewController: addWeather)
+        addWeather.weatherDelegate = self
         nav.modalPresentationStyle = .overFullScreen
         present(nav, animated: true, completion: nil)
     }
@@ -44,6 +65,7 @@ extension MeteoNookViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
         label.backgroundColor = .darkMint
+        label.text = "\(savedDays[section].day) \(savedDays[section].month)"
         return label
     }
     

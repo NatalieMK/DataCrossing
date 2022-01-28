@@ -22,8 +22,6 @@ class WeatherViewController: SwipingCollectionViewController {
         view.backgroundColor = .sand
     }
     
-   
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         addNavBar()
@@ -42,7 +40,7 @@ class WeatherViewController: SwipingCollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 1
     }
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
