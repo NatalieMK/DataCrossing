@@ -13,6 +13,15 @@ protocol AddWeatherItemControllerDelegate {
 class AddWeatherItemViewController: UIViewController {
     
     var weatherDelegate: AddWeatherItemControllerDelegate!
+    var chosenWeather = ""
+
+    
+    let alert: UIAlertController = {
+       let alert = UIAlertController()
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        
+        return alert
+    }()
     
     let doneButton: UIButton = {
         let button = UIButton()
@@ -30,7 +39,6 @@ class AddWeatherItemViewController: UIViewController {
         weather.layer.borderColor = UIColor.paleBrown.cgColor
         weather.layer.borderWidth = 5
         weather.backgroundColor = .acWhite
-        
         return weather
     }()
     
@@ -38,6 +46,8 @@ class AddWeatherItemViewController: UIViewController {
         let picker = UIDatePicker()
         picker.preferredDatePickerStyle = .compact
         picker.tintColor = .coolBrown
+        picker.minuteInterval = 30
+        picker.roundsToMinuteInterval = true
         return picker
     }()
     
@@ -74,11 +84,9 @@ class AddWeatherItemViewController: UIViewController {
         doneButton.addTarget(self, action: #selector(didSelectDoneButton), for: .touchUpInside)
         navigationItem.leftBarButtonItem?.tintColor = .acBrown
         weatherOptions.register(WeatherTableViewCell.self, forCellReuseIdentifier: WeatherTableViewCell.identifier)
-        
         view.addSubview(weatherOptions)
         weatherOptions.delegate = self
         weatherOptions.dataSource = self
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -103,8 +111,6 @@ class AddWeatherItemViewController: UIViewController {
         weatherOptions.anchorToConstraints(top: auroraSwitch.bottomAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: nil, insets: UIEdgeInsets(top: 16, left: 16, bottom: 0, right: 16))
         weatherOptions.widthAnchor.constraint(lessThanOrEqualTo: view.widthAnchor).isActive = true
         weatherOptions.heightAnchor.constraint(greaterThanOrEqualTo: weatherOptions.widthAnchor).isActive = true
-        
-        
     }
     
     @objc func didSelectBack(){
@@ -112,14 +118,42 @@ class AddWeatherItemViewController: UIViewController {
     }
     
     @objc func didSelectDoneButton(){
-        print("Click")
+        if chosenWeather.isEmpty {
+            alert.message = "No weather selected"
+            present(alert, animated: false, completion: nil)
+            return
+        }
         let weatherController = WeatherItemController()
-        weatherController.isWeatherItem(weatherDate: datePicker.date)
+        let hour = Calendar.current.component(.hour, from: datePicker.date)
+        do {
+            try weatherController.saveWeatherForHour(hour: Int16(hour), pattern: chosenWeather, date: datePicker.date)
+        } catch WeatherHourItemControllerError.noDaySaved {
+            // make day and retry
+            do {
+                try weatherController.newWeatherItem(weatherDate: datePicker.date)
+                try weatherController.saveWeatherForHour(hour: Int16(hour), pattern: chosenWeather, date: datePicker.date)
+            }
+            catch {
+                alert.message = "An error has occurred. Try again."
+                return
+            }
+            
+        } catch WeatherHourItemControllerError.weatherNotPossible {
+            alert.message = "Weather impossible - please double check"
+            present(alert, animated: false, completion: nil)
+            return
+        } catch WeatherHourItemControllerError.hourAlreadyExists{
+            alert.message = "Already a saved hour here"
+            present(alert, animated: false, completion: nil)
+            return
+        } catch {
+            alert.message = "An error has occurred"
+            present(alert, animated: false, completion: nil)
+            return
+        }
         weatherDelegate.didAddEvent()
         dismiss(animated: true, completion: nil)
     }
-    
-
 }
 
 extension AddWeatherItemViewController: UITableViewDataSource, UITableViewDelegate {
@@ -129,6 +163,23 @@ extension AddWeatherItemViewController: UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.height/6
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch(indexPath.row){
+        case 0:
+            chosenWeather = "Clear"
+        case 1:
+            chosenWeather = "Sunny"
+        case 2:
+            chosenWeather = "Cloudy"
+        case 3:
+            chosenWeather = "RainClouds"
+        case 4:
+            chosenWeather = "Rain"
+        default:
+            chosenWeather = "HeavyRain"
+        }
     }
     
 

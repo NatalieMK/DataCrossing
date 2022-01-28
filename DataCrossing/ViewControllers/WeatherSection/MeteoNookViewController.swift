@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class MeteoNookViewController: UIViewController, AddWeatherItemControllerDelegate {
     
@@ -25,7 +26,7 @@ class MeteoNookViewController: UIViewController, AddWeatherItemControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(weatherTable)
-        weatherTable.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        weatherTable.register(WeatherTableViewCell.self, forCellReuseIdentifier: WeatherTableViewCell.identifier)
         addNavBar()
         getData()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .done, target: self, action: #selector(didTapAddWeather))
@@ -58,8 +59,12 @@ extension MeteoNookViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch(savedDays[section]){
         default:
-            return savedDays[section].hours?.count ?? 1
+            return savedDays[section].hours?.count ?? 0
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.height/15
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -74,7 +79,14 @@ extension MeteoNookViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTableViewCell.identifier, for: indexPath) as! WeatherTableViewCell
+        let hoursList = weatherItemController.getHourItems(weatherItem: savedDays[indexPath.section])
+        if hoursList.count == 0 {return cell}
+        cell.weatherText.textColor = .darkTeal
+        cell.weatherText.text = "\(hoursList[indexPath.row]!.hour)"
+        cell.weatherImage.image = HourlyForecastCollectionViewCell().getWeatherImage(weather:
+                                                                                        hoursList[indexPath.row]!.pattern!)
+        
         return cell
     }
     
