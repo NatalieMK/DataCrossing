@@ -8,9 +8,12 @@
 import UIKit
 import MapKit
 
+protocol CritterDelegate {
+    func dismissWithButton()
+}
 
 class CritterInformationViewController: UIViewController {
-    
+
     lazy var fishController = FishDataController()
     lazy var bugController = BugDataController()
     lazy var seaController = SeaCreatureDataController()
@@ -20,6 +23,9 @@ class CritterInformationViewController: UIViewController {
     var index: Int!
     var size: String!
     var hemisphere: Int!
+    var critterDelegate: CritterDelegate!
+    
+    var dataController = CritterDataController()
 
     
     var available : [String:String] = [:]
@@ -78,6 +84,12 @@ class CritterInformationViewController: UIViewController {
         return label
     }()
     
+    let catchingButton: UIButton = {
+       let button = UIButton()
+        button.backgroundColor = .darkTeal
+        return button
+    }()
+    
     let northKeys = ["N_Jan","N_Feb","N_Mar",
                      "N_Apr","N_May","N_Jun","N_Jul",
                      "N_Aug","N_Sep","N_Oct","N_Nov","N_Dec"]
@@ -96,6 +108,7 @@ class CritterInformationViewController: UIViewController {
         view.addSubview(foundLabel)
         view.addSubview(sizeLabel)
         view.addSubview(sizeHeader)
+        view.addSubview(catchingButton)
         hemisphere = Int(IslandDataController().getIslandHemisphere()!)
     }
     
@@ -114,7 +127,6 @@ class CritterInformationViewController: UIViewController {
         calendarView.layer.cornerRadius = 30
         calendarView.isPagingEnabled = true
 
-      
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -153,17 +165,28 @@ class CritterInformationViewController: UIViewController {
         sizeLabel.anchorToConstraints(top: view.centerYAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: nil)
         sizeLabel.heightAnchor.constraint(equalTo: calendarView.heightAnchor, multiplier: 0.5).isActive = true
         
-        calendarView.anchorToConstraints(top: sizeLabel.bottomAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: nil, insets: UIEdgeInsets(top: 16, left: 10, bottom: view.safeAreaInsets.top, right: 10))
+        calendarView.anchorToConstraints(top: sizeLabel.bottomAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, bottom: nil, insets: UIEdgeInsets(top: 16, left: 10, bottom: 0, right: 10))
         calendarView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.25).isActive = true
-       
+        
+        catchingButton.anchorToConstraints(top: calendarView.bottomAnchor, leading: nameLabel.leadingAnchor, trailing: nameLabel.trailingAnchor, bottom: nil, insets: UIEdgeInsets(top: 16, left: 16, bottom: view.safeAreaInsets.top, right: 16))
+        catchingButton.heightAnchor.constraint(equalTo: calendarView.heightAnchor, multiplier: 0.25).isActive = true
     }
     
     
     func loadViewData(){
+        catchingButton.addTarget(self, action: #selector(didPressCatchButton), for: .touchUpInside)
+        
+        if critter.hasBeenCaught {
+            catchingButton.setTitle("Uncatch", for: .normal)
+        } else {
+            catchingButton.setTitle("Catch", for: .normal)
+        }
+        
         if let fish = critter as? Fish {
             do {
             try fishController.initFishData()
             } catch{}
+            dataController = fishController
             nameLabel.text = fishController.allFish[index].name.capitalized
 
             foundLabel.text = fishController.allFish[index].foundWhere.capitalized
@@ -182,10 +205,10 @@ class CritterInformationViewController: UIViewController {
             do {
                 try bugController.initBugData()
             } catch{}
+            dataController = bugController
             nameLabel.text = bugController.allBugs[index].name.capitalized
             size = nil
             rain = bugController.allBugs[index].weather
-            
             
             sizeLabel.isHidden = true
             foundLabel.text = nil
@@ -203,6 +226,7 @@ class CritterInformationViewController: UIViewController {
             do{
                 try seaController.initSeaCreatureData()
             } catch{}
+            dataController = seaController
             nameLabel.text = seaController.allCreatures[index].name.capitalized
             size = seaController.allCreatures[index].size
             foundLabel.text = nil
@@ -214,6 +238,20 @@ class CritterInformationViewController: UIViewController {
             available = seaController.allCreatures[index].available
             calendarView.reloadData()
         }
+    }
+    
+    @objc func didPressCatchButton(){
+        let name = critter.name
+        print(critter.hasBeenCaught)
+
+        if critter.hasBeenCaught {
+            dataController.uncatchCritterNamed(name: name)
+        } else {
+            dataController.catchCritterNamed(name: name)
+        }
+        critterDelegate.dismissWithButton()
+        
+        dismiss(animated: false, completion: nil)
     }
 
     

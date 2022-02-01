@@ -19,6 +19,7 @@ class MuseumCounterCollectionViewCell: UICollectionViewCell {
     
     let numberLabel: UILabel = {
         let label = UILabel()
+        label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .center
         return label
     }()

@@ -16,6 +16,7 @@ class SeaCreatureViewController: UIViewController {
     
     let creatureDataControl = SeaCreatureDataController()
     var creatureDelegate: SeaCreatureViewControllerDelegate!
+    let critterVC = CritterInformationViewController()
     
     let collectionView: UICollectionView = {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
@@ -36,6 +37,7 @@ class SeaCreatureViewController: UIViewController {
         super.viewDidAppear(animated)
         addNavBar()
         view.addSubview(collectionView)
+        critterVC.critterDelegate = self
         collectionView.anchorToView(view: view, insets: UIEdgeInsets(top: 100, left: 0, bottom: 0, right: 0))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .done, target: self, action: #selector(popUpInfo))
         navigationItem.rightBarButtonItem?.tintColor = .acWhite
@@ -57,6 +59,13 @@ class SeaCreatureViewController: UIViewController {
     }
 }
 
+extension SeaCreatureViewController: CritterDelegate {
+    
+    func dismissWithButton() {
+        collectionView.reloadData()
+    }
+}
+
 extension SeaCreatureViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -75,7 +84,7 @@ extension SeaCreatureViewController: UICollectionViewDelegate, UICollectionViewD
             let creature = creatureDataControl.getCreatureNamed(name: name)
             if creature != nil {
                 if (creature?.hasBeenCaught == true) {
-                    cell.contentView.layer.opacity = 0.5
+                    cell.contentView.layer.opacity = 0.25
                 } else {
                     cell.contentView.layer.opacity = 1.0
                 }

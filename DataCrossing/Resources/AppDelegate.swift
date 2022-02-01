@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
     }
     
-    var restrictRotation:UIInterfaceOrientationMask = .all
+    var restrictRotation:UIInterfaceOrientationMask = .portrait
 
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask
     {

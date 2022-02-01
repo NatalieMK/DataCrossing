@@ -25,15 +25,29 @@ class MeteoNookViewController: UIViewController, AddWeatherItemControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(weatherTable)
+      
         weatherTable.register(WeatherTableViewCell.self, forCellReuseIdentifier: WeatherTableViewCell.identifier)
+        
+        view.backgroundColor = .sand
+        weatherTable.backgroundColor = .sand
+        
         addNavBar()
         getData()
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .done, target: self, action: #selector(didTapAddWeather))
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .coolGreen
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         navigationItem.rightBarButtonItem?.tintColor = .acWhite
+        
         weatherTable.dataSource = self
         weatherTable.delegate = self
-        weatherTable.frame = view.frame
+        
+        view.addSubview(weatherTable)
+        view.bringSubviewToFront(weatherTable)
+        weatherTable.anchorToView(view: view, insets: UIEdgeInsets(top: 90, left: 0, bottom: 100, right: 0))
     }
     
     func getData(){
@@ -52,6 +66,11 @@ class MeteoNookViewController: UIViewController, AddWeatherItemControllerDelegat
         nav.modalPresentationStyle = .overFullScreen
         present(nav, animated: true, completion: nil)
     }
+    
+    let weatherAttributes : [NSAttributedString.Key: Any] = [
+        NSAttributedString.Key.font: UIFont(name: "AmericanTypewriter-Semibold", size: 18),
+        NSAttributedString.Key.foregroundColor: UIColor.acWhite
+    ]
 }
 
 extension MeteoNookViewController: UITableViewDelegate, UITableViewDataSource {
@@ -69,8 +88,9 @@ extension MeteoNookViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()
-        label.backgroundColor = .darkMint
-        label.text = "\(savedDays[section].day) \(savedDays[section].month)"
+        label.backgroundColor = .coolMint
+        label.text = "\(savedDays[section].day).\(savedDays[section].month).\(savedDays[section].year)"
+        label.attributedText = NSAttributedString(string: label.text!, attributes: weatherAttributes)
         return label
     }
     
@@ -83,10 +103,23 @@ extension MeteoNookViewController: UITableViewDelegate, UITableViewDataSource {
         let hoursList = weatherItemController.getHourItems(weatherItem: savedDays[indexPath.section])
         if hoursList.count == 0 {return cell}
         cell.weatherText.textColor = .darkTeal
-        cell.weatherText.text = "\(hoursList[indexPath.row]!.hour)"
+        cell.weatherImage.tintColor = .darkTeal
+        
+        var cellHour = hoursList[indexPath.row]!.hour
+        
+        if cellHour == 0 {
+            cell.weatherText.text = "12 AM"
+        } else if cellHour == 12 {
+            cell.weatherText.text = "12 PM"
+        } else if hoursList[indexPath.row]!.hour > 11 {
+            cellHour = cellHour % 12
+            cell.weatherText.text = "\(cellHour) PM"
+        } else {
+            cell.weatherText.text = "\(cellHour) AM"
+        }
         cell.weatherImage.image = HourlyForecastCollectionViewCell().getWeatherImage(weather:
                                                                                         hoursList[indexPath.row]!.pattern!)
-        
+        cell.backgroundColor = .sand
         return cell
     }
     

@@ -105,11 +105,7 @@ pub fn get_weather_for_hour(str: &str) -> String {
     println!("Sorry, could not parse JSON");
     return String::new()
 }
-
-
 }
-
-
 
 // Original lib.rs file from Ninji
 
@@ -510,7 +506,6 @@ pub fn is_pattern_possible_at_date(hemi: Hemisphere, month: u8, day: u8, pattern
 	}
 	false
 }
-
 
 pub fn get_weather(hour: u8, pattern: Pattern) -> Weather {
 	PATTERNS[pattern as usize][hour as usize]

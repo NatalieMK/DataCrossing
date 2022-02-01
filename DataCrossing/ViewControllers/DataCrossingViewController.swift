@@ -111,6 +111,9 @@ class DataCrossingViewController: UIViewController {
         view.addSubview(tabBarVC.view)
         tabBarVC.didMove(toParent: self)
     }
+    let bugVC = BugViewController()
+    let fishVC = FishViewController()
+    let seaVC = SeaCreatureViewController()
     
 }
 
@@ -144,7 +147,7 @@ extension DataCrossingViewController: MenuViewControllerDelegate {
     
     func addWeather() {
         
-        let weatherNavVC = PortraitLockedNavigationController(rootViewController: weatherVC)
+        let weatherNavVC = UINavigationController(rootViewController: weatherVC)
         let meteoNavVC = UINavigationController(rootViewController: meteoVC)
         
         weatherNavVC.tabBarItem.image = UIImage(systemName: "sun.max")
@@ -166,11 +169,11 @@ extension DataCrossingViewController: MenuViewControllerDelegate {
     
     func addMuseum() {
         let museumNavVC = UINavigationController(rootViewController: museumVC)
-        let bugVC = BugViewController()
+        
         let bugNavVC = UINavigationController(rootViewController: bugVC)
-        let fishVC = FishViewController()
+      
         let fishNavVC = UINavigationController(rootViewController: fishVC)
-        let seaVC = SeaCreatureViewController()
+
         let seaNavVC = UINavigationController(rootViewController: seaVC)
         
         museumVC.menuDelegate = self
@@ -198,18 +201,21 @@ extension DataCrossingViewController: FishViewControllerDelegate, BugViewControl
     func didTapFish(fish: Fish, index: Int) {
         critterVC.critter = fish
         critterVC.index = index
+        critterVC.critterDelegate = fishVC
         present(critterVC, animated: true)
     }
     
     func didTapBug(bug: Bug, index: Int){
         critterVC.critter = bug
         critterVC.index = index
+        critterVC.critterDelegate = bugVC
         present(critterVC, animated: true)
     }
     
     func didTapSeaCreature(creature: SeaCreature, index: Int) {
         critterVC.critter = creature
         critterVC.index = index
+        critterVC.critterDelegate = seaVC
         present(critterVC, animated: true)
     }
 }

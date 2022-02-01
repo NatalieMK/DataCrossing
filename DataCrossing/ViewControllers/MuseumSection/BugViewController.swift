@@ -35,6 +35,7 @@ class BugViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         addNavBar()
+        critterInfoVC.critterDelegate = self
         view.addSubview(collectionView)
         collectionView.anchorToView(view: view, insets: UIEdgeInsets(top: 100, left: 0, bottom: 0, right: 0))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: .done, target: self, action: #selector(popUpInfo))
@@ -76,7 +77,7 @@ extension BugViewController: UICollectionViewDelegate, UICollectionViewDataSourc
         let bug = bugDataControl.getBugNamed(name: name)
         if bug != nil {
             if bug?.hasBeenCaught == true {
-                cell.contentView.layer.opacity = 0.5
+                cell.contentView.layer.opacity = 0.25
             } else {
                 cell.contentView.layer.opacity = 1.0
             }
@@ -107,7 +108,10 @@ extension BugViewController: UICollectionViewDelegate, UICollectionViewDataSourc
     }
 }
 
-extension BugViewController {
+extension BugViewController: CritterDelegate {
+    func dismissWithButton() {
+        collectionView.reloadData()
+    }
     func presentInfo(){
         present(critterInfoVC, animated: true)
     }

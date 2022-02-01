@@ -27,20 +27,24 @@ class MuseumViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .sand
+        museumView.dataSource = self
+        museumView.delegate = self
+        museumView.register(MuseumCounterCollectionViewCell.self, forCellWithReuseIdentifier: MuseumCounterCollectionViewCell.identifier)
+        view.addSubview(museumView)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         addNavBar()
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.bullet.rectangle"), style: .done, target: self, action: #selector(didTapMenuButton))
+        navigationItem.leftBarButtonItem?.tintColor = .acWhite
+        
         fishRemaining = fishData.getUncaughtFish()
         bugsRemaining = bugData.getUncaughtBugs()
         creaturesRemaining = creatureData.getUncaughtSeaCreatures()
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.bullet.rectangle"), style: .done, target: self, action: #selector(didTapMenuButton))
-        navigationItem.leftBarButtonItem?.tintColor = .acWhite
-        museumView.dataSource = self
-        museumView.delegate = self
-        view.addSubview(museumView)
-        museumView.register(MuseumCounterCollectionViewCell.self, forCellWithReuseIdentifier: MuseumCounterCollectionViewCell.identifier)
+        
+        museumView.reloadData()
     }
     
     @objc func didTapMenuButton(){
@@ -51,7 +55,6 @@ class MuseumViewController: UIViewController {
         museumView.frame = CGRect(x: 0, y: 100, width: view.width, height: view.height)
         museumView.backgroundColor = .sand
     }
-    
 }
 
 extension MuseumViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -59,13 +62,14 @@ extension MuseumViewController: UICollectionViewDelegate, UICollectionViewDataSo
         switch (section){
         default:
             return 3
-
         }
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+    
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
             let cell = museumView.dequeueReusableCell(withReuseIdentifier: MuseumCounterCollectionViewCell.identifier, for: indexPath) as! MuseumCounterCollectionViewCell
@@ -80,9 +84,7 @@ extension MuseumViewController: UICollectionViewDelegate, UICollectionViewDataSo
                 cell.numberLabel.text = "\(bugsRemaining.count)"
                 cell.logoView.image = UIImage(systemName: "ladybug.fill")
             }
-        
             return cell
-        
     }
     
     static func buildLayout() -> UICollectionViewCompositionalLayout {
@@ -100,7 +102,6 @@ extension MuseumViewController: UICollectionViewDelegate, UICollectionViewDataSo
                 let counterSection = NSCollectionLayoutSection(group: counterGroup)
                 return counterSection
             }
-
         }
     }
     

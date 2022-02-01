@@ -12,7 +12,8 @@ class PortraitLockedNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         (UIApplication.shared.delegate as! AppDelegate).restrictRotation = .portrait
-
+        navigationBar.barTintColor = .brightMint
     }
+    
     
 }

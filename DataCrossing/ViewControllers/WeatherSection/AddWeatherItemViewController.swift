@@ -79,7 +79,7 @@ class AddWeatherItemViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .acWhite
+        view.backgroundColor = .sand
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .done, target: self, action: #selector(didSelectBack))
         doneButton.addTarget(self, action: #selector(didSelectDoneButton), for: .touchUpInside)
         navigationItem.leftBarButtonItem?.tintColor = .acBrown

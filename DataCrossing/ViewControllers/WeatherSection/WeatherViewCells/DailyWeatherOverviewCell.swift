@@ -31,10 +31,12 @@ class DailyWeatherOverviewCell: UICollectionViewCell {
     let dayWeatherLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .coolMint
+//        label.layer.borderColor = UIColor.darkTeal.cgColor
+//        label.layer.borderWidth = 5
         label.minimumScaleFactor = 0.3
         label.font = UIFont(name: "telugusangammn-bold", size: 200)
         label.textAlignment = .center
-        label.textColor = .acWhite
+        label.textColor = .coolMint
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
@@ -89,7 +91,7 @@ class DailyWeatherOverviewCell: UICollectionViewCell {
         
         dayWeatherLabel.anchorToConstraints(top: weatherImage.bottomAnchor, leading: contentView.leadingAnchor, trailing: contentView.trailingAnchor, bottom: contentView.centerYAnchor)
         
-        dayWeatherLabel.heightAnchor.constraint(lessThanOrEqualTo: contentView.heightAnchor, multiplier: 1/4).isActive = true
+        dayWeatherLabel.heightAnchor.constraint(lessThanOrEqualTo: contentView.heightAnchor, multiplier: 1/6).isActive = true
         
         // Square Image
         weatherImage.widthAnchor.constraint(lessThanOrEqualTo: contentView.widthAnchor, multiplier: 0.5).isActive = true
@@ -98,9 +100,6 @@ class DailyWeatherOverviewCell: UICollectionViewCell {
         weatherImage.centerXAnchor.constraint(equalTo: dayWeatherLabel.centerXAnchor).isActive = true
         
         weatherTable.anchorToConstraints(top: dayWeatherLabel.bottomAnchor, leading: contentView.leadingAnchor, trailing: contentView.trailingAnchor, bottom: contentView.bottomAnchor, insets: safeAreaInsets)
-        
-        
-        
     }
     
     public func getWeatherImage(weather: String) -> UIImage{
@@ -113,7 +112,9 @@ class DailyWeatherOverviewCell: UICollectionViewCell {
             return UIImage(systemName: weatherOptions.Clouds.rawValue)!
         case "RainCloud":
             return UIImage(systemName: weatherOptions.RainClouds.rawValue)!
-        case "Fine", "EventDay":
+        case "Fine":
+            return UIImage(systemName: weatherOptions.Sun.rawValue)!
+        case "EventDay":
             return UIImage(systemName: weatherOptions.Sun.rawValue)!
         case "Cloud":
             return UIImage(systemName: weatherOptions.Clouds.rawValue)!
@@ -129,7 +130,11 @@ class DailyWeatherOverviewCell: UICollectionViewCell {
             return UIImage(systemName: "questionmark")!
         }
     }
-
+    
+    let weatherAttributes : [NSAttributedString.Key: Any] = [
+        NSAttributedString.Key.font: UIFont(name: "AmericanTypewriter-Semibold", size: 18),
+        NSAttributedString.Key.foregroundColor: UIColor.darkTeal
+    ]
 }
 
 extension DailyWeatherOverviewCell: UITableViewDelegate, UITableViewDataSource {
@@ -147,14 +152,15 @@ extension DailyWeatherOverviewCell: UITableViewDelegate, UITableViewDataSource {
         
         let format = DateFormatter()
         format.dateFormat = "E"
-        var date = islandDataController.getIslandDate()
-        
+        let date = islandDataController.getIslandDate()
         let text = format.string(from: Calendar.current.date(byAdding: .day, value: indexPath.row + 1, to: date ?? Date()) ?? Date())
         cell.weatherText.text = text
         cell.selectionStyle = .none
-        cell.backgroundColor = .acWhite
-        cell.weatherText.textColor = .coolMint
-        cell.weatherImage.tintColor = .coolMint
+        cell.backgroundColor = .sand
+        
+        cell.weatherText.textColor = .darkTeal
+        cell.weatherText.attributedText = NSAttributedString(string: text, attributes: weatherAttributes)
+        cell.weatherImage.tintColor = .darkTeal
        
         return cell
     }

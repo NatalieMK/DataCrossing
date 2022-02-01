@@ -38,6 +38,7 @@ class FishViewController: UIViewController {
         super.viewDidAppear(animated)
         addNavBar()
         view.addSubview(collectionView)
+        critterInfoVC.critterDelegate = self
         collectionView.anchorToView(view: view, insets: UIEdgeInsets(top: 100, left: 0, bottom: 0, right: 0))
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -73,7 +74,7 @@ extension FishViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let fish = try fishDataControl.getFishNamed(name: name)
             if fish != nil {
                 if fish?.hasBeenCaught == true {
-                    cell.contentView.layer.opacity = 0.5
+                    cell.contentView.layer.opacity = 0.25
                 } else {
                     cell.contentView.layer.opacity = 1.0
                 }
@@ -111,9 +112,14 @@ extension FishViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 }
 
-extension FishViewController {
+extension FishViewController: CritterDelegate {
+    
     func presentInfo(){
         present(critterInfoVC, animated: true)
+    }
+    
+    func dismissWithButton() {
+        collectionView.reloadData()
     }
 }
 extension FishViewController: UIGestureRecognizerDelegate {
